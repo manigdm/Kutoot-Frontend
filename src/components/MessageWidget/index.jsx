@@ -257,7 +257,7 @@ function Index({pusher}) {
     useEffect(() => {
         if (!listenerAdded) {
             echo
-                .private(`seller-to-user-message.${auth() && auth().user.id}`)
+                .private(`seller-to-user-message.${auth() && auth()?.user?.id}`)
                 .listen("SellerToUser", (e) => {
                     let activeSeller = localStorage.getItem('active-chat-seller');
                     newMessageHandler(e, activeSeller)
@@ -528,7 +528,7 @@ function Index({pusher}) {
                               }`}
                           >
                             {offerPrice ? (
-                                <span>{currency_icon + price}</span>
+                                <span>Rs {price}</span>
                             ) : (
                                 <CheckProductIsExistsInFlashSale
                                     id={product.id}

@@ -48,7 +48,7 @@ export default function DefaultLayout({ children }) {
         if (token) {
           apiRequest
               .pushNotification(auth().access_token, {
-                user_id: auth().user.id,
+                user_id: auth()?.user?.id,
                 device_token: token,
               })
               .then((res) => {
@@ -117,13 +117,13 @@ export default function DefaultLayout({ children }) {
         );
 
         if (res.data) {
-          setgTagId(res.data.googleAnalytic.analytic_id);
+          setgTagId(res?.data?.googleAnalytic?.analytic_id);
           setTwkData({
-            widgetId: res.data.tawk_setting.widget_id,
-            propertyId: res.data.tawk_setting.property_id,
+            widgetId: res.data?.tawk_setting?.widget_id,
+            propertyId: res.data?.tawk_setting?.property_id,
           });
-          setFbPixel(res.data.facebookPixel);
-          localStorage.setItem("language", JSON.stringify(res.data.language));
+          setFbPixel(res.data?.facebookPixel);
+          localStorage.setItem("language", JSON.stringify(res.data?.language));
           const checkDefaultExists = localStorage.getItem("language") && localStorage.getItem("shopoDefaultCurrency");
           if (checkDefaultExists) {
             setLoad(false);
@@ -289,11 +289,11 @@ export default function DefaultLayout({ children }) {
             <div>
               <Consent />
               <div>{children}</div>
-              {twkData && (
+              {/* {twkData && (
                   <TawkMessengerReact
-                      propertyId={twkData.widgetId}
-                      widgetId={twkData.propertyId}/>
-              )}
+                      propertyId={twkData?.widgetId}
+                      widgetId={twkData?.propertyId}/>
+              )} */}
 
               {getLoginContexts.loginPopup && (
                 <div
@@ -345,12 +345,12 @@ export default function DefaultLayout({ children }) {
                   </div>
                 </div>
               )}
-              {parseInt(enable_multivendor) === 1 && messageWid && (
+              {/* {parseInt(enable_multivendor) === 1 && messageWid && (
                 <MessageWidget pusher={messageWid} />
-              )}
+              )} */}
             </div>
           ) : (
-            <div className="w-full h-full fixed bg-white px-5 py-5">
+            <div className="w-full h-full fixed hidden bg-white px-5 py-5">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

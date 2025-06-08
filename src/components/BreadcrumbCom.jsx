@@ -5,7 +5,7 @@ export default function BreadcrumbCom({
     <>
       {paths && paths.length > 0 && (
         <div key={Math.random()}>
-          <div className="breadcrumb-wrapper font-400 text-[13px] text-qblack mb-[23px] print:hidden">
+          <div className="breadcrumb-wrapper font-400 text-[13px] text-white mb-[23px] print:hidden">
             {paths.map((path) => (
               <span key={Math.random()}>
                 <a href={path.path}>

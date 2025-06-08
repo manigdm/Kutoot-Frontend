@@ -80,13 +80,13 @@ export default function Home({ homepageData }) {
             className="category-products md:mb-[60px] mb-[30px]"
           />
         )}
-        {homepage && (
+        {/* {homepage && (
           <BrandSection
             brands={homepage?.brands?.length > 0 ? homepage.brands : []}
             sectionTitle={sectionTitles && sectionTitles.Shop_by_Brand}
             className="brand-section-wrapper md:mb-[60px] mb-[30px]"
           />
-        )}
+        )} */}
 
         {homepage && (
           <CampaignCountDown

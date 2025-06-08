@@ -170,7 +170,7 @@ export default function Footer({ settings }) {
               </a>
             </div>
             <span className="sm:text-base text-[10px] text-qgray font-300">
-              ©2022
+              ©2025
               <Link
                 href="https://quomodosoft.com/"
                 target="_blank"

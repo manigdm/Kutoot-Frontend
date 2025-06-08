@@ -253,7 +253,7 @@ export default function ProductCardStyleOne({ datas }) {
   return (
     <div className="main-wrapper-card relative">
       <div
-        className="product-card-one w-full h-[445px] bg-white relative group overflow-hidden"
+        className="product-card-one w-full h-[460px] bg-white relative group overflow-hidden"
         style={{ boxShadow: "0px 15px 64px 0px rgba(0, 0, 0, 0.05)" }}
       >
         <div className="product-card-img w-full h-[300px] -mt-2">
@@ -316,7 +316,7 @@ export default function ProductCardStyleOne({ datas }) {
         </div>
         <div className="product-card-details px-[30px] pb-[30px] relative pt-2">
           {/* add to card button */}
-          <div className="absolute w-full h-10 px-[30px] left-0 top-40 group-hover:top-[85px] transition-all duration-300 ease-in-out">
+          <div className="absolute w-full h-10 px-[30px] left-0 top-40 group-hover:top-[120px] transition-all duration-300 ease-in-out">
             <button
               onClick={() => addToCart(datas.id)}
               type="button"

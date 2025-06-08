@@ -250,7 +250,7 @@ export default function AddressesTab() {
       {newAddress && (
         <div data-aos="zoom-in" className="w-full">
           <div className="flex justify-between items-center">
-            <h1 className="sm:text-2xl text-xl text-qblack font-medium mb-5">
+            <h1 className="sm:text-xl text-xl text-qblack font-medium mb-5">
               {ServeLangItem()?.Add_New_Address}
             </h1>
             <span

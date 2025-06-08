@@ -24,7 +24,7 @@ export default function TestCom() {
     console.log(echo);
     useEffect(() => {
         echo
-            .private(`laravel-react-private.${auth() && auth().user.id}`)
+            .private(`laravel-react-private.${auth() && auth()?.user?.id}`)
             .listen("LaravelReact", (e) => {
                 console.log(e);
             });
