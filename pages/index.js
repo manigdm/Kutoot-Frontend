@@ -7,8 +7,8 @@ export default function HomePage({ data }) {
     <>
 
       <PageHead
-        title={`${seoSetting.seo_title}`}
-        metaDes={seoSetting.seo_description}
+        title={`${seoSetting?.seo_title}`}
+        metaDes={seoSetting?.seo_description}
       />
       <Home homepageData={data} />
     </>

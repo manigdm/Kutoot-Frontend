@@ -6,8 +6,8 @@ export default function flashSalePage(data) {
   return (
     <>
       <PageHead
-        title={`${seoSetting.seo_title}`}
-        metaDes={seoSetting.seo_description}
+        title={`${seoSetting?.seo_title}`}
+        metaDes={seoSetting?.seo_description}
       />
       <FlashSale fetchData={data.data} />
     </>

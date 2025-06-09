@@ -6,8 +6,8 @@ export default function contactPage({ data }) {
   return (
     <>
       <PageHead
-        title={`${seoSetting.seo_title}`}
-        metaDes={seoSetting.seo_description}
+        title={`${seoSetting?.seo_title}`}
+        metaDes={seoSetting?.seo_description}
       />
       <Contact datas={data} />
     </>

@@ -16,8 +16,8 @@ export default function AllProductsPageData(data) {
       {data && seoSetting && (
           <>
             <PageHead
-                title={`${seoSetting.seo_title}`}
-                metaDes={seoSetting.seo_description}
+                title={`${seoSetting?.seo_title}`}
+                metaDes={seoSetting?.seo_description}
             />
             <AllProductPage response={data} />
           </>

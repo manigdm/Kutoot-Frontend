@@ -13,8 +13,8 @@ const SingleProduct = ({ data }) => {
   return (
     <>
       <PageHead
-          title={`${data.product && data.product.seo_title}`}
-          metaDes={data.product && data.product.seo_description}
+          title={`${data.product && data.product?.seo_title}`}
+          metaDes={data.product && data.product?.seo_description}
       />
       {router.query.slug && <SingleProductPage details={data} />}
     </>

@@ -7,8 +7,8 @@ export default function SellersPage(data) {
   return (
     <>
       <PageHead
-        title={`${seoSetting.seo_title}`}
-        metaDes={seoSetting.seo_description}
+        title={`${seoSetting?.seo_title}`}
+        metaDes={seoSetting?.seo_description}
       />
       <Layout childrenClasses="pt-0 pb-0">
         <Sellers sellersData={data.data} />
