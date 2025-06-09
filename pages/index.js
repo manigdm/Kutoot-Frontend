@@ -16,7 +16,7 @@ export default function HomePage({ data }) {
 }
 export async function getServerSideProps() {
 // Fetch data from an API endpoint
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/webinfo`);
   const data = await res.json();
 
   return {

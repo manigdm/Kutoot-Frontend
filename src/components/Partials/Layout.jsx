@@ -14,7 +14,7 @@ export default function Layout({ children, childrenClasses }) {
   useEffect(() => {
     if (!subscribeData) {
       axios
-        .get(`${process.env.NEXT_PUBLIC_BASE_URL}api/`)
+        .get(`${process.env.NEXT_PUBLIC_BASE_URL}api/webinfo`)
         .then((res) => {
           if (res.data) {
             setSubScribeDAta(res.data.subscriptionBanner);
