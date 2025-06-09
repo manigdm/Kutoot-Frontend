@@ -128,7 +128,7 @@ export default function Banner({
                             <a rel="noopener noreferrer">
                               <div className="cursor-pointer w-full relative  ">
                                 <div className="inline-flex rtl:space-x-reverse  space-x-1.5 items-center relative z-20">
-                              <span className="text-sm text-qblack font-medium leading-[30px]">
+                              <span className="text-sm text-black font-medium leading-[30px]">
                                 {ServeLangItem()?.Shop_Now}
                               </span>
                                   <span className="leading-[30px]">
@@ -206,7 +206,7 @@ export default function Banner({
                             <a rel="noopener noreferrer">
                               <div className="cursor-pointer w-full relative  ">
                                 <div className="inline-flex rtl:space-x-reverse  space-x-1.5 items-center relative z-20">
-                              <span className="text-sm text-qblack font-medium leading-[30px]">
+                              <span className="text-sm text-black font-medium leading-[30px]">
                                 {ServeLangItem()?.Shop_Now}
                               </span>
                                   <span className="leading-[30px]">

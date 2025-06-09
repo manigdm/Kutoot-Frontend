@@ -549,7 +549,7 @@ export default function AllProductPage({ response, sellerInfo }) {
                           <a rel="noopener noreferrer">
                             <div className="cursor-pointer w-full relative">
                               <div className="inline-flex  space-x-1.5 rtl:space-x-reverse items-center relative z-20">
-                                <span className="text-sm text-qblack font-medium leading-[30px]">
+                                <span className="text-sm text-white font-medium leading-[30px]">
                                   {ServeLangItem()?.Shop_Now}
                                 </span>
                                 <span className="leading-[30px]">
@@ -786,7 +786,7 @@ export default function AllProductPage({ response, sellerInfo }) {
                   </div>
                 ) : (
                   <div className={"mt-5 flex justify-center"}>
-                    <h1 className="text-2xl font-medium text-tblack">
+                    <h1 className="text-2xl font-medium text-white">
                       Products not available
                     </h1>
                   </div>

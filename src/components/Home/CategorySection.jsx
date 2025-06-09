@@ -51,7 +51,7 @@ function CategorySection({
                                                         />
                                                     </div>
                                                 </div>
-                                                <p className="text-base text-qgray text-center mt-5 group-hover:text-qgreen transition duration-300 ease-in-out">
+                                                <p className="text-base text-white text-center mt-5 group-hover:text-qgreen transition duration-300 ease-in-out">
                                                     {item.name}
                                                 </p>
                                             </a>

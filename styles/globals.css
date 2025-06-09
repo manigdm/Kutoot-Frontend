@@ -70,6 +70,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+  background-image: linear-gradient(360deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 30%);
+  background-image: -moz-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
+  background-image: -webkit-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
+  background-image: -ms-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
 }
 .font-100 {
   font-weight: 100;
@@ -412,7 +418,7 @@ body {
 /*TODO:=========home one=========*/
 .search-btn {
   @apply text-qblack;
-  background: #e3a848;
+  /* background: #e3a848; */
 }
 .cart-wrappwer {
   border-color: #e3a848;
@@ -431,7 +437,12 @@ body {
 
 }
 .quomodo-shop-nav-bar.nav-widget-wrapper {
-  background: #e3a848;
+  /* background: #e3a848; */
+  background-image: linear-gradient(110deg, #675c9c 0%, #7c3e92 100%);
+  background-image: -moz-linear-gradient( 7deg, #675c9c 0%, #7c3e92 100%);
+  background-image: -webkit-linear-gradient( 7deg, #675c9c 0%, #7c3e92 100%);
+  background-image: -ms-linear-gradient( 7deg, #675c9c 0%, #7c3e92 100%);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
 }
 .nav-widget-wrapper .become-seller-btn{
   @apply text-white bg-qblack;
@@ -677,7 +688,14 @@ li {
   padding: 5px !important;
 }
 
-    background: #d16490;
-    background: #686096;
-    background: #7fad52;
-    background: #65b6b9;
+.footer-section-wrapper {
+  background-color: #7b4092;
+}
+
+.gradient-bg {
+  background-image: linear-gradient(360deg, rgb(232, 42, 122) 0%, rgb(54, 3, 84) 100%);
+  background-image: -moz-linear-gradient(7deg, rgb(236, 19, 121) 0%, rgb(108, 0, 146) 100%);
+  background-image: -webkit-linear-gradient(7deg, rgb(236, 19, 121) 0%, rgb(108, 0, 146) 100%);
+  background-image: -ms-linear-gradient(7deg, rgb(236, 19, 121) 0%, rgb(108, 0, 146) 100%);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+}

@@ -387,7 +387,7 @@ export default function SingleProductPage({details}) {
                             <div className="related-product w-full bg-white">
                                 <div className="container-x mx-auto">
                                     <div className="w-full py-[60px]">
-                                        <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none mb-[30px]">
+                                        <h1 className="sm:text-3xl text-xl font-600 text-white leading-none mb-[30px]">
                                             {ServeLangItem()?.Related_Product}
                                         </h1>
                                         <div

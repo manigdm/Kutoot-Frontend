@@ -45,7 +45,7 @@ export default function Middlebar({ className, settings }) {
     cart && setCartItem(cart.cartProducts);
   }, [cart]);
   return (
-    <div className={`w-full h-[86px] bg-white ${className}`}>
+    <div className={`w-full h-[86px] ${className}`}>
       <div className="container-x mx-auto h-full">
         <div className="relative h-full">
           <div className="flex justify-between items-center h-full">
@@ -57,17 +57,17 @@ export default function Middlebar({ className, settings }) {
                       width="120"
                       height="44"
                       objectFit="scale-down"
-                      src={"/assets/images/kutoot_logo.png"}
+                      src={"/assets/images/logo-kutoot.png"}
                       alt="logo"
                     />
                   )}
                 </a>
               </Link>
             </div>
-            <div className="w-[517px] h-[44px]">
-              <SearchBox className="search-com" />
-            </div>
             <div className="flex space-x-6 rtl:space-x-reverse items-center relative">
+              <div className="w-[250px] h-[44px]">
+                <SearchBox className="search-com" />
+              </div>
               <div className="compaire relative">
                 {auth ? (
                   <Link href="/products-compaire" passHref>
@@ -108,7 +108,7 @@ export default function Middlebar({ className, settings }) {
                   <Link href="/cart" passHref>
                     <a rel="noopener noreferrer">
                       <span className="cursor-pointer">
-                        <ThinBag />
+                        <ThinBag className="fill-current" />
                       </span>
                     </a>
                   </Link>
@@ -123,10 +123,10 @@ export default function Middlebar({ className, settings }) {
                 {auth ? (
                   <button onClick={profilehandler} type="button">
                     <span className="text-qblack font-bold text-sm block">
-                      {auth && auth.user.name}
+                      {auth && auth?.user?.name}
                     </span>
                     <span className="text-qgray font-medium text-sm block">
-                      {auth && auth.user.phone}
+                      {auth && auth?.user?.phone}
                     </span>
                   </button>
                 ) : (
@@ -157,7 +157,7 @@ export default function Middlebar({ className, settings }) {
                       <ul className="w-full  flex flex-col space-y-7">
                         <li className="text-base text-qgraytwo">
                           <span>
-                            {ServeLangItem()?.Hi}, {auth && auth.user.name}{" "}
+                            {ServeLangItem()?.Hi}, {auth && auth?.user?.name}{" "}
                           </span>
                         </li>
                         <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">

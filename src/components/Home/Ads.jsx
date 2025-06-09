@@ -78,13 +78,15 @@ export default function Ads() {
                   <Link href="/" passHref>
                     <a>
                       <Image
-                        width="152"
-                        height="36"
-                        src={`${
-                          logo
-                            ? process.env.NEXT_PUBLIC_BASE_URL + logo
-                            : "/assets/images/logo.svg"
-                        }`}
+                        width="200"
+                        height="80"
+                        // TODO: Uncomment the src line below when the logo is available from BE
+                        // src={`${
+                        //   logo
+                        //     ? process.env.NEXT_PUBLIC_BASE_URL + logo
+                        //     : "/assets/images/logo-kutoot.png"
+                        // }`}
+                        src="/assets/images/logo-kutoot.png"
                         alt="logo"
                       />
                     </a>

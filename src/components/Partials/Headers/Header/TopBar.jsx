@@ -56,12 +56,13 @@ export default function TopBar({ className, contact,topBarProps }) {
                     <li>
                       <div className="currencyDropdown">
                         <div className="flex space-x-2 items-center">
-                          <span className="text-xs leading-6 text-qblack font-500">Currency:</span>
+                          {/* <span className="text-xs leading-6 text-qblack font-500">Currency:</span> */}
                           <div className="w-20 relative">
-                            <button onClick={()=>toggleHandler(!toggleCurrency)} type="button" className=" flex space-x-2 items-center text-xs bg-qblack text-white px-2 py-1 font-500">
+                            {/* <button onClick={()=>toggleHandler(!toggleCurrency)} type="button" className=" flex space-x-2 items-center text-xs bg-qblack text-white px-2 py-1 font-500">
                               <span className="">{defaultCurrency.currency_icon}</span>
                               <span>{defaultCurrency.currency_code}</span>
-                            </button>
+                              <span>Rs</span>
+                            </button> */}
                             {toggleCurrency && (
                                 <div
                                     className="w-24 h-[100px] overflow-y-scroll absolute bg-white left-0 top-[40px] z-50 p-2"
@@ -71,7 +72,8 @@ export default function TopBar({ className, contact,topBarProps }) {
                                     {allCurrency && allCurrency.length>0 && allCurrency.map((item,i)=>(
                                         <li onClick={()=>handler(item)} key={i}>
                                             <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
-                                              {item.currency_icon +" "+ item.currency_code}
+                                              {/* {item.currency_icon +" "+ item.currency_code} */}
+                                              Rs
                                             </span>
                                         </li>
                                     ))}
@@ -108,7 +110,9 @@ export default function TopBar({ className, contact,topBarProps }) {
                     </svg>
                   </span>
                   <span className="text-xs text-qblack font-500 leading-none rtl:ml-2 ltr:ml-0 ">
-                    {contact && contact.phone}
+                    {/* TODO: Need to update dynamically */}
+                    {/* {contact && contact.phone} */}
+                    9999999999
                   </span>
                 </div>
                 <div className="flex ltr:space-x-2 rtl:space-x-0 items-center ">
@@ -129,7 +133,9 @@ export default function TopBar({ className, contact,topBarProps }) {
                     </svg>
                   </span>
                   <span className="text-xs text-qblack font-500 leading-none">
-                    {contact && contact.email}
+                    {/* {contact && contact.email} */}
+                    {/* TODO: Need to update dynamically */}
+                    Shop@kutoot.com
                   </span>
                 </div>
                 {/*<div className="country-select flex space-x-1 items-center">*/}

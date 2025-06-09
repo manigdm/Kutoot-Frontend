@@ -5,12 +5,12 @@ function ShopNowBtn() {
   return (
     <div className="cursor-pointer w-full relative ">
       <div className="inline-flex  space-x-1.5 rtl:space-x-reverse items-center relative z-20">
-        <span className="text-sm text-qblack font-medium leading-[30px]">
+        <span className="text-sm text-black font-medium leading-[30px]">
           {ServeLangItem()?.Shop_Now}
         </span>
         <span className="leading-[30px]">
           <svg
-            className={`transform rtl:rotate-180 text-qblack fill-current`}
+            className={`transform rtl:rotate-180 text-black fill-current`}
             width="7"
             height="11"
             viewBox="0 0 7 11"

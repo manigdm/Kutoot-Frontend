@@ -252,7 +252,7 @@ export default function Navbar({ className }) {
               <div className="nav">
                 <ul className="nav-wrapper flex xl:space-x-10 rtl:space-x-reverse space-x-5">
                   <li>
-                    <span className="flex items-center text-sm font-600 cursor-pointer text-qblack ">
+                    <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                       <span>{ServeLangItem()?.Shop}</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
@@ -343,7 +343,7 @@ export default function Navbar({ className }) {
                                   <a rel="noopener noreferrer">
                                     <div className="cursor-pointer w-full relative  ">
                                       <div className="inline-flex  rtl:space-x-reverse space-x-1.5 items-center relative z-20">
-                                        <span className="text-sm text-qblack font-medium leading-[30px]">
+                                        <span className="text-sm text-black font-medium leading-[30px]">
                                           {ServeLangItem()?.Shop_Now}
                                         </span>
                                         <span className="leading-[30px]">
@@ -389,7 +389,7 @@ export default function Navbar({ className }) {
                   <li>
                     <Link href="/sellers" passHref>
                       <a rel="noopener noreferrer">
-                        <span className="flex items-center text-sm font-600 cursor-pointer text-qblack ">
+                        <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.Sellers}</span>
                         </span>
                       </a>
@@ -398,7 +398,7 @@ export default function Navbar({ className }) {
                   <li>
                     <Link href="/blogs" passHref>
                       <a rel="noopener noreferrer">
-                        <span className="flex items-center text-sm font-600 cursor-pointer text-qblack ">
+                        <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span className="capitalize">
                             {ServeLangItem()?.blogs}
                           </span>
@@ -409,7 +409,7 @@ export default function Navbar({ className }) {
                   <li>
                     <Link href="/about" passHref>
                       <a rel="noopener noreferrer">
-                        <span className="flex items-center text-sm font-600 cursor-pointer text-qblack ">
+                        <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.About}</span>
                         </span>
                       </a>
@@ -418,14 +418,14 @@ export default function Navbar({ className }) {
                   <li>
                     <Link href="/contact" passHref>
                       <a rel="noopener noreferrer">
-                        <span className="flex items-center text-sm font-600 cursor-pointer text-qblack ">
+                        <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.Contact}</span>
                         </span>
                       </a>
                     </Link>
                   </li>
                   <li className="relative">
-                    <span className="flex items-center text-sm font-600 cursor-pointer text-qblack ">
+                    <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                       <span>{ServeLangItem()?.Pages}</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
@@ -530,7 +530,7 @@ export default function Navbar({ className }) {
               </div>
             </div>
             {Multivendor() === 1 && (
-              <div className="become-seller-btn">
+              <div className="become-seller-btn rounded-lg">
                 <Link href="/become-seller" passHref>
                   <a rel="noopener noreferrer">
                     <div className=" w-[161px] h-[40px] flex justify-center items-center cursor-pointer">

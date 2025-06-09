@@ -26,7 +26,7 @@ export default function BestSellers({ className, sallers = [] }) {
                               alt={saller.slug}
                           />
                       </div>
-                      <p className="text-base font-500 text-center cursor-pointer">
+                      <p className="text-base font-500 text-qgray text-center cursor-pointer">
                           {saller.shop_name}
                       </p>
                   </a>

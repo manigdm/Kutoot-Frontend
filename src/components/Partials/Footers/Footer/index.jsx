@@ -61,11 +61,11 @@ export default function Footer({ settings }) {
   });
 
   return (
-    <footer className="footer-section-wrapper bg-white print:hidden">
+    <footer className="footer-section-wrapper print:hidden">
       <div className="container-x block mx-auto pt-[56px]">
         <div className="w-full flex flex-col items-center mb-[50px]">
           {/* logo area */}
-          <div className="mb-[40px]">
+          {/* <div className="mb-[40px]">
             <Link href="/" passHref>
               <a>
                 {settings && (
@@ -79,13 +79,13 @@ export default function Footer({ settings }) {
                 )}
               </a>
             </Link>
-          </div>
+          </div> */}
           <div className="w-full h-[1px] bg-[#E9E9E9]"></div>
         </div>
         <div className="lg:flex justify-between mb-[50px]">
           <div className="lg:w-[424px]  ml-0 w-full mb-10 lg:mb-0">
-            <h1 className="text-[18] font-500 text-[#2F2F2F] mb-5">About Us</h1>
-            <p className="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">
+            <h1 className="text-[18] font-500 text-white mb-5">About Us</h1>
+            <p className="text-white text-[15px] w-[247px] leading-[28px]">
               {footerContent && footerContent.about_us}
             </p>
             {/*<p className="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">*/}
@@ -121,7 +121,7 @@ export default function Footer({ settings }) {
               {firstCol && (
                 <>
                   <div className="mb-5">
-                    <h6 className="text-[18] font-500 text-[#2F2F2F]">
+                    <h6 className="text-[18] font-500 text-white">
                       {firstCol.columnTitle}
                     </h6>
                   </div>
@@ -132,7 +132,7 @@ export default function Footer({ settings }) {
                           <li key={i}>
                             <Link href={item.link} passHref>
                               <a rel="noopener noreferrer">
-                                <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                   {item.title}
                                 </span>
                               </a>
@@ -149,7 +149,7 @@ export default function Footer({ settings }) {
                 {secondCol && (
                   <>
                     <div className="mb-5">
-                      <h6 className="text-[18] font-500 text-[#2F2F2F]">
+                      <h6 className="text-[18] font-500 text-white">
                         {secondCol.columnTitle}
                       </h6>
                     </div>
@@ -160,7 +160,7 @@ export default function Footer({ settings }) {
                             <li key={i}>
                               <Link href={item.link} passHref>
                                 <a rel="noopener noreferrer">
-                                  <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                  <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                     {item.title}
                                   </span>
                                 </a>
@@ -178,7 +178,7 @@ export default function Footer({ settings }) {
                 {thirdCol && (
                   <>
                     <div className="mb-5">
-                      <h6 className="text-[18] font-500 text-[#2F2F2F]">
+                      <h6 className="text-[18] font-500 text-white">
                         {thirdCol.columnTitle}
                       </h6>
                     </div>
@@ -189,7 +189,7 @@ export default function Footer({ settings }) {
                             <li key={i}>
                               <Link href={item.link} passHref>
                                 <a rel="noopener noreferrer">
-                                  <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                  <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                     {item.title}
                                   </span>
                                 </a>
@@ -215,13 +215,13 @@ export default function Footer({ settings }) {
                 socialLink.map((item, i) => (
                   <a key={i} href={item.link} target="_blank" rel="noreferrer">
                     <FontAwesomeCom
-                      className="w-4 h-4 text-qgray"
+                      className="w-4 h-4 text-[#9A9A9A]"
                       icon={item.icon}
                     />
                   </a>
                 ))}
             </div>
-            <span className="sm:text-base text-[10px] text-qgray font-300">
+            <span className="sm:text-base text-[10px] text-white font-300">
               {footerContent && footerContent.copyright
                 ? footerContent.copyright
                 : ""}

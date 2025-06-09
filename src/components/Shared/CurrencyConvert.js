@@ -6,9 +6,11 @@ function CurrencyConvert({price}) {
                 const getDefaultCurrency=JSON.parse(localStorage.getItem("shopoDefaultCurrency"));
                 const priceConverted = priceTypeConst * parseFloat(getDefaultCurrency.currency_rate).toFixed(2);
                 if(getDefaultCurrency.currency_position==='left'){
-                    return `${priceConverted.toFixed(2)}${getDefaultCurrency.currency_icon}`;
+                    // return `${priceConverted.toFixed(2)}${getDefaultCurrency.currency_icon}`;
+                    return `${priceConverted.toFixed(2)}`;
                 }else{
-                return `${getDefaultCurrency.currency_icon}${priceConverted.toFixed(2)}`;
+                // return `${getDefaultCurrency.currency_icon}${priceConverted.toFixed(2)}`;
+                    return `${'Rs '}${priceConverted.toFixed(2)}`;
                 }
             }
             return priceTypeConst

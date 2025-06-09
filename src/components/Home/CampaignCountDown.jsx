@@ -38,7 +38,7 @@ export default function CampaignCountDown({
                         {showDate}
                       </span>
                     </div>
-                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
+                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8 text-qgray">
                       {ServeLangItem()?.Days}
                     </p>
                   </div>
@@ -48,7 +48,7 @@ export default function CampaignCountDown({
                         {showHour}
                       </span>
                     </div>
-                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
+                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8 text-qgray">
                       {ServeLangItem()?.Hours}
                     </p>
                   </div>
@@ -58,7 +58,7 @@ export default function CampaignCountDown({
                         {showMinute}
                       </span>
                     </div>
-                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
+                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8 text-qgray">
                       {ServeLangItem()?.Minutes}
                     </p>
                   </div>
@@ -68,13 +68,13 @@ export default function CampaignCountDown({
                         {showSecound}
                       </span>
                     </div>
-                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
+                    <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8 text-qgray">
                       {ServeLangItem()?.Seconds}
                     </p>
                   </div>
                 </div>
                 <div className="countdown-title mb-4">
-                  <h1 className="text-[44px] text-qblack font-600">
+                  <h1 className="text-[44px] text-white font-600">
                     {flashSaleData?.title}
                   </h1>
                 </div>

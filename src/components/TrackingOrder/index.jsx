@@ -65,7 +65,7 @@ function TrackingOrder() {
                 <InputCom
                   value={date}
                   inputHandler={(e) => setDate(e.target.value)}
-                  placeholder="23/09/2022"
+                  placeholder="23/05/2025"
                   label="Delivery Date"
                   inputClasses="w-full h-[50px]"
                 />
