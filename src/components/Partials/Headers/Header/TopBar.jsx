@@ -110,7 +110,9 @@ export default function TopBar({ className, contact,topBarProps }) {
                     </svg>
                   </span>
                   <span className="text-xs text-qblack font-500 leading-none rtl:ml-2 ltr:ml-0 ">
-                    {contact && contact.phone}
+                    {/* TODO: Need to update dynamically */}
+                    {/* {contact && contact.phone} */}
+                    9999999999
                   </span>
                 </div>
                 <div className="flex ltr:space-x-2 rtl:space-x-0 items-center ">
@@ -131,7 +133,9 @@ export default function TopBar({ className, contact,topBarProps }) {
                     </svg>
                   </span>
                   <span className="text-xs text-qblack font-500 leading-none">
-                    {contact && contact.email}
+                    {/* {contact && contact.email} */}
+                    {/* TODO: Need to update dynamically */}
+                    Shop@kutoot.com
                   </span>
                 </div>
                 {/*<div className="country-select flex space-x-1 items-center">*/}
