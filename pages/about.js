@@ -5,8 +5,8 @@ export default function aboutPage({ data }) {
   return (
     <>
       <PageHead
-        title={`${seoSetting.seo_title}`}
-        metaDes={seoSetting.seo_description}
+        title={`${seoSetting?.seo_title}`}
+        metaDes={seoSetting?.seo_description}
       />
       <About aboutData={data} />
     </>

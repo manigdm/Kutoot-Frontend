@@ -6,8 +6,8 @@ export default function BlogsPage({ data }) {
   return (
     <>
       <PageHead
-        title={`${seoSetting.seo_title}`}
-        metaDes={seoSetting.seo_description}
+        title={`${seoSetting?.seo_title}`}
+        metaDes={seoSetting?.seo_description}
       />
       <Blogs blogs={data.blogs.data} nextPageUrl={data.blogs.next_page_url} />
     </>
