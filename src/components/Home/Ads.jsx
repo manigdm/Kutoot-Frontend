@@ -76,7 +76,6 @@ export default function Ads() {
               <div>
                 <div className="logo mb-[20px]">
                   <Link href="/" passHref>
-                    <a>
                       <Image
                         width="200"
                         height="80"
@@ -89,7 +88,6 @@ export default function Ads() {
                         src="/assets/images/logo-kutoot.png"
                         alt="logo"
                       />
-                    </a>
                   </Link>
                 </div>
                 <h1 className="md:text-[30px] text-xl font-bold text-qblack mb-1">

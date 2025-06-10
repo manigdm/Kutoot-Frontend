@@ -91,7 +91,6 @@ export default function Navbar({ className }) {
                             }}
                             passHref
                           >
-                            <a rel="noopener noreferrer">
                               <div className=" flex justify-between items-center px-5 h-10 transition-all duration-300 ease-in-out cursor-pointer">
                                 <div className="flex items-center rtl:space-x-reverse space-x-6">
                                   <span>
@@ -134,7 +133,6 @@ export default function Navbar({ className }) {
                                   </span>
                                 </div>
                               </div>
-                            </a>
                           </Link>
                           <div
                             className={`sub-category-lvl-two absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
@@ -158,7 +156,6 @@ export default function Navbar({ className }) {
                                       }}
                                       passHref
                                     >
-                                      <a rel="noopener noreferrer">
                                         <div className=" flex justify-between items-center px-5 h-10 transition-all duration-300 ease-in-out cursor-pointer">
                                           <div>
                                             <span className="text-xs font-400">
@@ -195,7 +192,6 @@ export default function Navbar({ className }) {
                                             </span>
                                           </div>
                                         </div>
-                                      </a>
                                     </Link>
                                     <div
                                       className={`sub-category-lvl-three absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
@@ -225,7 +221,6 @@ export default function Navbar({ className }) {
                                                   }}
                                                   passHref
                                                 >
-                                                  <a rel="noopener noreferrer">
                                                     <div className=" flex justify-between items-center px-5 h-10 transition-all duration-300 ease-in-out cursor-pointer">
                                                       <div>
                                                         <span className="text-xs font-400">
@@ -233,7 +228,6 @@ export default function Navbar({ className }) {
                                                         </span>
                                                       </div>
                                                     </div>
-                                                  </a>
                                                 </Link>
                                               </li>
                                             )
@@ -291,12 +285,10 @@ export default function Navbar({ className }) {
                                             }}
                                             passHref
                                           >
-                                            <a rel="noopener noreferrer">
                                               <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
                                                 {subItem.sub_category &&
                                                   subItem.sub_category.name}
                                               </span>
-                                            </a>
                                           </Link>
                                         </li>
                                       ))}
@@ -340,7 +332,6 @@ export default function Navbar({ className }) {
                                   }}
                                   passHref
                                 >
-                                  <a rel="noopener noreferrer">
                                     <div className="cursor-pointer w-full relative  ">
                                       <div className="inline-flex  rtl:space-x-reverse space-x-1.5 items-center relative z-20">
                                         <span className="text-sm text-black font-medium leading-[30px]">
@@ -376,7 +367,6 @@ export default function Navbar({ className }) {
                                       </div>
                                       <div className="w-[82px] transition-all duration-300 ease-in-out group-hover:h-4 h-[0px] bg-qyellow absolute left-0 bottom-0 z-10"></div>
                                     </div>
-                                  </a>
                                 </Link>
                               </div>
                             </div>
@@ -388,40 +378,32 @@ export default function Navbar({ className }) {
 
                   <li>
                     <Link href="/sellers" passHref>
-                      <a rel="noopener noreferrer">
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.Sellers}</span>
                         </span>
-                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href="/blogs" passHref>
-                      <a rel="noopener noreferrer">
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span className="capitalize">
                             {ServeLangItem()?.blogs}
                           </span>
                         </span>
-                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href="/about" passHref>
-                      <a rel="noopener noreferrer">
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.About}</span>
                         </span>
-                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href="/contact" passHref>
-                      <a rel="noopener noreferrer">
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.Contact}</span>
                         </span>
-                      </a>
                     </Link>
                   </li>
                   <li className="relative">
@@ -444,20 +426,16 @@ export default function Navbar({ className }) {
                               <ul className="flex flex-col space-y-2">
                                 <li>
                                   <Link href="/privacy-policy" passHref>
-                                    <a rel="noopener noreferrer">
                                       <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
                                         {ServeLangItem()?.Privacy_Policy}
                                       </span>
-                                    </a>
                                   </Link>
                                 </li>
                                 <li>
                                   <Link href="/terms-condition" passHref>
-                                    <a rel="noopener noreferrer">
                                       <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
                                         {ServeLangItem()?.Term_and_Conditions}
                                       </span>
-                                    </a>
                                   </Link>
                                 </li>
                                 {Multivendor() === 1 && (
@@ -466,41 +444,34 @@ export default function Navbar({ className }) {
                                       href="seller-terms-condition"
                                       passHref
                                     >
-                                      <a rel="noopener noreferrer">
                                         <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
                                           {
                                             ServeLangItem()
                                               ?.Seller_terms_and_conditions
                                           }
                                         </span>
-                                      </a>
                                     </Link>
                                   </li>
                                 )}
                                 <li>
                                   <Link href="/faq" passHref>
-                                    <a rel="noopener noreferrer">
                                       <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
                                         {ServeLangItem()?.FAQ}
                                       </span>
-                                    </a>
                                   </Link>
                                 </li>
                                 {customPages &&
                                   customPages.length > 0 &&
                                   customPages.map((item, i) => (
-                                    // eslint-disable-next-line react/jsx-key
                                     <React.Fragment key={i}>
                                       <li>
                                         <Link
                                           href={`/pages?custom=${item.slug}`}
                                           passHref
                                         >
-                                          <a rel="noopener noreferrer">
                                             <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
                                               {item.page_name}
                                             </span>
-                                          </a>
                                         </Link>
                                       </li>
                                     </React.Fragment>
@@ -532,7 +503,6 @@ export default function Navbar({ className }) {
             {Multivendor() === 1 && (
               <div className="become-seller-btn rounded-lg">
                 <Link href="/become-seller" passHref>
-                  <a rel="noopener noreferrer">
                     <div className=" w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
                       <div className="flex rtl:space-x-reverse space-x-2 items-center">
                         <span className="text-sm font-600">
@@ -564,7 +534,6 @@ export default function Navbar({ className }) {
                         </span>
                       </div>
                     </div>
-                  </a>
                 </Link>
               </div>
             )}

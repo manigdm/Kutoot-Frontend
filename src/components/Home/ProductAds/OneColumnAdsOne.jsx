@@ -41,7 +41,6 @@ function OneColumnAdsOne({ data }) {
                       }}
                       passHref
                   >
-                    <a rel="noopener noreferrer">
                       <div className="w-[136px] h-[40px] bg-white relative flex justify-center overflow-hidden">
                         <div className="w-full h-full bg-qyellow absolute transition-all duration-300 ease-in-out -left-[140px] group-hover:left-0 top-0"></div>
                         <div className="flex space-x-2 rtl:space-x-reverse items-center relative z-10">
@@ -75,7 +74,6 @@ function OneColumnAdsOne({ data }) {
                       </span>
                         </div>
                       </div>
-                    </a>
                   </Link>
                 </div>
               </div>

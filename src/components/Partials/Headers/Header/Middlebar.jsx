@@ -51,7 +51,6 @@ export default function Middlebar({ className, settings }) {
           <div className="flex justify-between items-center h-full">
             <div className="relative custom-logo">
               <Link href="/" passHref>
-                <a rel="noopener noreferrer">
                   {settings && (
                     <Image
                       width="120"
@@ -61,7 +60,6 @@ export default function Middlebar({ className, settings }) {
                       alt="logo"
                     />
                   )}
-                </a>
               </Link>
             </div>
             <div className="flex space-x-6 rtl:space-x-reverse items-center relative">
@@ -71,19 +69,15 @@ export default function Middlebar({ className, settings }) {
               <div className="compaire relative">
                 {auth ? (
                   <Link href="/products-compaire" passHref>
-                    <a rel="noopener noreferrer">
                       <span className="cursor-pointer">
                         <Compair className="fill-current" />
                       </span>
-                    </a>
                   </Link>
                 ) : (
                   <Link href="/login" passHref>
-                    <a rel="noopener noreferrer">
                       <span className="cursor-pointer">
                         <Compair className="fill-current" />
                       </span>
-                    </a>
                   </Link>
                 )}
 
@@ -93,11 +87,9 @@ export default function Middlebar({ className, settings }) {
               </div>
               <div className="favorite relative">
                 <Link href="/wishlist" passHref>
-                  <a rel="noopener noreferrer">
                     <span className="cursor-pointer">
                       <ThinLove className="fill-current" />
                     </span>
-                  </a>
                 </Link>
                 <span className="w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
                   {wishlists ? wishlists.data.length : 0}
@@ -106,11 +98,9 @@ export default function Middlebar({ className, settings }) {
               <div className="cart-wrapper group relative py-4">
                 <div className="cart relative cursor-pointer">
                   <Link href="/cart" passHref>
-                    <a rel="noopener noreferrer">
                       <span className="cursor-pointer">
                         <ThinBag className="fill-current" />
                       </span>
-                    </a>
                   </Link>
                   <span className="w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
                     {cartItems ? cartItems.length : 0}
@@ -131,11 +121,9 @@ export default function Middlebar({ className, settings }) {
                   </button>
                 ) : (
                   <Link href="/login" passHref>
-                    <a rel="noopener noreferrer">
                       <span className="cursor-pointer">
                         <ThinPeople />
                       </span>
-                    </a>
                   </Link>
                 )}
               </div>
@@ -162,29 +150,23 @@ export default function Middlebar({ className, settings }) {
                         </li>
                         <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
                           <Link href="/profile#dashboard" passHref>
-                            <a rel="noopener noreferrer">
                               <span className="capitalize">
                                 {ServeLangItem()?.profile}
                               </span>
-                            </a>
                           </Link>
                         </li>
                         <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
                           <Link href="/contact" passHref>
-                            <a rel="noopener noreferrer">
                               <span className="capitalize">
                                 {ServeLangItem()?.Support}
                               </span>
-                            </a>
                           </Link>
                         </li>
                         <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
                           <Link href="/faq" passHref>
-                            <a rel="noopener noreferrer">
                               <span className="capitalize">
                                 {ServeLangItem()?.FAQ}
                               </span>
-                            </a>
                           </Link>
                         </li>
                       </ul>

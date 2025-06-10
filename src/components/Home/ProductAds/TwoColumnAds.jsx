@@ -50,9 +50,7 @@ function TwoColumnAds({ bannerOne, bannerTwo }) {
                                                   }}
                                                   passHref
                                               >
-                                                  <a rel="noopener noreferrer">
-                                                      <ShopNowBtn />
-                                                  </a>
+                                                <ShopNowBtn />
                                               </Link>
                                           </div>
                                       </div>
@@ -95,7 +93,6 @@ function TwoColumnAds({ bannerOne, bannerTwo }) {
                                                   }}
                                                   passHref
                                               >
-                                                  <a rel="noopener noreferrer">
                                                       <div className="cursor-pointer w-full relative  ">
                                                           <div className="inline-flex  space-x-1.5 rtl:space-x-reverse items-center relative z-20">
                             <span className="text-sm text-qblack font-medium leading-[30px]">
@@ -130,7 +127,6 @@ function TwoColumnAds({ bannerOne, bannerTwo }) {
                                                           </div>
                                                           <div className="w-[82px] transition-all duration-300 ease-in-out group-hover:h-4 h-[0px] bg-qyellow absolute left-0 bottom-0 z-10"></div>
                                                       </div>
-                                                  </a>
                                               </Link>
                                           </div>
                                       </div>
