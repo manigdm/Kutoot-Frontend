@@ -17,7 +17,6 @@ export default function BestSellers({ className, sallers = [] }) {
                       query: { seller: saller.slug },
                   }}
               >
-                  <a rel="noopener noreferrer">
                       <div className="sm:w-[170px] sm:h-[170px] w-[140px] h-[140px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2 relative">
                           <Image
                               layout="fill"
@@ -29,7 +28,6 @@ export default function BestSellers({ className, sallers = [] }) {
                       <p className="text-base font-500 text-qgray text-center cursor-pointer">
                           {saller.shop_name}
                       </p>
-                  </a>
               </Link>
           </div>
         ))}

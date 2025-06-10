@@ -65,21 +65,6 @@ export default function Footer({ settings }) {
       <div className="container-x block mx-auto pt-[56px]">
         <div className="w-full flex flex-col items-center mb-[50px]">
           {/* logo area */}
-          {/* <div className="mb-[40px]">
-            <Link href="/" passHref>
-              <a>
-                {settings && (
-                  <Image
-                    width="153"
-                    height="44"
-                    objectFit="scale-down"
-                    src={`${process.env.NEXT_PUBLIC_BASE_URL + settings.logo}`}
-                    alt="logo"
-                  />
-                )}
-              </a>
-            </Link>
-          </div> */}
           <div className="w-full h-[1px] bg-[#E9E9E9]"></div>
         </div>
         <div className="lg:flex justify-between mb-[50px]">
@@ -131,11 +116,9 @@ export default function Footer({ settings }) {
                         firstCol.col_links.map((item, i) => (
                           <li key={i}>
                             <Link href={item.link} passHref>
-                              <a rel="noopener noreferrer">
                                 <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                   {item.title}
                                 </span>
-                              </a>
                             </Link>
                           </li>
                         ))}
@@ -159,11 +142,9 @@ export default function Footer({ settings }) {
                           secondCol.col_links.map((item, i) => (
                             <li key={i}>
                               <Link href={item.link} passHref>
-                                <a rel="noopener noreferrer">
                                   <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                     {item.title}
                                   </span>
-                                </a>
                               </Link>
                             </li>
                           ))}
@@ -188,11 +169,9 @@ export default function Footer({ settings }) {
                           thirdCol.col_links.map((item, i) => (
                             <li key={i}>
                               <Link href={item.link} passHref>
-                                <a rel="noopener noreferrer">
                                   <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                     {item.title}
                                   </span>
-                                </a>
                               </Link>
                             </li>
                           ))}
@@ -230,7 +209,6 @@ export default function Footer({ settings }) {
           {footerContent && footerContent.payment_image ? (
             <div className="mt-2 lg:mt-0">
               <Link href="#" passHref>
-                <a>
                   <Image
                     width="318"
                     height="28"
@@ -240,7 +218,6 @@ export default function Footer({ settings }) {
                     }`}
                     alt="payment-getways"
                   />
-                </a>
               </Link>
             </div>
           ) : (
