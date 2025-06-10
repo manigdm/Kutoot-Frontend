@@ -279,11 +279,9 @@ export default function ProductCardRowStyleOne({ className, datas }) {
                 }}
                 passHref
               >
-                <a rel="noopener noreferrer">
                   <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600 cursor-pointer">
                     {datas.title}
                   </p>
-                </a>
               </Link>
               <p className="price mb-[26px]">
                 <span

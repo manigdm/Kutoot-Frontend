@@ -74,9 +74,7 @@ export default function Banner({
                                   }}
                                   passHref
                                 >
-                                  <a rel="noopener noreferrer">
                                     <ShopNowBtn />
-                                  </a>
                                 </Link>
                               </div>
                             </div>
@@ -125,7 +123,6 @@ export default function Banner({
                               }}
                               passHref
                           >
-                            <a rel="noopener noreferrer">
                               <div className="cursor-pointer w-full relative  ">
                                 <div className="inline-flex rtl:space-x-reverse  space-x-1.5 items-center relative z-20">
                               <span className="text-sm text-black font-medium leading-[30px]">
@@ -161,7 +158,6 @@ export default function Banner({
                                 </div>
                                 <div className="w-[82px] transition-all duration-300 ease-in-out group-hover:h-4 h-[0px] bg-qyellow absolute left-0 rtl:right-0 bottom-0 z-10"></div>
                               </div>
-                            </a>
                           </Link>
                         </div>
                       </div>
@@ -203,7 +199,6 @@ export default function Banner({
                               }}
                               passHref
                           >
-                            <a rel="noopener noreferrer">
                               <div className="cursor-pointer w-full relative  ">
                                 <div className="inline-flex rtl:space-x-reverse  space-x-1.5 items-center relative z-20">
                               <span className="text-sm text-black font-medium leading-[30px]">
@@ -239,7 +234,6 @@ export default function Banner({
                                 </div>
                                 <div className="w-[82px] transition-all duration-300 ease-in-out group-hover:h-4 h-[0px] bg-qyellow absolute left-0 rtl:right-0 bottom-0 z-10"></div>
                               </div>
-                            </a>
                           </Link>
                         </div>
                       </div>

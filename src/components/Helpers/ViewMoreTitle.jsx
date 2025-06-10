@@ -18,7 +18,6 @@ export default function ViewMoreTitle({
           </div>
           <div className="view-more-btn">
             <Link href={seeMoreUrl} passHref>
-              <a rel="noopener noreferrer">
                 <div className="flex space-x-2 text-white items-center cursor-pointer">
                   <p className="text-base font-600 ">
                     {ServeLangItem()?.View_More}
@@ -44,7 +43,6 @@ export default function ViewMoreTitle({
                     </svg>
                   </span>
                 </div>
-              </a>
             </Link>
           </div>
         </div>

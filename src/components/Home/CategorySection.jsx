@@ -36,7 +36,6 @@ function CategorySection({
                                             }}
                                             passhref
                                         >
-                                            <a rel="noopener noreferrer">
                                                 <div
                                                     className="w-full h-[120px] relative rounded bg-white flex justify-center items-center">
                                                     <div
@@ -54,7 +53,6 @@ function CategorySection({
                                                 <p className="text-base text-white text-center mt-5 group-hover:text-qgreen transition duration-300 ease-in-out">
                                                     {item.name}
                                                 </p>
-                                            </a>
                                         </Link>
                                     </div>
                                 ))}

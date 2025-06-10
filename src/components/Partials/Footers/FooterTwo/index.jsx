@@ -47,7 +47,6 @@ export default function Footer({ settings }) {
             {/* logo area */}
             <div className="mb-14">
               <Link href="/" passHref>
-                <a>
                   {settings && (
                     <Image
                       width="152"
@@ -58,7 +57,6 @@ export default function Footer({ settings }) {
                       alt="logo"
                     />
                   )}
-                </a>
               </Link>
             </div>
             <div>
@@ -184,14 +182,12 @@ export default function Footer({ settings }) {
           </div>
           <div className="">
             <Link href="#" passHref>
-              <a>
                 <Image
                   width="318"
                   height="28"
                   src={`/assets/images/payment-getways.png`}
                   alt="payment-getways"
                 />
-              </a>
             </Link>
           </div>
         </div>

@@ -27,29 +27,23 @@ export default function TopBar({ className, contact,topBarProps }) {
                 <li className={`rtl:ml-6 ltr:ml-0`}>
                   {auth ? (
                     <Link href="/profile#dashboard" passHref>
-                      <a rel="noopener noreferrer">
                         <span className="text-xs leading-6 text-qblack font-500 cursor-pointer">
                           {ServeLangItem()?.Account}
                         </span>
-                      </a>
                     </Link>
                   ) : (
                     <Link href="/login" passHref>
-                      <a rel="noopener noreferrer">
                         <span className="text-xs leading-6 text-qblack font-500 cursor-pointer">
                           {ServeLangItem()?.Account}
                         </span>
-                      </a>
                     </Link>
                   )}
                 </li>
                 <li>
                   <Link href="/tracking-order" passHref>
-                    <a rel="noopener noreferrer">
                       <span className="text-xs leading-6 text-qblack font-500 cursor-pointer">
                         {ServeLangItem()?.Track_Order}
                       </span>
-                    </a>
                   </Link>
                 </li>
                 {defaultCurrency && allCurrency && (

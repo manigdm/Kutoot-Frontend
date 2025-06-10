@@ -146,7 +146,6 @@ export default function SallerInfo({ products, sellerInfo }) {
           }}
           passHref
         >
-          <a rel="noopener noreferrer">
             <div className="lg:w-[300px] w-full h-[50px]">
               <div
                 className="w-full h-full yellow-btn text-qblack font-semibold"
@@ -155,7 +154,6 @@ export default function SallerInfo({ products, sellerInfo }) {
                 {ServeLangItem()?.View_Shop}
               </div>
             </div>
-          </a>
         </Link>
       </div>
     </div>

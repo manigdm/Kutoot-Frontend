@@ -204,11 +204,9 @@ export default function Drawer({ className, open, action }) {
               {Multivendor() === 1 && (
                   <div className="block my-5 px-2">
                     <Link href="/become-seller" passHref>
-                      <a rel="noopener noreferrer">
                   <div className="text-sm leading-6 text-qblack w-full h-10 flex justify-center items-center bg-qyellow font-medium font-500 cursor-pointer">
                     <span>{ServeLangItem()?.Become_seller}</span>
                   </div>
-                      </a>
                     </Link>
                   </div>
               )}
