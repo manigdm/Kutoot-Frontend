@@ -6,13 +6,13 @@ export default function DiscountBanner({ className, datas }) {
         className || ""
       }`}
       style={{
-        // backgroundImage: `url(${
-        //   process.env.NEXT_PUBLIC_BASE_URL + datas.image
-        // })`,
-        // backgroundRepeat: "no-repeat",
-        // backgroundSize: "cover",
-        // backgroundPosition: "top",
-        backgroundImage: `linear-gradient(360deg, rgb(110 91 171) 0%, rgb(189 126 214) 100%)`
+        backgroundImage: `url(${
+          process.env.NEXT_PUBLIC_BASE_URL + datas.image
+        })`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+        // backgroundImage: `linear-gradient(360deg, rgb(110 91 171) 0%, rgb(189 126 214) 100%)`
       }}
     >
       <div className="mb-[70px]">
