@@ -24,6 +24,9 @@ import ProfileTab from "./tabs/ProfileTab";
 import ReviewTab from "./tabs/ReviewTab";
 import WishlistTab from "./tabs/WishlistTab";
 import ServeLangItem from "../../Helpers/ServeLangItem";
+import CouponsTab from "./tabs/CouponsTab";
+import CoinsTab from "./tabs/CoinsTab";
+import Image from "next/image";
 
 function Profile() {
   const router = useRouter();
@@ -177,6 +180,42 @@ function Profile() {
                     </Link>
                   </div>
                   <div className="item group">
+                    <Link href="/profile#coupons">
+                      <div className="flex space-x-3 rtl:space-x-reverse items-center text-qgray hover:text-qblack capitalize">
+                        <span>
+                          <Image
+                            // layout="fill"
+                            src={`/assets/images/coupons.svg`}
+                            alt="coupons"
+                            width={25}
+                            height={25}
+                          />
+                        </span>
+                        <span className=" font-normal text-base capitalize cursor-pointer">
+                          My Coupons
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="item group">
+                    <Link href="/profile#coins">
+                      <div className="flex space-x-3 rtl:space-x-reverse items-center text-qgray hover:text-qblack capitalize">
+                        <span>
+                          <Image
+                            // layout="fill"
+                            src={`/assets/images/coins.svg`}
+                            alt="coins"
+                            width={30}
+                            height={30}
+                          />
+                        </span>
+                        <span className=" font-normal text-base capitalize cursor-pointer">
+                          My Coins 
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="item group">
                     <Link href="/profile#profile">
                       <div className="flex space-x-3 rtl:space-x-reverse items-center text-qgray hover:text-qblack capitalize">
                         <span>
@@ -188,19 +227,6 @@ function Profile() {
                       </div>
                     </Link>
                   </div>
-
-                  {/*<div className="item group">*/}
-                  {/*  <Link href="/profile#payment">*/}
-                  {/*    <div className="flex space-x-3 rtl:space-x-reverse items-center text-qgray hover:text-qblack capitalize">*/}
-                  {/*      <span>*/}
-                  {/*        <IcoPayment />*/}
-                  {/*      </span>*/}
-                  {/*      <span className=" font-normal text-base capitalize cursor-pointer">*/}
-                  {/*        Payment Method*/}
-                  {/*      </span>*/}
-                  {/*    </div>*/}
-                  {/*  </Link>*/}
-                  {/*</div>*/}
                   <div className="item group">
                     <Link href="/profile#order">
                       <div className="flex space-x-3 rtl:space-x-reverse items-center text-qgray hover:text-qblack capitalize">
@@ -261,18 +287,6 @@ function Profile() {
                       </div>
                     </Link>
                   </div>
-                  {/*<div className="item group">*/}
-                  {/*  <Link href="/profile#support">*/}
-                  {/*    <div className="flex space-x-3 rtl:space-x-reverse items-center text-qgray hover:text-qblack capitalize">*/}
-                  {/*      <span>*/}
-                  {/*        <IcoSupport />*/}
-                  {/*      </span>*/}
-                  {/*      <span className=" font-normal text-base capitalize cursor-pointer">*/}
-                  {/*        Support Ticket*/}
-                  {/*      </span>*/}
-                  {/*    </div>*/}
-                  {/*  </Link>*/}
-                  {/*</div>*/}
                   <div className="item group">
                     <div
                       onClick={logout}
@@ -293,7 +307,7 @@ function Profile() {
                   {active === "dashboard" ? (
                     <>
                       {dashBoardData && (
-                        <Dashboard dashBoardData={dashBoardData} />
+                        <Dashboard profileInfo={profileInfo} dashBoardData={dashBoardData} />
                       )}
                     </>
                   ) : active === "profile" ? (
@@ -305,6 +319,10 @@ function Profile() {
                         />
                       )}
                     </>
+                  ) : active === "coupons" ? (
+                    <CouponsTab />
+                  ) : active === "coins" ? (
+                    <CoinsTab />
                   ) : active === "order" ? (
                     <OrderTab orders={orders} />
                   ) : active === "wishlist" ? (

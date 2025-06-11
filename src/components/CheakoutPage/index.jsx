@@ -63,10 +63,13 @@ function CheakoutPage() {
   const [strpLoad, setStrpLoading] = useState(false);
   // const [paypalData, setPaypalData] = useState(null);
   const [inputCoupon, setInputCoupon] = useState("");
+  const [inputCoin, setInputCoin] = useState("");
   const [couponCode, setCouponCode] = useState(null);
   // const [totalAmountWithCalc, setTotalAmountWithCalc] = useState(null);
   const [bankInfo, setBankInfo] = useState(null);
   const [discountCoupon, setDiscountCoupon] = useState(0);
+  const totalPrice = subTotal && subTotal.reduce((prev, curr) => prev + curr);
+
   useEffect(() => {
     if (couponCode) {
       if (couponCode.offer_type === "2") {
@@ -103,6 +106,7 @@ function CheakoutPage() {
   const [sslStatus, setSslStatus] = useState(null);
   const [totalWeight, setTotalWeight] = useState(null);
   const [totalQty, setQty] = useState(null);
+  const [profileInfo, setProfile] = useState(null);
 
   const priceWithCoupon = (price) => {
     if (couponCode) {
@@ -111,12 +115,34 @@ function CheakoutPage() {
       return price;
     }
   };
+
+  const updateProfile = () => {
+      if (auth()) {
+        apiRequest
+          .profileInfo(auth().access_token)
+          .then((res) => {
+            setProfile(res.data && res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      } else {
+        return false;
+      }
+    };
+    useEffect(() => {
+      if (!profileInfo) {
+        updateProfile();
+      }
+    }, [profileInfo, ]);
+
   const submitCoupon = () => {
     if (auth()) {
       apiRequest
         .applyCoupon(auth().access_token, inputCoupon)
         .then((res) => {
           setInputCoupon("");
+          setInputCoin('');
           if (res.data) {
             if (totalPrice >= parseInt(res.data.coupon.min_purchase_price)) {
               setCouponCode(res.data.coupon);
@@ -141,6 +167,28 @@ function CheakoutPage() {
       return false;
     }
   };
+
+  const redeemCoin = () => {
+    if (auth()) {
+      apiRequest
+        .redeemCoins(auth().access_token, {'reedem_coins' : inputCoin})
+        .then((res) => {
+          setInputCoupon("");
+          setInputCoin('');
+          if (res.data) {
+            // TODO: Handle apply redeem functionality
+            console.log("data", res.data);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error(err.response && err.response.data.message);
+        });
+    } else {
+      return false;
+    }
+  }
+
   const dateHandler = (e) => {
     setExpireDate({
       value: e.target.value,
@@ -413,7 +461,7 @@ function CheakoutPage() {
       }
     }
   };
-  const totalPrice = subTotal && subTotal.reduce((prev, curr) => prev + curr);
+  
   useEffect(() => {
     if (carts && carts.length > 0) {
       setSubTotal(
@@ -562,7 +610,7 @@ function CheakoutPage() {
   const placeOrderHandler = async () => {
     if (auth()) {
       if (selectedBilling && selectedShipping) {
-        if (selectedRule) {
+        if (!selectedRule) {
           if (selectPayment) {
             if (selectPayment && selectPayment === "cashOnDelivery") {
               await apiRequest
@@ -570,8 +618,10 @@ function CheakoutPage() {
                   {
                     shipping_address_id: selectedShipping,
                     billing_address_id: selectedBilling,
-                    shipping_method_id: parseInt(selectedRule),
+                    // Hardcoded shipping method id for demo
+                    shipping_method_id: parseInt(selectedRule) || 1,
                     coupon: couponCode && couponCode.code,
+                    reedem_coins: inputCoin || 0,
                   },
                   auth().access_token
                 )
@@ -1484,20 +1534,20 @@ function CheakoutPage() {
                         Redeem Coins
                       </h1>
                       <p className="sm:text-sm text-xl text-gray font-medium mt-5 mb-5">
-                        Balance: <b>1000 🌕</b>
+                        Balance: <b>{profileInfo?.balance_coins} 🌕</b>
                       </p>
                     </div>
                     <div className="discount-code  w-full mb-5 sm:mb-0 h-[50px] flex ">
                       <div className="flex-1 h-full">
                         <InputCom
-                          value={inputCoupon}
-                          inputHandler={(e) => setInputCoupon(e.target.value)}
+                          value={inputCoin}
+                          inputHandler={(e) => setInputCoin(e.target.value)}
                           type="text"
                           placeholder="Enter"
                         />
                       </div>
                       <button
-                        onClick={submitCoupon}
+                        onClick={redeemCoin}
                         type="button"
                         className="w-[90px] h-[50px] black-btn"
                       >
@@ -1855,7 +1905,7 @@ function CheakoutPage() {
                     <div className="mt-[30px] mb-5 relative">
                       <div className="w-full">
                         <div className="flex flex-col space-y-3">
-                          {/* {cashOnDeliveryStatus && (
+                          {cashOnDeliveryStatus && (
                             <div
                               onClick={() => setPaymentMethod("cashOnDelivery")}
                               className={`payment-item relative bg-[#F8F8F8] text-center w-full h-[50px] text-sm text-qgreen flex justify-center items-center px-3 uppercase cursor-pointer
@@ -1892,7 +1942,7 @@ function CheakoutPage() {
                               )}
                             </div>
                           )}
-                          {stripeStatus && (
+                          {/* {stripeStatus && (
                             <div
                               onClick={() => setPaymentMethod("stripe")}
                               className={`payment-item text-center bg-[#F8F8F8] relative w-full h-[50px] font-bold text-sm text-white text-qyellow  flex justify-center items-center px-3 uppercase cursor-pointer ${

@@ -233,4 +233,11 @@ export default {
       url: `user/update-device-token?token=${token}`,
       data
     }),
+
+  redeemCoins: (token, data) =>
+    instance({
+      method: "POST",
+      url: `reedemcoins?token=${token}`,
+      data
+    }),
 };

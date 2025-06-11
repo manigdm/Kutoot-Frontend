@@ -444,6 +444,15 @@ function OrderCom() {
                       </p>
                     </div>
                     <div className="flex justify-between font-semibold w-[200px]">
+                      <p className="text-sm text-qred">
+                        (-) Redeem Coins
+                      </p>
+                      <p className="text-sm text-qred">
+                        -
+                        <CurrencyConvert price={resData.reedem_coins * 0.25}/>
+                      </p>
+                    </div>
+                    <div className="flex justify-between font-semibold w-[200px]">
                       <p className="text-sm text-qblack">
                         (+) {ServeLangItem()?.Shipping_Cost}
                       </p>
@@ -457,7 +466,7 @@ function OrderCom() {
                         {ServeLangItem()?.Total_Paid}
                       </p>
                       <p className="text-lg text-qblack">
-                        <CurrencyConvert price={resData.total_amount}/>
+                        <CurrencyConvert price={resData.total_amount - (resData.reedem_coins * 0.25)}/>
                       </p>
                     </div>
                   </div>
