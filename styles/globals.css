@@ -350,7 +350,7 @@ body {
   @apply w-full h-full focus:outline-none focus:ring-0 ltr:pl-5 rtl:pr-5 text-xs font-500 placeholder:text-qgraytwo;
 }
 .black-btn {
-  @apply bg-qblack text-white;
+  @apply bg-black text-white;
 }
 .breadcrumb-wrapper span:last-child .sperator {
   display: none;

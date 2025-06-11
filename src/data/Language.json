@@ -366,5 +366,9 @@
   "Features": "Features",
   "Reports_Headline_here": "Reports Headline here",
   "Type_Here": "Type Here",
-  "Product_from_Shop": "Product from Shop"
+  "Product_from_Shop": "Product from Shop",
+  "Balance_Coins" : "Balance Coins",
+  "Credit_Coins" : "Credit Coins",
+  "Debit_Coins" : "Debit Coins",
+  "Active_Prize_Coupons" : "Active Prize Coupons"
 }
