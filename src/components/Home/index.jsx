@@ -112,7 +112,7 @@ export default function Home({ homepageData }) {
           </ViewMoreTitle>
         )}
 
-        {homepage && isMultivendor === 1 && (
+        {/* {homepage && isMultivendor === 1 && (
           <ViewMoreTitle
             className="best-sallers-section md:mb-[60px] mb-[30px]"
             seeMoreUrl="/sellers"
@@ -122,7 +122,7 @@ export default function Home({ homepageData }) {
               sallers={homepage?.sellers?.length > 0 ? homepage.sellers : []}
             />
           </ViewMoreTitle>
-        )}
+        )} */}
 
         {homepage && (
           <TwoColumnAds

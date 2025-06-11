@@ -69,7 +69,7 @@ export default function Layout({ children, childrenClasses }) {
   useEffect(() => {
     if(!defaultCurrency){
       const getCurrency = localStorage.getItem("shopoDefaultCurrency");
-      if(getCurrency){
+      if(getCurrency && getCurrency !== "null" && getCurrency !== "undefined"){
         setDefaultCurrency(JSON.parse(localStorage.getItem("shopoDefaultCurrency")))
       }else{
         setDefaultCurrency(null)
