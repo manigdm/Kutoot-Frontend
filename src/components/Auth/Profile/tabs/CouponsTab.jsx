@@ -24,7 +24,7 @@ const CouponsTable = ({ data }) => {
         <thead className="bg-gray-50">
           <tr>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order Details</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Coins</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Coupon No</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Claimed</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Expires At</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
@@ -34,7 +34,7 @@ const CouponsTable = ({ data }) => {
           {data.map((item, index) => (
             <tr key={index} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.camp_title || 'N/A'}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.coins || '0'}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.coupon_code || '0'}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.is_claimed == "true" ? "Yes" : "No" || '-'}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(item.coupon_expires)}</td>
                 <td className="px-6 py-4 whitespace-nowrap">
