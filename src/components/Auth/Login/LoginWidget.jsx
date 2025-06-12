@@ -265,7 +265,7 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
             {/*  </div>*/}
             {/*</Link>*/}
           </div>
-          {googleUrl && (
+          {/* {googleUrl && (
               <>
                 <a
                     href={`${googleUrl}`}
@@ -341,7 +341,7 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
               </span>
                 </a>
               </>
-          )}
+          )} */}
           <div className="signup-area flex justify-center">
             <p className="text-base text-qgraytwo font-normal">
               {ServeLangItem()?.Dontt_have_an_account} ?
