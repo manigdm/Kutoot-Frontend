@@ -19,7 +19,8 @@ function VerifyWidget({ redirect = true, verifyActionPopup }) {
         {
           email: location.query.email,
         },
-        otp
+        otp,
+       location.query.id
       )
       .then((res) => {
         setLoading(false);

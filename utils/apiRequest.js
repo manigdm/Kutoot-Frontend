@@ -27,10 +27,10 @@ export default {
       method: "get",
       url: `user/logout?token=${token}`,
     }),
-  verification: (data, otp) =>
+  verification: (data, otp, id) =>
     instance({
       method: "GET",
-      url: `user-verification/${otp}`,
+      url: `user-verification/${otp}/`+id,
       data,
     }),
   resend: (data) =>
