@@ -610,7 +610,7 @@ function CheakoutPage() {
   const placeOrderHandler = async () => {
     if (auth()) {
       if (selectedBilling && selectedShipping) {
-        if (!selectedRule) {
+        if (selectedRule) {
           if (selectPayment) {
             if (selectPayment && selectPayment === "cashOnDelivery") {
               await apiRequest
@@ -637,6 +637,47 @@ function CheakoutPage() {
                 .catch((err) => {
                   console.log(err);
                   toast.success(err.response && err.response.message);
+                });
+            } else if (selectPayment && selectPayment === "razorpay") {
+              const url = `${
+                process.env.NEXT_PUBLIC_BASE_URL
+              }user/checkout/razorpay-order?token=${
+                auth().access_token
+              }&shipping_method_id=${parseInt(
+                selectedRule
+              )}&shipping_address_id=${selectedShipping}&coupon=${
+                couponCode && couponCode.code
+              }&billing_address_id=${selectedBilling}`;
+              await axios
+                .get(url)
+                .then((res) => {
+                  const order_id = res.data && res.data.order_id;
+                  const amount = res.data && res.data.amount;
+                  if (res.data) {
+                    const provideUrl = `${
+                      process.env.NEXT_PUBLIC_BASE_URL
+                    }user/checkout/razorpay-web-view?token=${
+                      auth().access_token
+                    }&shipping_address_id=${selectedShipping}&coupon=${
+                      couponCode && couponCode.code
+                    }&billing_address_id=${selectedBilling}&shipping_method_id=${parseInt(
+                      selectedRule
+                    )}&frontend_success_url=${
+                      typeof window !== "undefined" && window.location.origin
+                        ? window.location.origin + "/order/"
+                        : ""
+                    }&frontend_faild_url=${
+                      typeof window !== "undefined" && window.location.origin
+                        ? window.location.origin + "/payment-faild"
+                        : ""
+                    }&request_from=react_web&amount=${amount}&order_id=${order_id}`;
+                    router.push(provideUrl);
+                    localStorage.removeItem("coupon_set_date");
+                    localStorage.removeItem("coupon");
+                  }
+                })
+                .catch((err) => {
+                  console.log(err);
                 });
             } else if (selectPayment && selectPayment === "stripe") {
               setStrpLoading(true);
@@ -698,47 +739,6 @@ function CheakoutPage() {
               router.push(url);
               localStorage.removeItem("coupon_set_date");
               localStorage.removeItem("coupon");
-            } else if (selectPayment && selectPayment === "razorpay") {
-              const url = `${
-                process.env.NEXT_PUBLIC_BASE_URL
-              }user/checkout/razorpay-order?token=${
-                auth().access_token
-              }&shipping_method_id=${parseInt(
-                selectedRule
-              )}&shipping_address_id=${selectedShipping}&coupon=${
-                couponCode && couponCode.code
-              }&billing_address_id=${selectedBilling}`;
-              await axios
-                .get(url)
-                .then((res) => {
-                  const order_id = res.data && res.data.order_id;
-                  const amount = res.data && res.data.amount;
-                  if (res.data) {
-                    const provideUrl = `${
-                      process.env.NEXT_PUBLIC_BASE_URL
-                    }user/checkout/razorpay-web-view?token=${
-                      auth().access_token
-                    }&shipping_address_id=${selectedShipping}&coupon=${
-                      couponCode && couponCode.code
-                    }&billing_address_id=${selectedBilling}&shipping_method_id=${parseInt(
-                      selectedRule
-                    )}&frontend_success_url=${
-                      typeof window !== "undefined" && window.location.origin
-                        ? window.location.origin + "/order/"
-                        : ""
-                    }&frontend_faild_url=${
-                      typeof window !== "undefined" && window.location.origin
-                        ? window.location.origin + "/payment-faild"
-                        : ""
-                    }&request_from=react_web&amount=${amount}&order_id=${order_id}`;
-                    router.push(provideUrl);
-                    localStorage.removeItem("coupon_set_date");
-                    localStorage.removeItem("coupon");
-                  }
-                })
-                .catch((err) => {
-                  console.log(err);
-                });
             } else if (selectPayment && selectPayment === "flutterWave") {
               const url = `${
                 process.env.NEXT_PUBLIC_BASE_URL
@@ -1991,13 +1991,15 @@ function CheakoutPage() {
                             </div>
                           )} */}
                           {rezorPayStatue && (
-                            <div
+                             <div
                               onClick={() => setPaymentMethod("razorpay")}
-                              className={`payment-item text-center bg-[#F8F8F8] relative w-full h-[50px] font-bold text-sm text-white text-qyellow  flex justify-center items-center px-3 uppercase cursor-pointer ${
+                              className={`payment-item relative bg-[#F8F8F8] text-center w-full h-[50px] text-sm text-qgreen flex justify-center items-center px-3 uppercase cursor-pointer
+                              ${
                                 selectPayment === "razorpay"
                                   ? "border-2 border-qyellow"
                                   : "border border-gray-200"
-                              }`}
+                              }
+                              `}
                             >
                               <div className="w-full flex justify-center">
                                 <span>
