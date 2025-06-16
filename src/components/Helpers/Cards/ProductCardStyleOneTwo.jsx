@@ -311,11 +311,11 @@ export default function ProductCardStyleOneTwo({ datas }) {
           </button>
         )}
 
-        <button type="button" onClick={() => productCompare(datas.id)}>
+        {/* <button type="button" onClick={() => productCompare(datas.id)}>
           <span className="w-10 h-10 flex justify-center items-center bg-[#CCECEB] rounded">
             <Compair />
           </span>
-        </button>
+        </button> */}
       </div>
       {quickViewModal && quickViewData && (
         <div className="quicke-view-wrapper w-full h-full flex fixed left-0 top-0 justify-center z-50 items-center ">

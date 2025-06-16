@@ -271,7 +271,6 @@ export default function ProductCardRowStyleOne({ className, datas }) {
                   </>
                 )}
               </div>
-
               <Link
                 href={{
                   pathname: "/single-product",
@@ -364,7 +363,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
               </span>
             </button>
           )}
-          <button
+          {/* <button
             className=" absolute group-hover:left-4 -left-10 top-[107px]  transition-all duration-500 ease-in-out"
             type="button"
             onClick={() => productCompare(datas.id)}
@@ -373,7 +372,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
             <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-white transition-all duration-300 ease-in-out items-center hover-bg-qyellow bg-primarygray rounded">
               <Compair className="fill-current" />
             </span>
-          </button>
+          </button> */}
         </div>
         {quickViewModal && quickViewData && (
           <div className="quicke-view-wrapper w-full h-full flex fixed left-0 top-0 justify-center z-50 items-center ">

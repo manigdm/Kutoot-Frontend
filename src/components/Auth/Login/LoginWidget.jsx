@@ -54,52 +54,75 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
           console.log(err);
         });
   };
-  const doLogin = async () => {
-    setLoading(true);
-    await apiRequest
-        .login({
-          email: email,
-          password: password,
-        })
-        .then((res) => {
-          setLoading(false);
-          toast.success("Login Successfull");
-          setEmail("");
-          setPassword("");
-
-          localStorage.removeItem("auth");
-          localStorage.setItem("auth", JSON.stringify(res.data));
-          dispatch(fetchWishlist());
-          if (redirect) {
-            router.push("/");
-          } else {
-            if (res.data) {
-              loginPopupBoard.handlerPopup(false);
-            }
-          }
-        })
-        .catch((err) => {
-          setLoading(false);
-          if (err.response) {
-            if (
-                err.response.data.notification ===
-                "Please verify your acount. If you didn't get OTP, please resend your OTP and verify"
-            ) {
-              toast.warn(<SEND action={sendOtpHandler} />, {
-                autoClose: false,
-                icon: false,
-                theme: "colored",
-              });
-              notVerifyHandler();
-            } else {
-              toast.error(ServeLangItem()?.Invalid_Credentials);
-            }
-          } else {
-            return false;
-          }
-          console.log(err);
-        });
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
+
+  const validateMobile = (mobile) => {
+    // Validates international phone numbers starting with + and containing 8-15 digits
+    const mobileRegex = /^\+[1-9]\d{7,14}$/;
+    return mobileRegex.test(mobile);
+  };
+  const doLogin = async () => {
+  // Validate empty fields
+  if (!email) {
+    toast.error("Please enter both email/phone");
+    return;
+  }
+
+  // Validate email/mobile format
+  if (!validateEmail(email) && !validateMobile(email)) {
+    toast.error("Please enter a valid email address or phone number");
+    return;
+  }
+
+  
+  setLoading(true);
+  await apiRequest
+    .login({
+      email: email,
+      password: '1234',
+    })
+    .then((res) => {
+      setLoading(false);
+      toast.success("Login Successful");
+      setEmail("");
+      setPassword("");
+
+      localStorage.removeItem("auth");
+      localStorage.setItem("auth", JSON.stringify(res.data));
+      dispatch(fetchWishlist());
+      if (redirect) {
+        router.push("/");
+      } else {
+        if (res.data) {
+          loginPopupBoard.handlerPopup(false);
+        }
+      }
+    })
+    .catch((err) => {
+      setLoading(false);
+      if (err.response) {
+        if (
+          err.response.data.notification ===
+          "Please verify your acount. If you didn't get OTP, please resend your OTP and verify"
+        ) {
+          toast.warn(<SEND action={sendOtpHandler} />, {
+            autoClose: false,
+            icon: false,
+            theme: "colored",
+          });
+          notVerifyHandler();
+        } else {
+          toast.error(ServeLangItem()?.Invalid_Credentials);
+        }
+      } else {
+        return false;
+      }
+      console.log(err);
+    });
+};
   useEffect(() => {
     axios
         .get(`${process.env.NEXT_PUBLIC_BASE_URL}api/login/google`)
@@ -155,7 +178,7 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
                 value={email}
             />
           </div>
-          <div className="input-item mb-5">
+          {/* <div className="input-item mb-5">
             <InputCom
                 placeholder="* * * * * *"
                 label={ServeLangItem()?.Password}
@@ -165,7 +188,7 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
                 inputHandler={(e) => setPassword(e.target.value)}
                 value={password}
             />
-          </div>
+          </div> */}
           <div className="forgot-password-area flex justify-between items-center mb-7">
             <div className="remember-checkbox flex items-center space-x-2.5 rtl:space-x-reverse">
               <button
@@ -192,11 +215,11 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
               {ServeLangItem()?.Remember_Me}
             </span>
             </div>
-            <Link href="/forgot-password" passhref>
+            {/* <Link href="/forgot-password" passhref>
               <span className="text-base text-qyellow cursor-pointer">
                 {ServeLangItem()?.Forgot_password}?
               </span>
-            </Link>
+            </Link> */}
           </div>
           <div className="signin-area mb-3.5">
             <div className="flex justify-center">
@@ -342,7 +365,7 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
                 </a>
               </>
           )} */}
-          <div className="signup-area flex justify-center">
+          {/* <div className="signup-area flex justify-center">
             <p className="text-base text-qgraytwo font-normal">
               {ServeLangItem()?.Dontt_have_an_account} ?
               {redirect ? (
@@ -359,7 +382,7 @@ function LoginWidget({ redirect = true, loginActionPopup, notVerifyHandler }) {
                   </button>
               )}
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
   );
