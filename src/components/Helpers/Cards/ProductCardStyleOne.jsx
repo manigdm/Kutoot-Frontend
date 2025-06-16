@@ -1,6 +1,5 @@
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -36,8 +35,7 @@ const Redirect = () => {
   );
 };
 
-export default function ProductCardStyleOne({ datas }) {
-  const router = useRouter();
+export default function ProductCardStyleOne({ datas }) {  
   const dispatch = useDispatch();
   const { wishlistData } = useSelector((state) => state.wishlistData);
   const wishlist = wishlistData && wishlistData.wishlists;
@@ -128,15 +126,15 @@ export default function ProductCardStyleOne({ datas }) {
       token: auth() && auth().access_token,
       quantity: 1,
       variants:
-          getFirstVarients &&
-          getFirstVarients.length > 0 &&
-          getFirstVarients.map((v) =>
-              v ? parseInt(v.product_variant_id) : null
-          ),
+        getFirstVarients &&
+        getFirstVarients.length > 0 &&
+        getFirstVarients.map((v) =>
+          v ? parseInt(v.product_variant_id) : null
+        ),
       variantItems:
-          getFirstVarients &&
-          getFirstVarients.length > 0 &&
-          getFirstVarients.map((v) => (v ? v.id : null)),
+        getFirstVarients &&
+        getFirstVarients.length > 0 &&
+        getFirstVarients.map((v) => (v ? v.id : null)),
     };
     if (auth()) {
       if (varients) {
@@ -187,7 +185,10 @@ export default function ProductCardStyleOne({ datas }) {
         dispatch(fetchCart());
       }
     } else {
-      localStorage.setItem("data-hold", JSON.stringify({type:"add-to-cart",...data}));
+      localStorage.setItem(
+        "data-hold",
+        JSON.stringify({ type: "add-to-cart", ...data })
+      );
       loginPopupBoard.handlerPopup(true);
     }
   };
@@ -220,11 +221,6 @@ export default function ProductCardStyleOne({ datas }) {
     }
   }, [datas, varients]);
 
-  /*compare product feature
-   * add product for compare method
-   * @params (id,token)
-   * request method is (apiRequest)
-   * */
   const productCompare = (id) => {
     if (auth()) {
       apiRequest
@@ -244,10 +240,6 @@ export default function ProductCardStyleOne({ datas }) {
   const { currency_icon } = settings();
   const [imgSrc, setImgSrc] = useState(null);
   const loadImg = (value) => {
-    // const time = 3000;
-    // setTimeout(() => {
-    //   setImgSrc(value);
-    // }, time);
     setImgSrc(value);
   };
   return (
@@ -257,13 +249,7 @@ export default function ProductCardStyleOne({ datas }) {
         style={{ boxShadow: "0px 15px 64px 0px rgba(0, 0, 0, 0.05)" }}
       >
         <div className="product-card-img w-full h-[300px] -mt-2">
-          <div
-            className="w-full h-full relative flex justify-center items-center transform scale-100 group-hover:scale-110 transition duration-300 ease-in-out"
-            // style={{
-            //   background: `url(${datas.image}) no-repeat center`,
-            //   backgroundSize: "contain",
-            // }}
-          >
+          <div className="w-full h-full relative flex justify-center items-center transform scale-100 group-hover:scale-110 transition duration-300 ease-in-out">
             <Image
               layout="fill"
               objectFit="scale-down"
@@ -272,46 +258,6 @@ export default function ProductCardStyleOne({ datas }) {
               onLoadingComplete={() => loadImg(datas.image)}
               className="w-full h-full object-contain"
             />
-            {/* product available progress */}
-            {/*{datas.campaingn_product && (*/}
-            {/*  <>*/}
-            {/*    <div className="px-[30px] absolute left-0 top-3 w-full">*/}
-            {/*      <div className="progress-title flex justify-between ">*/}
-            {/*        <p className="text-xs text-qblack font-400 leading-6">*/}
-            {/*          Prodcuts Available*/}
-            {/*        </p>*/}
-            {/*        <span className="text-sm text-qblack font-600 leading-6">*/}
-            {/*          {datas.cam_product_available}*/}
-            {/*        </span>*/}
-            {/*      </div>*/}
-            {/*      <div className="progress w-full h-[5px] rounded-[22px] bg-primarygray relative overflow-hidden">*/}
-            {/*        <div*/}
-            {/*          style={{*/}
-            {/*            width: `${*/}
-            {/*              datas.campaingn_product ? 100 - available : 0*/}
-            {/*            }%`,*/}
-            {/*          }}*/}
-            {/*          className="h-full absolute left-0 top-0 bg-qyellow"*/}
-            {/*        ></div>*/}
-            {/*      </div>*/}
-            {/*    </div>*/}
-            {/*  </>*/}
-            {/*)}*/}
-
-            {/* product type */}
-            {/*{datas.product_type && !datas.campaingn_product && (*/}
-            {/*  <div className="product-type absolute right-[14px] top-[17px]">*/}
-            {/*    <span*/}
-            {/*      className={`text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider ${*/}
-            {/*        datas.product_type === "popular"*/}
-            {/*          ? "bg-[#19CC40]"*/}
-            {/*          : "bg-qyellow"*/}
-            {/*      }`}*/}
-            {/*    >*/}
-            {/*      {datas.product_type}*/}
-            {/*    </span>*/}
-            {/*  </div>*/}
-            {/*)}*/}
           </div>
         </div>
         <div className="product-card-details px-[30px] pb-[30px] relative pt-2">
@@ -364,9 +310,9 @@ export default function ProductCardStyleOne({ datas }) {
             href={{ pathname: "/single-product", query: { slug: datas.slug } }}
             passHref
           >
-              <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600 cursor-pointer">
-                {datas.title}
-              </p>
+            <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600 cursor-pointer">
+              {datas.title}
+            </p>
           </Link>
           <p className="price">
             <span
@@ -377,7 +323,7 @@ export default function ProductCardStyleOne({ datas }) {
             >
               {offerPrice ? (
                 <span>
-                  <CurrencyConvert price={price}/>
+                  <CurrencyConvert price={price} />
                 </span>
               ) : (
                 <>
@@ -385,7 +331,7 @@ export default function ProductCardStyleOne({ datas }) {
                     <span
                       className={`line-through text-qgray font-500 text-[16px] mr-2`}
                     >
-                       <CurrencyConvert price={price}/>
+                      <CurrencyConvert price={price} />
                     </span>
                   )}
                   <CheckProductIsExistsInFlashSale
@@ -433,7 +379,7 @@ export default function ProductCardStyleOne({ datas }) {
             <button
               className="absolute group-hover:right-4 -right-10 top-[120px]  transition-all duration-300 ease-in-out"
               type="button"
-              onClick={() => removeToWishlist(wishlisted && wishlisted.id)}
+              onClick={() => removeToWishlist(datas.id)}
             >
               <span className="hover:bg-qyellow w-10 h-10 flex justify-center items-center bg-primarygray rounded">
                 <ThinLove fill={true} />
