@@ -441,7 +441,7 @@ export default function ProductCardStyleOne({ datas }) {
             </button>
           )}
 
-          <button
+          {/* <button
             className=" absolute group-hover:right-4 -right-10 top-[168px]  transition-all duration-500 ease-in-out"
             type="button"
             onClick={() => productCompare(datas.id)}
@@ -449,7 +449,7 @@ export default function ProductCardStyleOne({ datas }) {
             <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-white transition-all duration-300 ease-in-out items-center hover-bg-qyellow bg-primarygray rounded">
               <Compair className="fill-current" />
             </span>
-          </button>
+          </button> */}
         </div>
         {quickViewModal && quickViewData && (
           <div className="quicke-view-wrapper w-full h-full flex fixed left-0 top-0 justify-center z-50 items-center ">

@@ -699,3 +699,8 @@ li {
   background-image: -ms-linear-gradient(7deg, rgb(236, 19, 121) 0%, rgb(108, 0, 146) 100%);
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
 }
+
+.bg-qblack{
+  background-color: #222222;
+  color: #ffffff;
+}

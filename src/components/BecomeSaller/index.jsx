@@ -80,11 +80,28 @@ function BecomeSaller() {
       setUploadCoverImg(e.target.files[0]);
     }
   };
+
   const rememberMe = () => {
     setCheck(!checked);
   };
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateMobile = (mobile) => {
+    // Validates international phone numbers starting with + and containing 8-15 digits
+    const mobileRegex = /^\+[1-9]\d{7,14}$/;
+    return mobileRegex.test(mobile);
+  };
+  
   const sellerReq = async () => {
     if (auth()) {
+      // Validate email/mobile format
+      if (!validateEmail(email) && !validateMobile(email)) {
+        toast.error("Please enter a valid email address or phone number");
+        return;
+      }
       const formData = new FormData();
       formData.append("banner_image", uploadCoverImg);
       formData.append("shop_name", shopName);
