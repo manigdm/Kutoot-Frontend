@@ -376,14 +376,14 @@ export default function Navbar({ className }) {
                     </div>
                   </li>
 
-                  <li>
+                  {/* <li>
                     <Link href="/sellers" passHref>
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.Sellers}</span>
                         </span>
                     </Link>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <Link href="/blogs" passHref>
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span className="capitalize">
@@ -391,7 +391,7 @@ export default function Navbar({ className }) {
                           </span>
                         </span>
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link href="/about" passHref>
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
@@ -407,12 +407,12 @@ export default function Navbar({ className }) {
                     </Link>
                   </li>
                   <li className="relative">
-                    <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
+                    {/* <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                       <span>{ServeLangItem()?.Pages}</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>
-                    </span>
+                    </span> */}
                     <div className="sub-menu w-[220px] absolute left-0 top-[60px]">
                       <div
                         className="w-full bg-white flex justify-between items-center "
