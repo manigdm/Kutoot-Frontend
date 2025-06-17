@@ -52,7 +52,7 @@ function CheakoutPage() {
   const [shippingRulesByCityId, setShippingRulesByCityId] = useState([]);
   const [selectPayment, setPaymentMethod] = useState(null);
   //selectdRule store shipping price
-  const [selectedRule, setSelectedRule] = useState(null);
+  const [selectedRule, setSelectedRule] = useState(1);
   const [shippingCharge, setShippingCharge] = useState(null);
   //TODO: stripe datas
   const [strpeNumber, setStrpeNumber] = useState("");
@@ -64,27 +64,32 @@ function CheakoutPage() {
   // const [paypalData, setPaypalData] = useState(null);
   const [inputCoupon, setInputCoupon] = useState("");
   const [inputCoin, setInputCoin] = useState("");
+  const [appliedRedeem, setAppliedRedeem] = useState(false);
   const [couponCode, setCouponCode] = useState(null);
   // const [totalAmountWithCalc, setTotalAmountWithCalc] = useState(null);
   const [bankInfo, setBankInfo] = useState(null);
   const [discountCoupon, setDiscountCoupon] = useState(0);
+  const [redeemCoupon, setRedeemCoupon] = useState(null);
+  const [redeemDiscount, setRedeemDiscount] = useState(null);
+  
   const totalPrice = subTotal && subTotal.reduce((prev, curr) => prev + curr);
 
   useEffect(() => {
     if (couponCode) {
-      if (couponCode.offer_type === "2") {
-        let price = totalPrice - parseInt(couponCode.discount);
-        setDiscountCoupon(totalPrice - price);
-      } else {
-        //discout =10%
-        // let price = (parseInt(totalPrice) / 100) * couponCode.discount;
-        // setDiscountCoupon(totalPrice - price);
-        let discount =
-          (parseInt(couponCode.discount) / 100) * parseInt(totalPrice);
-        setDiscountCoupon(discount);
-      }
+      // if (couponCode.offer_type === "2") {
+      //   let price = totalPrice - parseInt(couponCode.discount);
+      //   setDiscountCoupon(totalPrice - price);
+      // } else {
+      //   //discout =10%
+      //   // let price = (parseInt(totalPrice) / 100) * couponCode.discount;
+      //   // setDiscountCoupon(totalPrice - price);
+      //   let discount =
+      //     (parseInt(couponCode.discount) / 100) * parseInt(totalPrice);
+      //   setDiscountCoupon(discount);
+      // }
     }
   }, [couponCode, totalPrice]);
+
   const [transactionInfo, setTransactionInfo] = useState("");
   // useEffect(() => {
   //   if (transactionInfo && transactionInfo !== "") {
@@ -107,7 +112,7 @@ function CheakoutPage() {
   const [totalWeight, setTotalWeight] = useState(null);
   const [totalQty, setQty] = useState(null);
   const [profileInfo, setProfile] = useState(null);
-
+  
   const priceWithCoupon = (price) => {
     if (couponCode) {
       return (price / 100) * couponCode.discount;
@@ -167,17 +172,23 @@ function CheakoutPage() {
       return false;
     }
   };
+  const cancelRedeemCoin = () =>{
+    setAppliedRedeem(false)
+    setRedeemDiscount(null)
+  }
 
   const redeemCoin = () => {
     if (auth()) {
       apiRequest
-        .redeemCoins(auth().access_token, {'reedem_coins' : inputCoin})
+        .redeemCoins(auth().access_token, {'reedem_coins' : redeemCoupon?.reedem_coins_allowed})
         .then((res) => {
           setInputCoupon("");
           setInputCoin('');
+          setAppliedRedeem(true)
           if (res.data) {
+            setRedeemDiscount(res.data)
             // TODO: Handle apply redeem functionality
-            console.log("data", res.data);
+            toast.success("Sucessfully redeem applied");
           }
         })
         .catch((err) => {
@@ -203,7 +214,11 @@ function CheakoutPage() {
         }`
       )
       .then((res) => {
-        const {cartProducts} = res.data;
+        const {cartProducts} = res.data;        	
+        setRedeemCoupon(
+          res.data &&
+          res.data.redeemcoin_coupon
+        );
         setSslStatus(
           !!(
             res.data &&
@@ -621,7 +636,7 @@ function CheakoutPage() {
                     // Hardcoded shipping method id for demo
                     shipping_method_id: parseInt(selectedRule) || 1,
                     coupon: couponCode && couponCode.code,
-                    reedem_coins: inputCoin || 0,
+                    reedem_coins: redeemCoupon?.reedem_coins_allowed || 0,
                   },
                   auth().access_token
                 )
@@ -647,6 +662,8 @@ function CheakoutPage() {
                 selectedRule
               )}&shipping_address_id=${selectedShipping}&coupon=${
                 couponCode && couponCode.code
+              }&reedem_coins=${
+                redeemDiscount && redeemCoupon?.reedem_coins_allowed || 0
               }&billing_address_id=${selectedBilling}`;
               await axios
                 .get(url)
@@ -1537,27 +1554,45 @@ function CheakoutPage() {
                         Balance: <b>{profileInfo?.balance_coins} 🌕</b>
                       </p>
                     </div>
+                    <span style={{
+                      background: "#e3a848", // Yellow background
+                      color: "#fff", // White text color
+                      padding: "3px", // Padding around the text
+                      fontSize: "12px"
+                    }}>{redeemCoupon?.message}</span>
                     <div className="discount-code  w-full mb-5 sm:mb-0 h-[50px] flex ">
                       <div className="flex-1 h-full">
                         <InputCom
-                          value={inputCoin}
-                          inputHandler={(e) => setInputCoin(e.target.value)}
+                          value={redeemCoupon?.reedem_coins_allowed}
                           type="text"
                           placeholder="Enter"
+                          disabled={true}
                         />
                       </div>
-                      <button
-                        onClick={redeemCoin}
-                        type="button"
-                        className="w-[90px] h-[50px] black-btn"
-                      >
-                        <span className="text-sm font-semibold">
-                          Redeem
-                        </span>
-                      </button>
+                      { !appliedRedeem &&
+                        <button
+                          onClick={redeemCoin}
+                          type="button"
+                          className="w-[90px] h-[50px] black-btn"
+                        >
+                          <span className="text-sm font-semibold">
+                            Redeem
+                          </span>
+                        </button>
+                      }
+                      { appliedRedeem &&
+                        (<button
+                          type="button"
+                          className="w-[90px] h-[50px] black-btn"
+                          style={{background: "#c60d0d"}}
+                          onClick={cancelRedeemCoin}
+                        >
+                          Cancel
+                        </button>)
+                      }
                     </div>
                   </div>
-                  <div className="mb-10">
+                  {/* <div className="mb-10">
                     <h1 className="sm:text-lg text-xl text-qblack font-medium mt-5 mb-5">
                       {ServeLangItem()?.Apply_Coupon}
                     </h1>
@@ -1580,7 +1615,7 @@ function CheakoutPage() {
                         </span>
                       </button>
                     </div>
-                  </div>
+                  </div> */}
                   <h1 className="sm:text-lg text-xl text-qblack font-medium mt-5 mb-5">
                     {ServeLangItem()?.Order_Summary}
                   </h1>
@@ -1655,13 +1690,13 @@ function CheakoutPage() {
                       </div>
                       <div className=" flex justify-between mb-5">
                         <p className="text-[13px] text-qblack uppercase font-bold">
-                          {ServeLangItem()?.Discount_coupon} (-)
+                          {'Discount Coin'} (-)
                         </p>
                         <p
                           suppressHydrationWarning
                           className="text-[15px] font-bold text-qblack uppercase"
                         >
-                             <CurrencyConvert price={discountCoupon}/>
+                             <CurrencyConvert price={redeemDiscount?.reedem_amount || '0'}/>
                         </p>
                       </div>
                     </div>
@@ -1695,6 +1730,7 @@ function CheakoutPage() {
                                                 type="radio"
                                                 name="price"
                                                 className="accent-pink-500"
+                                                checked={selectedRule}
                                               />
                                             </div>
                                             <span className="text-[15px] text-normal text-qgraytwo">
@@ -1724,6 +1760,7 @@ function CheakoutPage() {
                                                 type="radio"
                                                 name="price"
                                                 className="accent-pink-500"
+                                                checked={selectedRule}
                                               />
                                             </div>
                                             <span className="text-[15px] text-normal text-qgraytwo">
@@ -1897,7 +1934,9 @@ function CheakoutPage() {
                           suppressHydrationWarning
                           className="text-2xl font-medium text-qred"
                         >
-                            <CurrencyConvert price={(mainTotalPrice - discountCoupon)}/>
+                          {redeemDiscount?.reedem_amount != null ?  mainTotalPrice - redeemDiscount?.reedem_amount : mainTotalPrice}
+
+                            {/* <CurrencyConvert price={ redeemDiscount?.reedem_amount ? mainTotalPrice : mainTotalPrice - redeemDiscount?.reedem_amount }/> */}
                         </p>
                       </div>
                     </div>
