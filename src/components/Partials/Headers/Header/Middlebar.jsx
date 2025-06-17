@@ -66,7 +66,7 @@ export default function Middlebar({ className, settings }) {
               <div className="w-[250px] h-[44px]">
                 <SearchBox className="search-com" />
               </div>
-              <div className="compaire relative">
+              {/* <div className="compaire relative">
                 {auth ? (
                   <Link href="/products-compaire" passHref>
                       <span className="cursor-pointer">
@@ -84,7 +84,7 @@ export default function Middlebar({ className, settings }) {
                 <span className="w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
                   {compareProducts ? compareProducts.products.length : 0}
                 </span>
-              </div>
+              </div> */}
               <div className="favorite relative">
                 <Link href="/wishlist" passHref>
                     <span className="cursor-pointer">
