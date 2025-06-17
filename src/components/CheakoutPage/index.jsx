@@ -677,6 +677,8 @@ function CheakoutPage() {
                       auth().access_token
                     }&shipping_address_id=${selectedShipping}&coupon=${
                       couponCode && couponCode.code
+                    }&reedem_coins=${
+                      redeemDiscount && redeemCoupon?.reedem_coins_allowed || 0
                     }&billing_address_id=${selectedBilling}&shipping_method_id=${parseInt(
                       selectedRule
                     )}&frontend_success_url=${
