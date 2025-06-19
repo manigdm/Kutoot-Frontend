@@ -27,6 +27,12 @@ export default {
       method: "get",
       url: `user/logout?token=${token}`,
     }),
+  verifyOTP: (data) =>
+    instance({
+      method: "POST",
+      url: `verify-otp`,
+      data,
+    }),
   verification: (data, otp, id) =>
     instance({
       method: "GET",
