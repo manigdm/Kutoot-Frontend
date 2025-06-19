@@ -112,7 +112,8 @@ function CheakoutPage() {
   const [totalWeight, setTotalWeight] = useState(null);
   const [totalQty, setQty] = useState(null);
   const [profileInfo, setProfile] = useState(null);
-  
+  const [redeemValue, setRedeemValue] = useState("");
+
   const priceWithCoupon = (price) => {
     if (couponCode) {
       return (price / 100) * couponCode.discount;
@@ -120,6 +121,12 @@ function CheakoutPage() {
       return price;
     }
   };
+
+  useEffect(() => {
+    if (redeemCoupon?.reedem_coins_allowed) {
+      setRedeemValue(String(redeemCoupon.reedem_coins_allowed));
+    }
+  }, [redeemCoupon]);
 
   const updateProfile = () => {
       if (auth()) {
@@ -560,6 +567,20 @@ function CheakoutPage() {
       }
     }
   };
+
+  const handleRedeemChange = (e) => {
+    const val = e.target.value;
+
+    // Allow only numbers
+    if (!/^\d*$/.test(val)) return;
+
+    const max = redeemCoupon?.reedem_coins_allowed ?? Infinity;
+
+    if (Number(val) <= max) {
+      setRedeemValue(val);
+    }
+  };
+
   const shippingHandler = (addressId, cityId) => {
     setShipping(addressId);
     const getRules =
@@ -1557,18 +1578,20 @@ function CheakoutPage() {
                       </p>
                     </div>
                     <span style={{
-                      background: "#e3a848", // Yellow background
-                      color: "#fff", // White text color
-                      padding: "3px", // Padding around the text
+                      background: "#e3a848", 
+                      color: "#fff", 
+                      padding: "3px",
                       fontSize: "12px"
                     }}>{redeemCoupon?.message}</span>
                     <div className="discount-code  w-full mb-5 sm:mb-0 h-[50px] flex ">
                       <div className="flex-1 h-full">
                         <InputCom
-                          value={redeemCoupon?.reedem_coins_allowed}
-                          type="text"
+                          value={redeemValue}
+                          type="number"
                           placeholder="Enter"
-                          disabled={true}
+                          name="redeemCoins"
+                          inputHandler={handleRedeemChange}
+                          max={redeemCoupon?.reedem_coins_allowed}
                         />
                       </div>
                       { !appliedRedeem &&
