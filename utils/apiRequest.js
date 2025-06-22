@@ -22,6 +22,12 @@ export default {
       url: "store-login",
       data,
     }),
+  loginTrigger: (data) =>
+    instance({
+      method: "POST",
+      url: "logintrigger",
+      data,
+    }),
   logout: (token) =>
     instance({
       method: "get",

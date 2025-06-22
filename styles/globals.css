@@ -364,12 +364,14 @@ body {
 /*product style row two*/
 .product-row-card-style-one , .product-card-one{
   border:1px solid transparent;
+  border-radius: 8px;
 }
 .main-wrapper-card span.anim {
   position: absolute;
   background-color: #e3a848;
   transform-origin: center;
   transition: transform 0.5s ease;
+  border-radius: 8px;
 }
 
 .main-wrapper-card span.bottom,
@@ -407,11 +409,13 @@ body {
 .product-row-card-style-one:hover ~ span.top, .product-row-card-style-one:hover ~  span.bottom,
 .product-card-one:hover ~ span.top, .product-card-one:hover ~  span.bottom{
   transform: scaleX(1);
+  border-radius: 8px;
 }
 
 .product-row-card-style-one:hover ~ span.left, .product-row-card-style-one:hover ~  span.right,
 .product-card-one:hover ~ span.left, .product-card-one:hover ~  span.right{
   transform: scaleY(1);
+  border-radius: 8px;
 }
 /*product style row two end*/
 
@@ -422,6 +426,7 @@ body {
 }
 .cart-wrappwer {
   border-color: #e3a848;
+  border-radius: 8px;
 }
 .quomodo-shop-middle-bar :is(.compaire>span,.favorite>span,.cart-wrapper .cart>span){
 
