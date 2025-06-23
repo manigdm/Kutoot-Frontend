@@ -36,6 +36,7 @@ function LoginWidget({ redirect = true, notVerifyHandler }) {
   const rememberMe = () => {
     setValue(!checked);
   };
+
   const sendOtpHandler = () => {
     apiRequest
       .resend({
@@ -48,68 +49,46 @@ function LoginWidget({ redirect = true, notVerifyHandler }) {
         console.log(err);
       });
   };
+  
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
   const validateMobile = (mobile) => {
-    // Validates international phone numbers starting with + and containing 8-15 digits
     const mobileRegex = /^\+[1-9]\d{7,14}$/;
     return mobileRegex.test(mobile);
   };
+
   const doLogin = async () => {
-    // Validate empty fields
     if (!email) {
       toast.error("Please enter both email/phone");
       return;
     }
 
-    // Validate email/mobile format
     if (!validateEmail(email) && !validateMobile(email)) {
       toast.error("Please enter a valid email address or phone number");
       return;
     }
 
     setLoading(true);
-    await apiRequest
-      .login({
-        email: email,
-        password: "1234",
-      })
-      .then((res) => {
-        setLoading(false);
-        toast.success("OTP sent to your email");
-        setEmail("");
-        if (redirect) {
-          router.push("/verify-otp?email=" + email);
-        } else {
-          if (res.data) {
-            loginPopupBoard.handlerPopup(false);
-          }
+    
+    try {
+      await apiRequest.loginTrigger({ identifier: email });
+      toast.success("OTP sent to your email");
+      setEmail("");
+       if (redirect) {
+        router.push("/verify-otp?email=" + email);
+      } else {
+        if (res.data) {
+          loginPopupBoard.handlerPopup(false);
         }
-      })
-      .catch((err) => {
-        setLoading(false);
-        if (err.response) {
-          if (
-            err.response.data.notification ===
-            "Please verify your acount. If you didn't get OTP, please resend your OTP and verify"
-          ) {
-            toast.warn(<SEND action={sendOtpHandler} />, {
-              autoClose: false,
-              icon: false,
-              theme: "colored",
-            });
-            notVerifyHandler();
-          } else {
-            toast.error(ServeLangItem()?.Invalid_Credentials);
-          }
-        } else {
-          return false;
-        }
-        console.log(err);
-      });
+      }
+    } catch (err) {
+      toast.error("Failed to send OTP");
+    } finally {
+      setLoading(false);
+    }
   };
   
   return (
