@@ -6,9 +6,9 @@ function OneColumnAdsOne({ data }) {
   if(data){
     return (
         <div
-            className={`one-column-ads-one md:h-[295px] h-[190px] md:mb-[60px] mb-[30px] w-full`}
+            className={`one-column-ads-one md:h-[295px] h-[190px] md:mb-[60px] mb-[30px] w-full rounded`}
         >
-          <div className="container-x mx-auto h-full">
+          <div className="container-x mx-auto h-full rounded">
             <div
                 data-aos="fade-right"
                 style={{

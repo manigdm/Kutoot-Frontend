@@ -66,6 +66,7 @@ export default function Home({ homepageData }) {
             sectionTitle={sectionTitles && sectionTitles.Trending_Category}
           />
         )}
+        
         {homepage && (
           <SectionStyleOne
             products={homepage.popularCategoryProducts}
@@ -88,14 +89,14 @@ export default function Home({ homepageData }) {
           />
         )} */}
 
-        {homepage && (
+        {/* {homepage && (
           <CampaignCountDown
             className="md:mb-[60px] mb-[30px]"
             flashSaleData={homepage.flashSale}
             downloadData={homepage.flashSaleSidebarBanner}
             lastDate={homepage?.flashSale?.end_time}
           />
-        )}
+        )} */}
         {homepage && (
           <ViewMoreTitle
             className="top-selling-product md:mb-[60px] mb-[30px]"
@@ -152,7 +153,7 @@ export default function Home({ homepageData }) {
             className="category-products md:mb-[60px] mb-[30px]"
           />
         )}
-        {homepage && <OneColumnAdsOne data={homepage.singleBannerOne && parseInt(homepage.singleBannerOne.status)===1?homepage.singleBannerOne:null} />}
+        {/* {homepage && <OneColumnAdsOne data={homepage.singleBannerOne && parseInt(homepage.singleBannerOne.status)===1?homepage.singleBannerOne:null} />} */}
         {homepage && (
           <SectionStyleThree
             products={

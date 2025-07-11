@@ -16,7 +16,7 @@ export default function TopBar({ className, contact,topBarProps }) {
   return (
     <>
       <div
-        className={`w-full bg-white h-10 border-b border-qgray-border ${
+        className={`w-full bg-white border-b qgray-border ${
           className || ""
         }`}
       >
@@ -24,28 +24,15 @@ export default function TopBar({ className, contact,topBarProps }) {
           <div className="flex justify-between items-center h-full">
             <div className="topbar-nav">
               <ul className="flex space-x-6">
-                <li className={`rtl:ml-6 ltr:ml-0`}>
-                  {auth ? (
-                    <Link href="/profile#dashboard" passHref>
-                        <span className="text-xs leading-6 text-qblack font-500 cursor-pointer">
-                          {ServeLangItem()?.Account}
-                        </span>
-                    </Link>
-                  ) : (
-                    <Link href="/login" passHref>
-                        <span className="text-xs leading-6 text-qblack font-500 cursor-pointer">
-                          {ServeLangItem()?.Account}
-                        </span>
-                    </Link>
-                  )}
-                </li>
-                <li>
-                  <Link href="/tracking-order" passHref>
-                      <span className="text-xs leading-6 text-qblack font-500 cursor-pointer">
-                        {ServeLangItem()?.Track_Order}
-                      </span>
+                <Link href="/" passHref>
+                      <Image
+                        width="120"
+                        height="44"
+                        objectFit="scale-down"
+                        src={"/assets/images/logo-kutoot.png"}
+                        alt="logo"
+                      />
                   </Link>
-                </li>
                 {defaultCurrency && allCurrency && (
                     <li>
                       <div className="currencyDropdown">
@@ -85,9 +72,10 @@ export default function TopBar({ className, contact,topBarProps }) {
               </ul>
             </div>
             <div className="topbar-dropdowns lg:block hidden">
+              
               <div className="flex ltr:space-x-6 rtl:-space-x-0 items-center">
                 <div className="flex ltr:space-x-2 rtl:space-x-0 items-center rtl:ml-2 ltr:ml-0">
-                  <span className={`rtl:ml-2 ltr:ml-0`}>
+                  {/* <span className={`rtl:ml-2 ltr:ml-0`}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -104,13 +92,24 @@ export default function TopBar({ className, contact,topBarProps }) {
                     </svg>
                   </span>
                   <span className="text-xs text-qblack font-500 leading-none rtl:ml-2 ltr:ml-0 ">
-                    {/* TODO: Need to update dynamically */}
-                    {/* {contact && contact.phone} */}
                     9999999999
-                  </span>
+                  </span> */}
+                  {auth ? (
+                    <Link href="/profile#dashboard" passHref>
+                        <span className="text-xs leading-6 text-white font-500 cursor-pointer">
+                          {ServeLangItem()?.Account}
+                        </span>
+                    </Link>
+                  ) : (
+                    <Link href="/login" passHref>
+                        <span className="text-xs leading-6 text-white font-500 cursor-pointer">
+                          {ServeLangItem()?.Account}
+                        </span>
+                    </Link>
+                  )}
                 </div>
                 <div className="flex ltr:space-x-2 rtl:space-x-0 items-center ">
-                  <span className={`rtl:ml-2 ltr:ml-0`}>
+                  {/* <span className={`rtl:ml-2 ltr:ml-0`}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -127,11 +126,53 @@ export default function TopBar({ className, contact,topBarProps }) {
                     </svg>
                   </span>
                   <span className="text-xs text-qblack font-500 leading-none">
-                    {/* {contact && contact.email} */}
-                    {/* TODO: Need to update dynamically */}
                     Shop@kutoot.com
-                  </span>
+                  </span> */}
+                  <Link href="/tracking-order" passHref>
+                      <span className="text-xs leading-6 text-white font-500 cursor-pointer">
+                        {ServeLangItem()?.Track_Order}
+                      </span>
+                  </Link>
                 </div>
+                <div className="flex ltr:space-x-6 rtl:-space-x-0 items-center">
+                {Multivendor() === 1 && (
+                  <div className="become-seller-btn rounded orange-btn">
+                    <Link href="/become-seller" passHref>
+                        <div className=" w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
+                          <div className="flex rtl:space-x-reverse space-x-2 items-center">
+                            <span className="text-sm font-600">
+                              {ServeLangItem()?.Become_seller}
+                            </span>
+                            <span className="transform rtl:rotate-180 fill-current ">
+                              <svg
+                                width="6"
+                                height="10"
+                                viewBox="0 0 6 10"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="fill-current"
+                              >
+                                <rect
+                                  x="1.08984"
+                                  width="6.94106"
+                                  height="1.54246"
+                                  transform="rotate(45 1.08984 0)"
+                                />
+                                <rect
+                                  x="6"
+                                  y="4.9082"
+                                  width="6.94106"
+                                  height="1.54246"
+                                  transform="rotate(135 6 4.9082)"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                    </Link>
+                  </div>
+                )}
+              </div>
                 {/*<div className="country-select flex space-x-1 items-center">*/}
                 {/*  <div>*/}
                 {/*    <Image*/}

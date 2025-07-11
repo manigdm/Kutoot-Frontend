@@ -4,17 +4,17 @@ import ServeLangItem from "../ServeLangItem";
 function ShopNowBtn() {
   return (
     <div className="cursor-pointer w-full relative ">
-      <div className="inline-flex  space-x-1.5 rtl:space-x-reverse items-center relative z-20">
-        <span className="text-sm text-black font-medium leading-[30px]">
+      <div className="inline-flex  space-x-1.5 rtl:space-x-reverse items-center relative z-20 orange-btn" style={{padding: "5px 20px"}}>
+        <span className="text-sm text-white font-medium leading-[30px]">
           {ServeLangItem()?.Shop_Now}
         </span>
         <span className="leading-[30px]">
           <svg
-            className={`transform rtl:rotate-180 text-black fill-current`}
+            className={`transform rtl:rotate-180 text-white fill-current`}
             width="7"
             height="11"
             viewBox="0 0 7 11"
-            fill="none"
+            fill="#fff"
             xmlns="http://www.w3.org/2000/svg"
           >
             <rect

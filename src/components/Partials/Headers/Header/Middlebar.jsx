@@ -13,6 +13,8 @@ import ThinPeople from "../../../Helpers/icons/ThinPeople";
 import SearchBox from "../../../Helpers/SearchBox";
 import ServeLangItem from "../../../Helpers/ServeLangItem";
 import LoginContext from "../../../Contexts/LoginContext";
+import Arrow from "../../../Helpers/icons/Arrow";
+import FontAwesomeCom from "../../../Helpers/icons/FontAwesomeCom";
 export default function Middlebar({ className, settings }) {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -22,6 +24,16 @@ export default function Middlebar({ className, settings }) {
   const [profile, setProfile] = useState(false);
   const [auth, setAuth] = useState(null);
   const { compareProducts } = useSelector((state) => state.compareProducts);
+  const { websiteSetup } = useSelector((state) => state.websiteSetup);
+  const categoryList = websiteSetup && websiteSetup.payload.productCategories;
+  // const mageMenuList = websiteSetup && websiteSetup.payload.megaMenuCategories;
+  // const megaMenuBanner = websiteSetup && websiteSetup.payload.megaMenuBanner;
+  // const customPages = websiteSetup && websiteSetup.payload.customPages;
+  const [categoryToggle, setToggle] = useState(false);
+  const [subCatHeight, setHeight] = useState(null);
+  const handler = () => {
+    setToggle(!categoryToggle);
+  };
   useEffect(() => {
     if (getLoginContexts.loginPopup === false) {
       setAuth(() => JSON.parse(localStorage.getItem("auth")));
@@ -50,17 +62,217 @@ export default function Middlebar({ className, settings }) {
         <div className="relative h-full">
           <div className="flex justify-between items-center h-full">
             <div className="relative custom-logo">
-              <Link href="/" passHref>
-                  {settings && (
-                    <Image
-                      width="120"
-                      height="44"
-                      objectFit="scale-down"
-                      src={"/assets/images/logo-kutoot.png"}
-                      alt="logo"
+              <div className="category w-[270px] h-[53px] bg-white px-5 rounded mt-[6px] relative">
+                <button
+                  onClick={handler}
+                  type="button"
+                  className="w-full h-full flex justify-between items-center"
+                >
+                  <div className="flex rtl:space-x-reverse space-x-3 items-center">
+                    <span>
+                      <svg
+                        width="14"
+                        height="9"
+                        viewBox="0 0 14 9"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="14" height="1"  />
+                        <rect y="8" width="14" height="1"  />
+                        <rect y="4" width="10" height="1"  />
+                      </svg>
+                    </span>
+                    <span className="text-sm font-600 text-qblacktext">
+                      {ServeLangItem()?.All_Categories}
+                    </span>
+                  </div>
+                  <div>
+                    <Arrow
+                      width="5.78538"
+                      height="1.28564"
+                      className="fill-current text-qblacktext"
                     />
-                  )}
-              </Link>
+                  </div>
+                </button>
+                {categoryToggle && (
+                  <>
+                    <div
+                      className="fixed top-0 left-0 w-full h-full -z-10"
+                      onClick={handler}
+                    ></div>
+                  </>
+                )}
+                <div
+                  style={{
+                    boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
+                  }}
+                  className={`category-dropdown w-full absolute left-0 top-[53px]  ${
+                    categoryToggle ? "block" : "hidden"
+                  }`}
+                >
+                  <ul className="categories-list relative">
+                    {categoryList &&
+                      categoryList.map((item) => (
+                        <li key={item.id} className="category-item">
+                          <Link
+                            href={{
+                              pathname: "/products",
+                              query: { category: item.slug },
+                            }}
+                            passHref
+                          >
+                              <div className=" flex justify-between items-center px-5 h-10 transition-all duration-300 ease-in-out cursor-pointer">
+                                <div className="flex items-center rtl:space-x-reverse space-x-6">
+                                  <span>
+                                    <FontAwesomeCom
+                                      className="w-4 h-4"
+                                      icon={item.icon}
+                                    />
+                                  </span>
+                                  <span className="text-xs font-400">
+                                    {item.name}
+                                  </span>
+                                </div>
+                                <div>
+                                  <span>
+                                    <svg
+                                      className={`transform rtl:rotate-180 fill-current`}
+                                      width="6"
+                                      height="9"
+                                      viewBox="0 0 6 9"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <rect
+                                        x="1.49805"
+                                        y="0.818359"
+                                        width="5.78538"
+                                        height="1.28564"
+                                        transform="rotate(45 1.49805 0.818359)"
+
+                                      />
+                                      <rect
+                                        x="5.58984"
+                                        y="4.90918"
+                                        width="5.78538"
+                                        height="1.28564"
+                                        transform="rotate(135 5.58984 4.90918)"
+
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                          </Link>
+                          <div
+                            className={`sub-category-lvl-two absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
+                              item.active_sub_categories.length > 0
+                                ? "bg-white"
+                                : ""
+                            }`}
+                            style={{ height: `${subCatHeight}px` }}
+                          >
+                            <ul className="">
+                              {item.active_sub_categories.length > 0 &&
+                                item.active_sub_categories.map((subItem) => (
+                                  <li
+                                    key={subItem.id}
+                                    className="category-item"
+                                  >
+                                    <Link
+                                      href={{
+                                        pathname: "/products",
+                                        query: { sub_category: subItem.slug },
+                                      }}
+                                      passHref
+                                    >
+                                        <div className=" flex justify-between items-center px-5 h-10 transition-all duration-300 ease-in-out cursor-pointer">
+                                          <div>
+                                            <span className="text-xs font-400">
+                                              {subItem.name}
+                                            </span>
+                                          </div>
+                                          <div>
+                                            <span>
+                                              <svg
+                                                className={`transform rtl:rotate-180 fill-current`}
+                                                width="6"
+                                                height="9"
+                                                viewBox="0 0 6 9"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <rect
+                                                  x="1.49805"
+                                                  y="0.818359"
+                                                  width="5.78538"
+                                                  height="1.28564"
+                                                  transform="rotate(45 1.49805 0.818359)"
+
+                                                />
+                                                <rect
+                                                  x="5.58984"
+                                                  y="4.90918"
+                                                  width="5.78538"
+                                                  height="1.28564"
+                                                  transform="rotate(135 5.58984 4.90918)"
+
+                                                />
+                                              </svg>
+                                            </span>
+                                          </div>
+                                        </div>
+                                    </Link>
+                                    <div
+                                      className={`sub-category-lvl-three absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
+                                        subItem.active_child_categories.length >
+                                        0
+                                          ? "bg-white"
+                                          : ""
+                                      }`}
+                                      style={{ height: `${subCatHeight}px` }}
+                                    >
+                                      <ul className="">
+                                        {subItem.active_child_categories
+                                          .length > 0 &&
+                                          subItem.active_child_categories.map(
+                                            (subsubitem) => (
+                                              <li
+                                                key={subsubitem.id}
+                                                className="category-item"
+                                              >
+                                                <Link
+                                                  href={{
+                                                    pathname: "/products",
+                                                    query: {
+                                                      child_category:
+                                                        subsubitem.slug,
+                                                    },
+                                                  }}
+                                                  passHref
+                                                >
+                                                    <div className=" flex justify-between items-center px-5 h-10 transition-all duration-300 ease-in-out cursor-pointer">
+                                                      <div>
+                                                        <span className="text-xs font-400">
+                                                          {subsubitem.name}
+                                                        </span>
+                                                      </div>
+                                                    </div>
+                                                </Link>
+                                              </li>
+                                            )
+                                          )}
+                                      </ul>
+                                    </div>
+                                  </li>
+                                ))}
+                            </ul>
+                          </div>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="flex space-x-6 rtl:space-x-reverse items-center relative">
               <div className="w-[250px] h-[44px]">

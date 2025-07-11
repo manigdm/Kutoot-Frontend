@@ -18,11 +18,28 @@ function SubscribeInputWidget(props) {
   };
   return (
     <div
-      data-aos="fade-right"
-      className="sm:w-[543px] w-[300px] h-[54px] flex mt-8"
+      className="sm:w-[543px] w-[300px] h-[54px] flex"
     >
-      <div className="flex-1 bg-white ltr:pl-4 rtl:pr-4 flex rtl:space-x-reverse space-x-2 items-center h-full focus-within:text-qyellow text-qblack">
-        <span>
+      <div className="flex-1 bg-white ltr:pl-4 rtl:pr-4 flex rtl:space-x-reverse space-x-2 items-center h-full focus-within:text-qyellow text-qblack rounded">
+        <input
+          type="email"
+          name="email"
+          className="w-full h-full focus:outline-none text-sm placeholder:text-xs placeholder:text-qblack font-400 tracking-wider rounded"
+          placeholder="EMAIL ADDRESS"
+          onChange={(e) => setEmail(e.target.value.trim())}
+          value={email}
+        />
+        <button
+          onClick={subscribehandler}
+          type="button"
+
+          className="w-[200px] orange-btn text-sm font-600 rounded"
+          style={{ padding: "16px 8px" }}
+        >
+          {ServeLangItem()?.Get_the_Coupon}
+        </button>
+      </div>
+      {/* <span>
           <svg
             width="17"
             height="15"
@@ -45,24 +62,7 @@ function SubscribeInputWidget(props) {
               strokeLinejoin="round"
             />
           </svg>
-        </span>
-        <input
-          type="email"
-          name="email"
-          className="w-full h-full focus:outline-none text-sm placeholder:text-xs placeholder:text-qblack text-qblack font-400 tracking-wider"
-          placeholder="EMAIL ADDRESS"
-          onChange={(e) => setEmail(e.target.value.trim())}
-          value={email}
-        />
-      </div>
-      <button
-        onClick={subscribehandler}
-        type="button"
-
-        className="sm:w-[158px] w-[80px]  h-full bg-qyellow text-sm font-600"
-      >
-        {ServeLangItem()?.Get_the_Coupon}
-      </button>
+      </span> */}
     </div>
   );
 }

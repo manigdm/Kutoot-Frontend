@@ -16,12 +16,12 @@ export default function Header({ topBarProps,drawerAction, settings, contact }) 
 
   return (
     <header className="header-section-wrapper relative print:hidden">
-      <TopBar topBarProps={topBarProps} contact={contact && contact} className="quomodo-shop-top-bar" />
-      <Middlebar
+      <TopBar topBarProps={topBarProps} contact={contact && contact} className="quomodo-shop-top-bar bg-block" />
+      {/* <Middlebar
         settings={settings && settings}
         className="quomodo-shop-middle-bar lg:block hidden"
-      />
-      <div className="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-white">
+      /> */}
+      <div className="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-block">
         <div className="w-full h-full flex justify-between items-center px-5">
           <div onClick={drawerAction}>
             <svg

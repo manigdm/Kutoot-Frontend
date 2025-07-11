@@ -1,38 +1,76 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useSelector, useDispatch } from "react-redux";
 import Arrow from "../../../Helpers/icons/Arrow";
 import FontAwesomeCom from "../../../Helpers/icons/FontAwesomeCom";
 import Multivendor from "../../../Shared/Multivendor";
 import ServeLangItem from "../../../Helpers/ServeLangItem";
+import ThinBag from "../../../Helpers/icons/ThinBag";
+import ThinLove from "../../../Helpers/icons/ThinLove";
+import ThinPeople from "../../../Helpers/icons/ThinPeople";
+import SearchBox from "../../../Helpers/SearchBox";
+import LoginContext from "../../../Contexts/LoginContext";
+import Cart from "../../../Cart";
 export default function Navbar({ className }) {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const [profile, setProfile] = useState(false);
+  const [auth, setAuth] = useState(null);
   const { websiteSetup } = useSelector((state) => state.websiteSetup);
   const categoryList = websiteSetup && websiteSetup.payload.productCategories;
-  const mageMenuList = websiteSetup && websiteSetup.payload.megaMenuCategories;
-  const megaMenuBanner = websiteSetup && websiteSetup.payload.megaMenuBanner;
-  const customPages = websiteSetup && websiteSetup.payload.customPages;
+  // const mageMenuList = websiteSetup && websiteSetup.payload.megaMenuCategories;
+  // const megaMenuBanner = websiteSetup && websiteSetup.payload.megaMenuBanner;
+  // const customPages = websiteSetup && websiteSetup.payload.customPages;
   const [categoryToggle, setToggle] = useState(false);
   const [subCatHeight, setHeight] = useState(null);
+  const { wishlistData } = useSelector((state) => state.wishlistData);
+  const wishlists = wishlistData && wishlistData.wishlists;
+  const getLoginContexts = useContext(LoginContext);
   const handler = () => {
     setToggle(!categoryToggle);
   };
 
   useEffect(() => {
+      if (getLoginContexts.loginPopup === false) {
+        setAuth(() => JSON.parse(localStorage.getItem("auth")));
+      }
+    }, [getLoginContexts.loginPopup]);
+    const profilehandler = () => {
+      setProfile(!profile);
+    };
+    const logout = () => {
+      if (auth) {
+        apiRequest.logout(auth.access_token);
+        localStorage.removeItem("auth");
+        dispatch(fetchWishlist());
+        router.push("/login");
+      }
+    };
+
+  useEffect(() => {
     let categorySelector = document.querySelector(".category-dropdown");
     setHeight(categorySelector.offsetHeight);
   }, [categoryToggle]);
+
+  //cart
+  const { cart } = useSelector((state) => state.cart);
+  const [cartItems, setCartItem] = useState(null);
+  useEffect(() => {
+    cart && setCartItem(cart.cartProducts);
+  }, [cart]);
   return (
     <div
-      className={`nav-widget-wrapper w-full  h-[60px] relative z-30  ${
+      className={`nav-widget-wrapper w-full relative z-30  ${
         className || ""
       }`}
     >
       <div className="container-x mx-auto h-full">
-        <div className="w-full h-full relative">
-          <div className="w-full h-full flex justify-between items-center">
-            <div className="category-and-nav flex xl:rtl:space-x-reverse space-x-7 rtl:space-x-reverse space-x-3 items-center">
-              <div className="category w-[270px] h-[53px] bg-white px-5 rounded-t-md mt-[6px] relative">
+        <div className="relative h-full">
+          <div className="flex justify-between items-center h-full">
+            <div className="relative custom-logo">
+              <div className="category w-[270px] h-[53px] bg-white px-5 rounded mt-[6px] relative">
                 <button
                   onClick={handler}
                   type="button"
@@ -243,8 +281,132 @@ export default function Navbar({ className }) {
                   </ul>
                 </div>
               </div>
-              <div className="nav">
-                <ul className="nav-wrapper flex xl:space-x-10 rtl:space-x-reverse space-x-5">
+            </div>
+            <div className="flex space-x-6 rtl:space-x-reverse items-center relative">
+              <div className="w-[400px] h-[44px]">
+                <SearchBox className="search-com" />
+              </div>
+              {/* <div className="compaire relative">
+                {auth ? (
+                  <Link href="/products-compaire" passHref>
+                      <span className="cursor-pointer">
+                        <Compair className="fill-current" />
+                      </span>
+                  </Link>
+                ) : (
+                  <Link href="/login" passHref>
+                      <span className="cursor-pointer">
+                        <Compair className="fill-current" />
+                      </span>
+                  </Link>
+                )}
+
+                <span className="w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
+                  {compareProducts ? compareProducts.products.length : 0}
+                </span>
+              </div> */}
+              <div className="favorite relative">
+                <Link href="/wishlist" passHref>
+                    <span className="cursor-pointer">
+                      <ThinLove className="fill-current txt-white" />
+                    </span>
+                </Link>
+                <span className="w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] txt-white">
+                  {wishlists?.total || 0}
+                </span>
+              </div>
+              <div className="cart-wrapper group relative py-4">
+                <div className="cart relative cursor-pointer">
+                  <Link href="/cart" passHref>
+                      <span className="cursor-pointer">
+                        {/* <ThinBag className="fill-current txt-white" /> */}
+                        <ThinBag className="fill-current txt-white"/>
+                      </span>
+                  </Link>
+                  <span className="w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] txt-white">
+                    {cartItems ? cartItems.length : 0}
+                  </span>
+                </div>
+
+                <Cart className="absolute ltr:-right-[45px] rtl:-left-[45px] top-11 z-50 hidden group-hover:block" />
+              </div>
+              <div>
+                {auth ? (
+                  <button onClick={profilehandler} type="button">
+                    <span className="text-qblack font-bold text-sm txt-white">
+                      {auth && auth?.user?.name}
+                    </span>
+                    <span className="text-qgray font-medium text-sm txt-white">
+                      {auth && auth?.user?.phone}
+                    </span>
+                  </button>
+                ) : (
+                  <Link href="/login" passHref>
+                      <span className="cursor-pointer">
+                        <ThinPeople />
+                      </span>
+                  </Link>
+                )}
+              </div>
+
+              {profile && (
+                <>
+                  <div
+                    onClick={() => setProfile(false)}
+                    className="w-full h-full fixed top-0 left-0 z-30"
+                    style={{ zIndex: "35", margin: "0" }}
+                  ></div>
+                  <div
+                    className="w-[208px] h-[267px] bg-white absolute right-0 top-11 z-40 border-t-[3px] primary-border flex flex-col justify-between"
+                    style={{
+                      boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
+                    }}
+                  >
+                    <div className="menu-item-area w-full  p-5">
+                      <ul className="w-full  flex flex-col space-y-7">
+                        <li className="text-base text-qgraytwo">
+                          <span>
+                            {ServeLangItem()?.Hi}, {auth && auth?.user?.name}{" "}
+                          </span>
+                        </li>
+                        <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
+                          <Link href="/profile#dashboard" passHref>
+                              <span className="capitalize">
+                                {ServeLangItem()?.profile}
+                              </span>
+                          </Link>
+                        </li>
+                        <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
+                          <Link href="/contact" passHref>
+                              <span className="capitalize">
+                                {ServeLangItem()?.Support}
+                              </span>
+                          </Link>
+                        </li>
+                        <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
+                          <Link href="/faq" passHref>
+                              <span className="capitalize">
+                                {ServeLangItem()?.FAQ}
+                              </span>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="w-full h-10 flex justify-center items-center border-t border-qgray-border">
+                      <button
+                        onClick={logout}
+                        type="button"
+                        className="text-qblack text-base font-semibold"
+                      >
+                        {ServeLangItem()?.Sign_Out}
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+            {/* <div className="flex space-x-6 rtl:space-x-reverse items-center relative">
+              <ul className="nav-wrapper flex xl:space-x-10 rtl:space-x-reverse space-x-5">
                   <li>
                     <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                       <span>{ServeLangItem()?.Shop}</span>
@@ -376,14 +538,14 @@ export default function Navbar({ className }) {
                     </div>
                   </li>
 
-                  {/* <li>
+                  <li>
                     <Link href="/sellers" passHref>
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span>{ServeLangItem()?.Sellers}</span>
                         </span>
                     </Link>
-                  </li> */}
-                  {/* <li>
+                  </li>
+                  <li>
                     <Link href="/blogs" passHref>
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                           <span className="capitalize">
@@ -391,7 +553,7 @@ export default function Navbar({ className }) {
                           </span>
                         </span>
                     </Link>
-                  </li> */}
+                  </li>
                   <li>
                     <Link href="/about" passHref>
                         <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
@@ -407,12 +569,12 @@ export default function Navbar({ className }) {
                     </Link>
                   </li>
                   <li className="relative">
-                    {/* <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
+                    <span className="flex items-center text-sm font-600 cursor-pointer text-white ">
                       <span>{ServeLangItem()?.Pages}</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>
-                    </span> */}
+                    </span>
                     <div className="sub-menu w-[220px] absolute left-0 top-[60px]">
                       <div
                         className="w-full bg-white flex justify-between items-center "
@@ -476,20 +638,20 @@ export default function Navbar({ className }) {
                                       </li>
                                     </React.Fragment>
                                   ))}
-                                {/*<li>*/}
-                                {/*  <Link href="#">*/}
-                                {/*    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">*/}
-                                {/*      Shop Category Icon*/}
-                                {/*    </span>*/}
-                                {/*  </Link>*/}
-                                {/*</li>*/}
-                                {/*<li>*/}
-                                {/*  <Link href="#">*/}
-                                {/*    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">*/}
-                                {/*      Shop List View*/}
-                                {/*    </span>*/}
-                                {/*  </Link>*/}
-                                {/*</li>*/}
+                                <li>
+                                <Link href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
+                                    Shop Category Icon
+                                  </span>
+                                </Link>
+                                </li>
+                                <li>
+                                <Link href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow cursor-pointer">
+                                    Shop List View
+                                  </span>
+                                </Link>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -498,9 +660,8 @@ export default function Navbar({ className }) {
                     </div>
                   </li>
                 </ul>
-              </div>
-            </div>
-            {Multivendor() === 1 && (
+            </div> */}
+            {/* {Multivendor() === 1 && (
               <div className="become-seller-btn rounded-lg">
                 <Link href="/become-seller" passHref>
                     <div className=" w-[161px] h-[40px] flex justify-center items-center cursor-pointer">
@@ -536,7 +697,7 @@ export default function Navbar({ className }) {
                     </div>
                 </Link>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

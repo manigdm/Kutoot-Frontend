@@ -69,10 +69,40 @@ export default function Footer({ settings }) {
         </div>
         <div className="lg:flex justify-between mb-[50px]">
           <div className="lg:w-[424px]  ml-0 w-full mb-10 lg:mb-0">
-            <h1 className="text-[18] font-500 text-white mb-5">About Us</h1>
-            <p className="text-white text-[15px] w-[247px] leading-[28px]">
+            <h1 className="text-[18] font-500 text-white mb-5">
+              <Link href="/" passHref>
+                  <Image
+                    width="120"
+                    height="44"
+                    objectFit="scale-down"
+                    src={"/assets/images/logo-kutoot.png"}
+                    alt="logo"
+                  />
+              </Link>
+              </h1>
+              <div className="flex rtl:space-x-reverse space-x-5 items-center mb-3">
+                <Link href="/" passHref>
+                    <Image
+                      width="120"
+                      height="44"
+                      objectFit="scale-down"
+                      src={"/assets/images/apple-store.png"}
+                      alt="logo"
+                    />
+                </Link>
+                <Link href="/" passHref>
+                    <Image
+                      width="120"
+                      height="44"
+                      objectFit="scale-down"
+                      src={"/assets/images/android-store.png"}
+                      alt="logo"
+                    />
+                </Link>
+              </div>
+            {/* <p className="text-white text-[15px] w-[247px] leading-[28px]">
               {footerContent && footerContent.about_us}
-            </p>
+            </p> */}
             {/*<p className="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">*/}
             {/*  {footerContent && footerContent.email ? footerContent.email : ""}*/}
             {/*</p>*/}
@@ -85,14 +115,14 @@ export default function Footer({ settings }) {
             {/*  <ul className="flex flex-col space-y-4 ">*/}
             {/*    <li>*/}
             {/*      <Link href="/tracking-order">*/}
-            {/*        <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">*/}
+            {/*        <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">*/}
             {/*          Track Order*/}
             {/*        </span>*/}
             {/*      </Link>*/}
             {/*    </li>*/}
             {/*    <li>*/}
             {/*      <Link href="/faq">*/}
-            {/*        <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">*/}
+            {/*        <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">*/}
             {/*          Support*/}
             {/*        </span>*/}
             {/*      </Link>*/}
@@ -116,7 +146,7 @@ export default function Footer({ settings }) {
                         firstCol.col_links.map((item, i) => (
                           <li key={i}>
                             <Link href={item.link} passHref>
-                                <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                <span className="text-white text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                   {item.title}
                                 </span>
                             </Link>
@@ -142,7 +172,7 @@ export default function Footer({ settings }) {
                           secondCol.col_links.map((item, i) => (
                             <li key={i}>
                               <Link href={item.link} passHref>
-                                  <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                  <span className="text-white text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                     {item.title}
                                   </span>
                               </Link>
@@ -169,13 +199,28 @@ export default function Footer({ settings }) {
                           thirdCol.col_links.map((item, i) => (
                             <li key={i}>
                               <Link href={item.link} passHref>
-                                  <span className="text-white text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                  <span className="text-white text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">
                                     {item.title}
                                   </span>
                               </Link>
                             </li>
                           ))}
                       </ul>
+                    </div>
+                    <div className="flex rtl:space-x-reverse space-x-2 items-center mt-5">
+                      { socialLink &&
+                        socialLink.length > 0 &&
+                        socialLink.map((item, i) => (
+                          <a key={i} href={item.link} target="_blank" rel="noreferrer">
+                            <Image
+                              className="text-[#9A9A9A]"
+                              src={item.icon }
+                              alt={item.title}
+                              width="40"
+                              height="40"
+                            />
+                          </a>
+                        ))}
                     </div>
                   </>
                 )}
@@ -187,8 +232,8 @@ export default function Footer({ settings }) {
           className="bottom-bar border-t border-qgray-border lg:h-[82px] flex lg:flex-row flex-col-reverse
          justify-between items-center"
         >
-          <div className="flex rtl:space-x-reverse lg:space-x-5 space-x-2.5 justify-between items-center mb-3">
-            <div className="flex rtl:space-x-reverse space-x-5 items-center">
+          <div className="w-full flex justify-center items-center mb-3">
+            {/* <div className="flex rtl:space-x-reverse space-x-5 items-center">
               {socialLink &&
                 socialLink.length > 0 &&
                 socialLink.map((item, i) => (
@@ -199,8 +244,8 @@ export default function Footer({ settings }) {
                     />
                   </a>
                 ))}
-            </div>
-            <span className="sm:text-base text-[10px] text-white font-300">
+            </div> */}
+            <span className="sm:text-base text-[10px] text-white text-center font-300">
               {footerContent && footerContent.copyright
                 ? footerContent.copyright
                 : ""}
