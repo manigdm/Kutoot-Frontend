@@ -12,14 +12,14 @@ export default function ViewMoreTitle({
       <div className="container-x mx-auto">
         <div className=" section-title flex justify-between items-center mb-5">
           <div>
-            <h1 className="sm:text-3xl text-xl font-600 text-white leading-none">
+            <h1 className="sm:text-3xl text-xl font-600 txt-block leading-none">
               {categoryTitle}
             </h1>
           </div>
           <div className="view-more-btn">
             <Link href={seeMoreUrl} passHref>
                 <div className="flex space-x-2 text-white items-center cursor-pointer">
-                  <p className="text-base font-600 ">
+                  <p className="text-base font-600 orange-btn" style={{padding: "8px 32px"}}>
                     {ServeLangItem()?.View_More}
                   </p>
                   <span className="animate-right-dir">

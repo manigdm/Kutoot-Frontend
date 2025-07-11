@@ -37,9 +37,9 @@ function CategorySection({
                                             passhref
                                         >
                                                 <div
-                                                    className="w-full h-[120px] relative rounded bg-white flex justify-center items-center">
+                                                    className="w-full h-[120px] w-[120px] relative bg-white flex justify-center items-center" style={{background: "#80808024", borderRadius: "15px"}}>
                                                     <div
-                                                        className="w-full h-full relative transform scale-100 group-hover:scale-110 transition duration-300 ease-in-out">
+                                                        className="w-full h-full relative transform scale-70 group-hover:scale-80 transition duration-300 ease-in-out" style={{margin: "10px"}}>
                                                         <Image
                                                             layout="fill"
                                                             objectFit="scale-down"
@@ -50,7 +50,7 @@ function CategorySection({
                                                         />
                                                     </div>
                                                 </div>
-                                                <p className="text-base text-white text-center mt-5 group-hover:text-qgreen transition duration-300 ease-in-out">
+                                                <p className="text-base txt-block text-center mt-5 group-hover:text-qgreen transition duration-300 ease-in-out">
                                                     {item.name}
                                                 </p>
                                         </Link>

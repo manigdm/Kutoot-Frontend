@@ -235,11 +235,11 @@ export default function ProductCardRowStyleOne({ className, datas }) {
     <div className="main-wrapper-card relative">
       <div
         data-aos="fade-left"
-        className={`product-row-card-style-one  w-full lg:h-[250px] h-[200px] bg-white group relative overflow-hidden ${
+        className={`product-row-card-style-one  w-full lg:h-[250px] h-[200px] bg-white group relative shadow-custom rounded-lg overflow-hidden ${
           className || ""
         }`}
       >
-        <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
+        <div className="flex space-x-5 items-center w-full h-full lg:p-[15px] sm:p-5 p-2">
           <div className="lg:w-1/2 w-1/3 h-full relative transform scale-100 group-hover:scale-110 transition duration-300 ease-in-ou">
             <Image
               layout="fill"
@@ -252,7 +252,55 @@ export default function ProductCardRowStyleOne({ className, datas }) {
           <div className="flex-1 flex flex-col justify-center h-full">
             <div>
               {/* reviews */}
-              <div className="flex space-x-1 mb-3">
+              <Link
+                href={{
+                  pathname: "/single-product",
+                  query: { slug: datas.slug },
+                }}
+                passHref
+              >
+                  <p className="title sm:text-[14px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600 cursor-pointer">
+                    {datas.title}
+                  </p>
+              </Link>
+              <p className="price mb-[5px]">
+                <span
+                  suppressHydrationWarning
+                  className={`main-price  font-600 text-[14px] ${
+                    offerPrice ? "line-through text-qgray" : "text-qred"
+                  }`}
+                >
+                  {offerPrice ? (
+                    <span> <CurrencyConvert price={price}/></span>
+                  ) : (
+                    <>
+                      {isProductInFlashSale && (
+                        <span
+                          className={`line-through text-qgray font-500 text-[14px] mr-2`}
+                        >
+                           <CurrencyConvert price={price}/>
+                        </span>
+                      )}
+                      <CheckProductIsExistsInFlashSale
+                        id={datas.id}
+                        price={price}
+                      />
+                    </>
+                  )}
+                </span>
+                {offerPrice && (
+                  <span
+                    suppressHydrationWarning
+                    className="offer-price text-qblack font-600 text-[14px] ml-2"
+                  >
+                    <CheckProductIsExistsInFlashSale
+                      id={datas.id}
+                      price={offerPrice}
+                    />
+                  </span>
+                )}
+              </p>
+              <div className="flex space-x-1 mb-6">
                 {Array.from(Array(datas.review), () => (
                   <span key={datas.review + Math.random()}>
                     <Star />
@@ -271,60 +319,12 @@ export default function ProductCardRowStyleOne({ className, datas }) {
                   </>
                 )}
               </div>
-              <Link
-                href={{
-                  pathname: "/single-product",
-                  query: { slug: datas.slug },
-                }}
-                passHref
-              >
-                  <p className="title mb-2 sm:text-[14px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600 cursor-pointer">
-                    {datas.title}
-                  </p>
-              </Link>
-              <p className="price mb-[26px]">
-                <span
-                  suppressHydrationWarning
-                  className={`main-price  font-600 text-[18px] ${
-                    offerPrice ? "line-through text-qgray" : "text-qred"
-                  }`}
-                >
-                  {offerPrice ? (
-                    <span> <CurrencyConvert price={price}/></span>
-                  ) : (
-                    <>
-                      {isProductInFlashSale && (
-                        <span
-                          className={`line-through text-qgray font-500 text-[16px] mr-2`}
-                        >
-                           <CurrencyConvert price={price}/>
-                        </span>
-                      )}
-                      <CheckProductIsExistsInFlashSale
-                        id={datas.id}
-                        price={price}
-                      />
-                    </>
-                  )}
-                </span>
-                {offerPrice && (
-                  <span
-                    suppressHydrationWarning
-                    className="offer-price text-qred font-600 text-[18px] ml-2"
-                  >
-                    <CheckProductIsExistsInFlashSale
-                      id={datas.id}
-                      price={offerPrice}
-                    />
-                  </span>
-                )}
-              </p>
               <button
                 onClick={() => addToCart(datas.id)}
                 type="button"
-                className="w-[110px] h-[30px]"
+                className=""
               >
-                <span className="yellow-btn">
+                <span className="orange-btn" style={{padding: "10px"}}>
                   {ServeLangItem()?.Add_To_Cart}
                 </span>
               </button>
@@ -338,7 +338,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
             type="button"
             onClick={() => quickViewHandler(datas.slug)}
           >
-            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-white items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded">
+            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-black items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded" style={{ background: "#848383", padding: "10px" }}>
               <QuickViewIco className="fill-current" />
             </span>
           </button>
@@ -348,7 +348,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
               type="button"
               onClick={() => addToWishlist(datas.id)}
             >
-              <span className="hover:bg-qyellow w-10 h-10 flex text-black hover:text-white justify-center items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded">
+              <span className="hover:bg-qyellow w-10 h-10 flex text-black hover:text-blackjustify-center items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded" style={{ background: "#848383", padding: "10px" }}>
                 <ThinLove className="fill-current" />
               </span>
             </button>
@@ -369,7 +369,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
             onClick={() => productCompare(datas.id)}
           >
 
-            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-white transition-all duration-300 ease-in-out items-center hover-bg-qyellow bg-primarygray rounded">
+            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-blacktransition-all duration-300 ease-in-out items-center hover-bg-qyellow bg-primarygray rounded">
               <Compair className="fill-current" />
             </span>
           </button> */}

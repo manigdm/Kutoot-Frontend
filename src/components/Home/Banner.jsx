@@ -66,7 +66,7 @@ export default function Banner({
                                   {item.title_two}
                                 </h1>
                               </div>
-                              <div className="w-[90px]">
+                              <div className="w-[150px] orange-btn rounded text-center">
                                 <Link
                                   href={{
                                     pathname: "/single-product",
@@ -115,7 +115,7 @@ export default function Banner({
                             </h1>
                           </div>
                         </div>
-                        <div className="w-[90px]">
+                        <div className="w-[150px] rounded text-center orange-btn">
                           <Link
                               href={{
                                 pathname: "/products",
@@ -123,41 +123,7 @@ export default function Banner({
                               }}
                               passHref
                           >
-                              <div className="cursor-pointer w-full relative  ">
-                                <div className="inline-flex rtl:space-x-reverse  space-x-1.5 items-center relative z-20">
-                              <span className="text-sm text-black font-medium leading-[30px]">
-                                {ServeLangItem()?.Shop_Now}
-                              </span>
-                                  <span className="leading-[30px]">
-                                <svg
-                                    className={`transform rtl:rotate-180`}
-                                    width="7"
-                                    height="11"
-                                    viewBox="0 0 7 11"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <rect
-                                      x="2.08984"
-                                      y="0.636719"
-                                      width="6.94219"
-                                      height="1.54271"
-                                      transform="rotate(45 2.08984 0.636719)"
-                                      fill="#1D1D1D"
-                                  />
-                                  <rect
-                                      x="7"
-                                      y="5.54492"
-                                      width="6.94219"
-                                      height="1.54271"
-                                      transform="rotate(135 7 5.54492)"
-                                      fill="#1D1D1D"
-                                  />
-                                </svg>
-                              </span>
-                                </div>
-                                <div className="w-[82px] transition-all duration-300 ease-in-out group-hover:h-4 h-[0px] bg-qyellow absolute left-0 rtl:right-0 bottom-0 z-10"></div>
-                              </div>
+                              <ShopNowBtn />
                           </Link>
                         </div>
                       </div>
@@ -191,7 +157,7 @@ export default function Banner({
                             </h1>
                           </div>
                         </div>
-                        <div className="w-[90px]">
+                        <div>
                           <Link
                               href={{
                                 pathname: "/products",
@@ -200,8 +166,8 @@ export default function Banner({
                               passHref
                           >
                               <div className="cursor-pointer w-full relative  ">
-                                <div className="inline-flex rtl:space-x-reverse  space-x-1.5 items-center relative z-20">
-                              <span className="text-sm text-black font-medium leading-[30px]">
+                                <div className="inline-flex rtl:space-x-reverse  space-x-1.5 items-center relative z-20 orange-btn" style={{padding: "5px 20px"}}>
+                              <span className="text-sm text-white font-medium leading-[30px]">
                                 {ServeLangItem()?.Shop_Now}
                               </span>
                                   <span className="leading-[30px]">
@@ -219,7 +185,7 @@ export default function Banner({
                                       width="6.94219"
                                       height="1.54271"
                                       transform="rotate(45 2.08984 0.636719)"
-                                      fill="#1D1D1D"
+                                      fill="#fff"
                                   />
                                   <rect
                                       x="7"
@@ -227,7 +193,7 @@ export default function Banner({
                                       width="6.94219"
                                       height="1.54271"
                                       transform="rotate(135 7 5.54492)"
-                                      fill="#1D1D1D"
+                                      fill="#fff"
                                   />
                                 </svg>
                               </span>
@@ -244,7 +210,7 @@ export default function Banner({
             </div>
             <div
               data-aos="fade-up"
-              className="best-services w-full bg-white flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10"
+              className="best-services w-full bg-white flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10" style={{border: "1px solid rgb(166, 161, 161)", borderRadius: "8px"}}
             >
               {services.map((service) => (
                 <div key={service.id} className="item">

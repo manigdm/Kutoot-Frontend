@@ -63,14 +63,14 @@ export default function Footer({ settings }) {
               <ul className="flex flex-col space-y-5 ">
                 <li>
                   <Link href="/tracking-order">
-                    <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer">
+                    <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer">
                       Track Order
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link href="/faq">
-                    <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer">
+                    <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer">
                       Support
                     </span>
                   </Link>
@@ -92,7 +92,7 @@ export default function Footer({ settings }) {
                       firstCol.col_links.map((item, i) => (
                         <li key={i}>
                           <Link href={item.link}>
-                            <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer">
+                            <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer">
                               {item.title}
                             </span>
                           </Link>
@@ -117,7 +117,7 @@ export default function Footer({ settings }) {
                       secondCol.col_links.map((item, i) => (
                         <li key={i}>
                           <Link href={item.link}>
-                            <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer">
+                            <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer">
                               {item.title}
                             </span>
                           </Link>
@@ -142,7 +142,7 @@ export default function Footer({ settings }) {
                       thirdCol.col_links.map((item, i) => (
                         <li key={i}>
                           <Link href={item.link}>
-                            <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer">
+                            <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer">
                               {item.title}
                             </span>
                           </Link>
@@ -158,13 +158,13 @@ export default function Footer({ settings }) {
           <div className="flex lg:space-x-5 justify-between items-center mb-3">
             <div className="flex space-x-5 items-center">
               <a href="#">
-                <Instagram className="fill-current text-qgray hover:text-qblack" />
+                <Instagram className="fill-current text-qgray hover:text-white" />
               </a>
               <a href="#">
-                <Facebook className="fill-current text-qgray hover:text-qblack" />
+                <Facebook className="fill-current text-qgray hover:text-white" />
               </a>
               <a href="#">
-                <Youtube className="fill-current text-qgray hover:text-qblack" />
+                <Youtube className="fill-current text-qgray hover:text-white" />
               </a>
             </div>
             <span className="sm:text-base text-[10px] text-qgray font-300">
@@ -173,7 +173,7 @@ export default function Footer({ settings }) {
                 href="https://quomodosoft.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="font-500 text-qblack mx-1"
+                className="font-500 text-white mx-1"
               >
                 Quomodosoft
               </Link>

@@ -19,10 +19,8 @@ export default function CategoryCard({
     <div
       className="category-card-wrappwer w-full h-full p-[30px]"
       style={{
-        background: `url(${
-          background || `/assets/images/section-category-1.jpg`
-        }) no-repeat`,
-        backgroundSize: "cover",
+        border: "1px solid #a6a1a1",
+        borderRadius: "8px",
       }}
     >
       <div>
@@ -42,7 +40,7 @@ export default function CategoryCard({
           </ul>
         </div>
         <Link href={`${moreUrl}`}>
-          <div className="flex space-x-2 rtl:space-x-reverse items-center cursor-pointer">
+          <div className="flex justify-center items-center space-x-2 rtl:space-x-reverse cursor-pointer orange-btn">
             <span className="text-qblack font-600 text-sm">
               {ServeLangItem()?.Shop_Now}
             </span>
@@ -52,7 +50,7 @@ export default function CategoryCard({
                 width="7"
                 height="11"
                 viewBox="0 0 7 11"
-                fill="none"
+                fill="#fff"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <rect
@@ -61,7 +59,7 @@ export default function CategoryCard({
                   width="6.94219"
                   height="1.54271"
                   transform="rotate(45 2.08984 0.636719)"
-                  fill="#1D1D1D"
+                  fill="#fff"
                 />
                 <rect
                   x="7"
@@ -69,7 +67,7 @@ export default function CategoryCard({
                   width="6.94219"
                   height="1.54271"
                   transform="rotate(135 7 5.54492)"
-                  fill="#1D1D1D"
+                  fill="#fff"
                 />
               </svg>
             </span>

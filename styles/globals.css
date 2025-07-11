@@ -70,12 +70,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
-  background-image: linear-gradient(360deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 30%);
+  /* background-image: linear-gradient(360deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 30%);
   background-image: -moz-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
   background-image: -webkit-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
   background-image: -ms-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
-  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35); */
+  background: #fff;
 }
 .font-100 {
   font-weight: 100;
@@ -441,14 +441,6 @@ body {
   @apply  text-qblacktext
 
 }
-.quomodo-shop-nav-bar.nav-widget-wrapper {
-  /* background: #e3a848; */
-  background-image: linear-gradient(110deg, #675c9c 0%, #7c3e92 100%);
-  background-image: -moz-linear-gradient( 7deg, #675c9c 0%, #7c3e92 100%);
-  background-image: -webkit-linear-gradient( 7deg, #675c9c 0%, #7c3e92 100%);
-  background-image: -ms-linear-gradient( 7deg, #675c9c 0%, #7c3e92 100%);
-  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
-}
 .nav-widget-wrapper .become-seller-btn{
   @apply text-white bg-qblack;
 }
@@ -693,10 +685,6 @@ li {
   padding: 5px !important;
 }
 
-.footer-section-wrapper {
-  background-color: #7b4092;
-}
-
 .gradient-bg {
   background-image: linear-gradient(360deg, rgb(232, 42, 122) 0%, rgb(54, 3, 84) 100%);
   background-image: -moz-linear-gradient(7deg, rgb(236, 19, 121) 0%, rgb(108, 0, 146) 100%);
@@ -708,4 +696,78 @@ li {
 .bg-qblack{
   background-color: #222222;
   color: #ffffff;
+}
+
+.bg-block, .footer-section-wrapper{
+  background-color: #39322C;
+}
+.quomodo-shop-top-bar, .quomodo-shop-nav-bar{
+  padding: 10px;
+}
+
+.orange-btn{
+  background: #DA7636;
+  color: #fff;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.quomodo-shop-nav-bar.nav-widget-wrapper {
+  @apply bg-block;
+}
+
+.txt-block{
+  color: #39322C;
+}
+
+.qgray-border{
+  border-color: #595354;
+}
+.rounded{
+  border-radius: 30px;
+}
+.txt-white{
+  color: #ffffff;
+}
+
+.fill-current path{
+  fill: #ffffff;
+}
+
+.subscribtion-banner{
+  background-color: #39322C;
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 28px 20px;
+  margin-bottom: 50px;
+}
+
+.shadow-custom {
+  --tw-shadow: 0 10px 15px 16px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px 16px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.product-card-btn{
+  width: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.product-title{
+  width: 236px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  margin: 0 5px 0px 0px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

@@ -149,7 +149,7 @@ export default function ProductCardRowStyleTwo({ className, datas }) {
       data-aos="fade-up"
       className={`product-card-row-two w-full  ${className || ""}`}
     >
-      <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
+      <div className="w-full h-[105px] bg-white border-primarygray px-5 " style={{ border: "1px solid rgb(166, 161, 161)", borderRadius: "8px", marginBottom: "2px" }}>
         <div className="w-full h-full flex space-x-5 justify-center items-center">
           <div className="w-[75px] h-full relative">
             <Image
@@ -176,8 +176,8 @@ export default function ProductCardRowStyleTwo({ className, datas }) {
             <p className="price">
               <span
                 suppressHydrationWarning
-                className={`main-price  font-600 text-[18px] ${
-                  offerPrice ? "line-through text-qgray" : "text-qred"
+                className={`main-price  font-600 text-[14px] ${
+                  offerPrice ? "line-through text-qgray" : "text-qblack"
                 }`}
               >
                 {offerPrice ? (
@@ -199,7 +199,7 @@ export default function ProductCardRowStyleTwo({ className, datas }) {
               {offerPrice && (
                 <span
                   suppressHydrationWarning
-                  className="offer-price text-qred font-600 text-[18px] ml-2"
+                  className="offer-price text-qblack font-600 text-[14px] ml-2"
                 >
                   <CheckProductIsExistsInFlashSale
                     id={datas.id}
