@@ -357,42 +357,81 @@ export default function Navbar({ className }) {
                     style={{ zIndex: "35", margin: "0" }}
                   ></div>
                   <div
-                    className="w-[208px] h-[267px] bg-white absolute right-0 top-11 z-40 border-t-[3px] primary-border flex flex-col justify-between"
+                    className="w-[208px] h-[167px] bg-white absolute right-0 top-11 z-40 rounded-lg primary-border flex flex-col justify-between"
                     style={{
                       boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
                     }}
                   >
                     <div className="menu-item-area w-full  p-5">
                       <ul className="w-full  flex flex-col space-y-7">
-                        <li className="text-base text-qgraytwo">
+                        <li className="text-base text-qgraythree flex items-center space-x-2">
+                          {/* <span>
+                            <svg
+                              width="20"
+                              height="20"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              className="text-qgraythree"
+                            >
+                              <circle cx="10" cy="7" r="4" />
+                              <path d="M2 18c0-3.314 3.134-6 7-6s7 2.686 7 6" />
+                            </svg>
+                          </span> */}
                           <span>
                             {ServeLangItem()?.Hi}, {auth && auth?.user?.name}{" "}
                           </span>
                         </li>
-                        <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
-                          <Link href="/profile#dashboard" passHref>
-                              <span className="capitalize">
-                                {ServeLangItem()?.profile}
-                              </span>
-                          </Link>
+                        <li className="text-base text-qgraytwo flex items-center space-x-2">
+                          <Link href="/profile" passHref>
+                            <button
+                                type="button"
+                                className="text-qblack text-base font-semibold flex items-center space-x-2"
+                              >
+                                {/* Logout Icon */}
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                  className="text-qgraythree"
+                                >
+                                  <circle cx="10" cy="7" r="4" />
+                                  <path d="M2 18c0-3.314 3.134-6 7-6s7 2.686 7 6" />
+                                </svg>
+                                <span>{ServeLangItem()?.profile}</span>
+                              </button>
+                            </Link>
                         </li>
-                        <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
+                        {/* <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
                           <Link href="/contact" passHref>
                               <span className="capitalize">
                                 {ServeLangItem()?.Support}
                               </span>
                           </Link>
-                        </li>
+                        </li> */}
                         <li className="text-base text-qgraytwo cursor-pointer hover:text-qblack hover:font-semibold">
-                          <Link href="/faq" passHref>
-                              <span className="capitalize">
-                                {ServeLangItem()?.FAQ}
-                              </span>
-                          </Link>
+                           <button
+                              onClick={logout}
+                              type="button"
+                              className="text-qblack text-base font-semibold flex items-center space-x-2"
+                            >
+                              {/* Logout Icon */}
+                              <svg
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                className="text-qgraythree"
+                              >
+                                <path d="M7 17a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2h-2V5H8v10h2v-1h2v2a1 1 0 0 1-1 1H7z"/>
+                                <path d="M15 11l-3-3v2H9v2h3v2l3-3z"/>
+                              </svg>
+                              <span>{ServeLangItem()?.Sign_Out}</span>
+                            </button>
                         </li>
                       </ul>
                     </div>
-                    <div className="w-full h-10 flex justify-center items-center border-t border-qgray-border">
+                    {/* <div className="w-full h-10 flex justify-center items-center border-t border-qgray-border">
                       <button
                         onClick={logout}
                         type="button"
@@ -400,7 +439,7 @@ export default function Navbar({ className }) {
                       >
                         {ServeLangItem()?.Sign_Out}
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </>
               )}
