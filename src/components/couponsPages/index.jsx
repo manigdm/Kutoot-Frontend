@@ -90,7 +90,6 @@ const CouponOrderUI = () => {
       const newCoupons = list.map((c, i) => ({
         serialNo: i + 1,
         numbers: (c.coupon_code || "").match(/.{1,2}/g) || [], // ["12","34","..."]
-        series: "A",
         isManual: false,
         ...c, // keep API fields: id, coupon_id, etc.
       }));
@@ -325,9 +324,9 @@ const CouponOrderUI = () => {
                   {/* Coupon ticket */}
                   <div className="col-span-4 flex items-center gap-2">
                     <div className="relative py-4">
-                      <div className=" bg-white rounded-xl border border-gray-300 flex overflow-hidden w-[320px] h-[100px] shadow-sm">
+                      <div className=" bg-white rounded-xl border border-gray-300 flex overflow-hidden w-[340px] min-h-[100px] shadow-sm">
                         {/* Left side */}
-                        <div className="flex flex-col items-start justify-center w-[45%] pl-3 pr-3 py-3">
+                        <div className="flex flex-col items-start justify-center w-[35%] pl-3 pr-3 py-3">
                           <Image
                             width="200"
                             height="80"
@@ -359,7 +358,7 @@ const CouponOrderUI = () => {
                           </div>
                           <div className="text-xs text-gray-500">Coupon ID</div>
                           <div className="font-normal text-sm text-gray-800 tracking-wider">
-                            <span>A</span>
+                            <span>{response.data?.['series-prefix']} </span>
                             <span className="text-lg text-gray-700">-</span>
                             {coupon.numbers.map((num, i) => (
                               <Fragment key={i}>
@@ -385,7 +384,7 @@ const CouponOrderUI = () => {
                     <div className="col-span-3 flex flex-col justify-center items-center">
                       <div className="flex items-center gap-1 justify-center">
                         <span className="font-bold text-lg text-gray-700">
-                          A
+                        {response.data?.['series-prefix']}
                         </span>
                         <span className="text-xl text-gray-700">-</span>
                         {[...Array(6)].map((_, i) => (
@@ -417,24 +416,25 @@ const CouponOrderUI = () => {
                           </button>
                         </div>
                         <div className="grid grid-cols-10 gap-4 text-xs">
-                          {Array.from({ length: 49 }, (_, i) => i + 1).map(
-                            (num) => (
-                              <button
-                                key={num}
-                                onClick={() => handleNumberSelect(num)}
-                                // disabled={
-                                //   selectedNumbers.includes(num) ||
-                                //   selectedNumbers.length >= 6
-                                // }
-                                className={`w-6 h-6 rounded-full border font-medium 
-                              ${"bg-white text-gray-700 border-gray-200 hover:bg-gray-100"
-                                  }
-                            `}
-                              >
-                                {num.toString().padStart(2, "0")}
-                              </button>
-                            )
-                          )}
+                          {Array.from(
+                            { length: response.data?.number_max - response.data?.number_min + 1 },
+                            (_, i) => response.data?.number_min + i
+                          ).map((num) => (
+                            <button
+                              key={num}
+                              onClick={() => handleNumberSelect(num)}
+                              // disabled={
+                              //   selectedNumbers.includes(num) ||
+                              //   selectedNumbers.length >= 6
+                              // }
+                              className={`w-6 h-6 rounded-full border font-medium 
+      bg-white text-gray-700 border-gray-200 hover:bg-gray-100
+    `}
+                            >
+                              {num.toString().padStart(2, "0")}
+                            </button>
+                          ))}
+
                         </div>
                       </div>
                     </div>
@@ -443,7 +443,7 @@ const CouponOrderUI = () => {
                       <div className="flex items-center gap-2">
                         <div className="flex gap-1 ml-1 items-center">
                           <span className="font-semibold text-lg text-gray-700">
-                            A
+                          {response.data?.['series-prefix']} 
                           </span>
                           <span className="text-2xl text-gray-700">-</span>
                           {coupon.numbers.map((num, i) => (
