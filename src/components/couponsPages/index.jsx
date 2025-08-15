@@ -130,13 +130,13 @@ const CouponOrderUI = () => {
   };
 
   const handleNumberSelect = (num) => {
-    if (selectedNumbers.length < 6) {
+    if (selectedNumbers.length < response?.data?.numbers_per_ticket) {
       setSelectedNumbers((prev) => [...prev, num]);
     }
   };
 
   const handleSaveManualCoupon = async () => {
-    if (selectedNumbers.length !== 6 || editingCouponId == null) return;
+    if (selectedNumbers.length !== response?.data?.numbers_per_ticket || editingCouponId == null) return;
 
     setSaveLoading(true);
     setError("");
@@ -387,7 +387,7 @@ const CouponOrderUI = () => {
                         {response.data?.['series-prefix']}
                         </span>
                         <span className="text-xl text-gray-700">-</span>
-                        {[...Array(6)].map((_, i) => (
+                        {[...Array((response?.data?.numbers_per_ticket))].map((_, i) => (
                           <Fragment key={i}>
                             <DottedCircle
                               value={
@@ -468,11 +468,11 @@ const CouponOrderUI = () => {
                     {editingCouponId === coupon.id ? (
                       <div className="flex flex-col items-center w-full">
                         <button
-                          className={`w-28 mb-2 py-1 rounded-full font-semibold ${selectedNumbers.length === 6 && !saveLoading
+                          className={`w-28 mb-2 py-1 rounded-full font-semibold ${(selectedNumbers.length === response?.data?.numbers_per_ticket) && !saveLoading
                             ? "bg-[#ea580c] text-white"
                             : "bg-[#D9D9D9] text-white cursor-not-allowed"
                             }`}
-                          disabled={selectedNumbers.length !== 6 || saveLoading}
+                          disabled={(selectedNumbers.length !== response?.data?.numbers_per_ticket) || saveLoading}
                           onClick={handleSaveManualCoupon}
                         >
                           {saveLoading ? "Saving..." : "Save"}
