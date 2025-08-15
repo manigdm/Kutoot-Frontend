@@ -2,54 +2,23 @@ import React from "react";
 import CouponPages from "../../src/components/couponsPages";
 import PageHead from "../../src/components/Helpers/PageHead";
 
-export default function AllCouponsPageData({ data }) {
-  const seoSetting = data?.seoSetting || {};
-  // Or, if your API returns `seoSetting` inside data.data: const seoSetting = data?.data?.seoSetting || {};
-console.log({ data });
+export default function AllCouponsPageData() {
 
   return (
     <>
       <PageHead
-        title={seoSetting.seo_title || "Coupons"}
-        metaDes={seoSetting.seo_description || ""}
+        title={"Coupons"}
+        metaDes={""}
       />
-      <CouponPages data={data} />
+      <CouponPages />
     </>
   );
 }
 
 export const getServerSideProps = async () => {
-  try {
-      const payload = {
-    camp_id: "2",
-    amount: "100",
-    quantity: "2",
-    base_plan_id: "2",
-  };
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}api/user/coinpurchase`,{
-         method: "POST",
-       headers: {
-         // Add Authorization header here if needed
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify(payload),
-     }
-    );
-    const data = await res.json();
-    return {
-      props: {
-        data,
-      },
+   return {
+      props: { data: {  } },
     };
-  } catch (err) {
-    console.log(err);
-    return {
-      props: {
-        data: false,
-      },
-    };
-  }
 };
 // export async function getServerSideProps() {
 //   const payload = {
