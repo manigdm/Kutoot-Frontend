@@ -6,7 +6,7 @@ import Facebook from "../../../Helpers/icons/Facebook";
 import Instagram from "../../../Helpers/icons/Instagram";
 import Youtube from "../../../Helpers/icons/Youtube";
 import FontAwesomeCom from "../../../Helpers/icons/FontAwesomeCom";
-export default function Footer({ settings }) {
+export default function Footer({ settings = {} }) {
   const { websiteSetup } = useSelector((state) => state.websiteSetup);
   const [firstCol, setFirstCol] = useState(null);
   const [secondCol, setSecondCol] = useState(null);
