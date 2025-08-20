@@ -251,7 +251,7 @@ export default function ProductCardStyleOne({ datas }) {
           <div className="w-full h-full relative flex justify-center items-center transform scale-100 group-hover:scale-110 transition duration-300 ease-in-out">
             <Image
               layout="fill"
-              objectFit="scale-down"
+              objectFit="cover"
               src={`${imgSrc ? imgSrc : "/assets/images/spinner.gif"}`}
               alt=""
               onLoadingComplete={() => loadImg(datas.image)}
@@ -259,7 +259,7 @@ export default function ProductCardStyleOne({ datas }) {
             />
           </div>
         </div>
-        <div className="product-card-details pb-[30px] relative pt-2" style={{padding: "0 15px"}}>
+        <div className="product-card-details pb-[30px] relative pt-2" style={{padding: "15px 15px"}}>
           {/* add to card button */}
           
           <div className="reviews flex space-x-[1px] mb-3">

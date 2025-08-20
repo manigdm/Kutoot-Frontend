@@ -1,275 +1,273 @@
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import Facebook from "../../../Helpers/icons/Facebook";
-import Instagram from "../../../Helpers/icons/Instagram";
-import Youtube from "../../../Helpers/icons/Youtube";
-import FontAwesomeCom from "../../../Helpers/icons/FontAwesomeCom";
-export default function Footer({ settings = {} }) {
-  const { websiteSetup } = useSelector((state) => state.websiteSetup);
-  const [firstCol, setFirstCol] = useState(null);
-  const [secondCol, setSecondCol] = useState(null);
-  const [thirdCol, setThirdCol] = useState(null);
-  const [footerContent, setFooterContent] = useState(null);
-  const [socialLink, setSocialLink] = useState(null);
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa";
 
-  useEffect(() => {
-    if (!footerContent) {
-      setFooterContent(
-        websiteSetup && websiteSetup.payload && websiteSetup.payload.footer
-      );
-    }
-  });
+const Footer = () => {
+  const styles = {
+    footerContainer: {
+      backgroundColor: "#26201B",
+      color: "#cfcfcf",
+      fontFamily: "Poppins",
+      padding: "60px 40px 30px",
+      borderTopLeftRadius: "48px",
+      borderTopRightRadius: "48px",
+    },
+    footerMain: {
+      display: "flex",
+      justifyContent: "space-between",
+      flexWrap: "wrap",
+      gap: "40px",
+      marginBottom: "30px",
+    },
+    footerColumn: {
+      flex: 1,
+      minWidth: "200px",
+    },
+    logoSection: {
+      flexBasis: "25%",
+    },
+    footerLogo: {
+      width: "300px",
+      marginBottom: "20px",
+    },
+    storeButton: {
+      background: "#5f5d5c",
+      width: "fit-content",
+      padding: "12px 16px",
+      borderRadius: "12px",
+      display: "flex",
+      alignItems: "center",
+      gap: "8px",
+      cursor: "pointer",
+    },
+    storeTextTop: {
+      fontSize: "14px",
+      letterSpacing: "0.6px",
+      marginBottom: "4px",
+      opacity: 0.7,
+      color: "#fff",
+      lineHeight: "100%",
+    },
+    storeTextBottom: {
+      fontSize: "22px",
+      lineHeight: "100%",
+      color: "#fff",
+    },
+    appBadgesWrapper: {
+      display: "flex",
+      gap: "12px",
+      marginTop: "12px",
+    },
+    linksTitle: {
+      color: "#fff",
+      fontSize: "1.1rem",
+      fontWeight: 500,
+      marginBottom: "16px",
+      fontFamily: "Poppins",
+    },
+    linkList: {
+      listStyle: "none",
+      padding: 0,
+      margin: 0,
+    },
+    linkItem: {
+      fontSize: "18px",
+      lineHeight: "18px",
+      fontWeight: 500,
+      marginBottom: "16px",
+      fontFamily: "Poppins",
+    },
+    link: {
+      color: "#ABABAB",
+      textDecoration: "none",
+      transition: "color 0.3s ease",
+    },
+    connectSectionP: {
+      margin: "0 0 4px",
+    },
+    emailLink: {
+      color: "#cfcfcf",
+      display: "inline-block",
+      marginBottom: "12px",
+    },
+    socialIcons: {
+      display: "flex",
+      gap: "14px",
+      marginTop: "10px",
+    },
+    socialIcon: {
+      width: "36px",
+      height: "36px",
+      backgroundColor: "#544e59",
+      color: "#fff",
+      borderRadius: "50%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "1.1rem",
+      transition: "background-color 0.3s ease",
+    },
+    footerDivider: {
+      border: "none",
+      background: "url('/images/line-footer.png') center center no-repeat",
+      backgroundSize: "contain",
+      margin: "20px 0",
+      opacity: 1,
+    },
+    footerBottom: {
+      textAlign: "center",
+      fontSize: "14px",
+      fontWeight: 400,
+      color: "#ABABAB",
+      fontFamily: "Poppins",
+    },
+  };
 
-  useEffect(() => {
-    if (!socialLink) {
-      setSocialLink(
-        websiteSetup &&
-          websiteSetup.payload &&
-          websiteSetup.payload.social_links
-      );
-    }
-  });
-
-  useEffect(() => {
-    if (!firstCol) {
-      setFirstCol(
-        websiteSetup &&
-          websiteSetup.payload &&
-          websiteSetup.payload.footer_first_col
-      );
-    }
-  });
-  useEffect(() => {
-    if (!secondCol) {
-      setSecondCol(
-        websiteSetup &&
-          websiteSetup.payload &&
-          websiteSetup.payload.footer_second_col
-      );
-    }
-  });
-  useEffect(() => {
-    if (!thirdCol) {
-      setThirdCol(
-        websiteSetup &&
-          websiteSetup.payload &&
-          websiteSetup.payload.footer_third_col
-      );
-    }
-  });
+  const handleDownloadClick = () => {
+    console.log("Redirect to store...");
+  };
 
   return (
-    <footer className="footer-section-wrapper print:hidden">
-      <div className="container-x block mx-auto pt-[56px]">
-        <div className="w-full flex flex-col items-center mb-[50px]">
-          {/* logo area */}
-          <div className="w-full h-[1px] bg-[#E9E9E9]"></div>
+    <footer style={styles.footerContainer}>
+      <div style={styles.footerMain}>
+        {/* Logo Section */}
+        <div style={{ ...styles.footerColumn, ...styles.logoSection }}>
+          <img
+            src="/images/logo-new.png"
+            alt="Logo"
+            style={styles.footerLogo}
+          />
+          <div style={styles.appBadgesWrapper}>
+            <div style={styles.storeButton} onClick={handleDownloadClick}>
+              <img src="/images/apple.png" alt="logo" width={32} height={32} />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <p style={styles.storeTextTop}>Download on the</p>
+                <p style={styles.storeTextBottom}>App Store</p>
+              </div>
+            </div>
+            <div style={styles.storeButton} onClick={handleDownloadClick}>
+              <img
+                src="/images/Playstore.png"
+                alt="logo"
+                width={32}
+                height={32}
+              />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <p style={styles.storeTextTop}>Android app on</p>
+                <p style={styles.storeTextBottom}>Google Play</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="lg:flex justify-between mb-[50px]">
-          <div className="lg:w-[424px]  ml-0 w-full mb-10 lg:mb-0">
-            <h1 className="text-[18] font-500 text-white mb-5">
-              <Link href="/" passHref>
-                  <Image
-                    width="120"
-                    height="44"
-                    objectFit="scale-down"
-                    src={"/assets/images/logo-kutoot.png"}
-                    alt="logo"
-                  />
+
+        {/* Kutoot Links Section */}
+        <div style={styles.footerColumn}>
+          <h3 style={styles.linksTitle}>Kutoot</h3>
+          <ul style={styles.linkList}>
+            <li style={styles.linkItem}>
+              <Link href="/about-us" style={styles.link}>
+                About Us
               </Link>
-              </h1>
-              <div className="flex rtl:space-x-reverse space-x-5 items-center mb-3">
-                <Link href="/" passHref>
-                    <Image
-                      width="120"
-                      height="44"
-                      objectFit="scale-down"
-                      src={"/assets/images/apple-store.png"}
-                      alt="logo"
-                    />
-                </Link>
-                <Link href="/" passHref>
-                    <Image
-                      width="120"
-                      height="44"
-                      objectFit="scale-down"
-                      src={"/assets/images/android-store.png"}
-                      alt="logo"
-                    />
-                </Link>
-              </div>
-            {/* <p className="text-white text-[15px] w-[247px] leading-[28px]">
-              {footerContent && footerContent.about_us}
-            </p> */}
-            {/*<p className="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">*/}
-            {/*  {footerContent && footerContent.email ? footerContent.email : ""}*/}
-            {/*</p>*/}
-            {/*<p className="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">*/}
-            {/*  {footerContent && footerContent.address*/}
-            {/*    ? footerContent.address*/}
-            {/*    : ""}*/}
-            {/*</p>*/}
-            {/*<div>*/}
-            {/*  <ul className="flex flex-col space-y-4 ">*/}
-            {/*    <li>*/}
-            {/*      <Link href="/tracking-order">*/}
-            {/*        <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">*/}
-            {/*          Track Order*/}
-            {/*        </span>*/}
-            {/*      </Link>*/}
-            {/*    </li>*/}
-            {/*    <li>*/}
-            {/*      <Link href="/faq">*/}
-            {/*        <span className="text-[#9A9A9A] text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">*/}
-            {/*          Support*/}
-            {/*        </span>*/}
-            {/*      </Link>*/}
-            {/*    </li>*/}
-            {/*    */}
-            {/*  </ul>*/}
-            {/*</div>*/}
-          </div>
-          <div className="flex-1 lg:flex">
-            <div className="lg:w-1/3 w-full mb-10 lg:mb-0">
-              {firstCol && (
-                <>
-                  <div className="mb-5">
-                    <h6 className="text-[18] font-500 text-white">
-                      {firstCol.columnTitle}
-                    </h6>
-                  </div>
-                  <div>
-                    <ul className="flex flex-col space-y-4 ">
-                      {firstCol.col_links.length > 0 &&
-                        firstCol.col_links.map((item, i) => (
-                          <li key={i}>
-                            <Link href={item.link} passHref>
-                                <span className="text-white text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                  {item.title}
-                                </span>
-                            </Link>
-                          </li>
-                        ))}
-                    </ul>
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0 ">
-              <div>
-                {secondCol && (
-                  <>
-                    <div className="mb-5">
-                      <h6 className="text-[18] font-500 text-white">
-                        {secondCol.columnTitle}
-                      </h6>
-                    </div>
-                    <div>
-                      <ul className="flex flex-col space-y-4 ">
-                        {secondCol.col_links.length > 0 &&
-                          secondCol.col_links.map((item, i) => (
-                            <li key={i}>
-                              <Link href={item.link} passHref>
-                                  <span className="text-white text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                    {item.title}
-                                  </span>
-                              </Link>
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0">
-              <div>
-                {thirdCol && (
-                  <>
-                    <div className="mb-5">
-                      <h6 className="text-[18] font-500 text-white">
-                        {thirdCol.columnTitle}
-                      </h6>
-                    </div>
-                    <div>
-                      <ul className="flex flex-col space-y-4 ">
-                        {thirdCol.col_links.length > 0 &&
-                          thirdCol.col_links.map((item, i) => (
-                            <li key={i}>
-                              <Link href={item.link} passHref>
-                                  <span className="text-white text-[15px] hover:text-white border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                    {item.title}
-                                  </span>
-                              </Link>
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-                    <div className="flex rtl:space-x-reverse space-x-2 items-center mt-5">
-                      { socialLink &&
-                        socialLink.length > 0 &&
-                        socialLink.map((item, i) => (
-                          <a key={i} href={item.link} target="_blank" rel="noreferrer">
-                            <Image
-                              className="text-[#9A9A9A]"
-                              src={item.icon }
-                              alt={item.title}
-                              width="40"
-                              height="40"
-                            />
-                          </a>
-                        ))}
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="bottom-bar border-t border-qgray-border lg:h-[82px] flex lg:flex-row flex-col-reverse
-         justify-between items-center"
-        >
-          <div className="w-full flex justify-center items-center mb-3">
-            {/* <div className="flex rtl:space-x-reverse space-x-5 items-center">
-              {socialLink &&
-                socialLink.length > 0 &&
-                socialLink.map((item, i) => (
-                  <a key={i} href={item.link} target="_blank" rel="noreferrer">
-                    <FontAwesomeCom
-                      className="w-4 h-4 text-[#9A9A9A]"
-                      icon={item.icon}
-                    />
-                  </a>
-                ))}
-            </div> */}
-            <span className="sm:text-base text-[10px] text-white text-center font-300">
-              {footerContent && footerContent.copyright
-                ? footerContent.copyright
-                : ""}
-            </span>
-          </div>
-          {footerContent && footerContent.payment_image ? (
-            <div className="mt-2 lg:mt-0">
-              <Link href="#" passHref>
-                  <Image
-                    width="318"
-                    height="28"
-                    src={`${
-                      process.env.NEXT_PUBLIC_BASE_URL +
-                      footerContent.payment_image
-                    }`}
-                    alt="payment-getways"
-                  />
+            </li>
+            <li style={styles.linkItem}>
+              <Link href="/faq" style={styles.link}>
+                FAQs
               </Link>
-            </div>
-          ) : (
-            ""
-          )}
+            </li>
+            <li style={styles.linkItem}>
+              <Link href="/career" style={styles.link}>
+                Careers
+              </Link>
+            </li>
+            <li style={styles.linkItem}>
+              <Link href="/contact" style={styles.link}>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
         </div>
+
+        {/* Legal & Policies Section */}
+        <div style={styles.footerColumn}>
+          <h3 style={styles.linksTitle}>Legal & Policies</h3>
+          <ul style={styles.linkList}>
+            <li style={styles.linkItem}>
+              <Link href="/" style={styles.link}>
+                Terms & Conditions
+              </Link>
+            </li>
+            <li style={styles.linkItem}>
+              <Link href="/refund" style={styles.link}>
+                Return & Refund
+              </Link>
+            </li>
+            <li style={styles.linkItem}>
+              <Link href="/privacy-policy" style={styles.link}>
+                Privacy
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Connect Section */}
+        <div style={styles.footerColumn}>
+          <h3 style={styles.linksTitle}>Connect</h3>
+          <p style={styles.connectSectionP}>Support@kutoot.com</p>
+          <div style={styles.socialIcons}>
+            <a
+              href="https://wa.me/919380384568"
+              style={styles.socialIcon}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              href="https://x.com/kutootindia?s=21"
+              style={styles.socialIcon}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              href="https://www.instagram.com/kutoot_india/?igsh=dGNoa3F3bnJ3NGMz&utm_source=qr#"
+              style={styles.socialIcon}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.facebook.com/share/19gaKaJHi8/?mibextid=wwXIfr"
+              style={styles.socialIcon}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <img
+        src="/images/line.png"
+        alt="footer divider"
+        style={styles.footerDivider}
+      />
+
+      {/* Bottom */}
+      <div style={styles.footerBottom}>
+        © {new Date().getFullYear()} All Rights Reserved by Kutoot
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

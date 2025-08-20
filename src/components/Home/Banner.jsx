@@ -59,10 +59,10 @@ export default function Banner({
                                 </span>
                               </div>
                               <div className="md:mb-[30px] mb-[15px]">
-                                <p className="md:text-[50px] text-[20px] leading-none text-qblack md:mb-3">
+                                <p className="md:text-[50px] text-[20px] leading-none text-white md:mb-3">
                                   {item.title_one}
                                 </p>
-                                <h1 className="md:text-[50px] text-[20px] md:w-[400px] md:leading-[66px] text-qblack font-bold">
+                                <h1 className="md:text-[50px] text-[20px] md:w-[400px] md:leading-[66px] text-white font-bold">
                                   {item.title_two}
                                 </h1>
                               </div>
@@ -107,10 +107,10 @@ export default function Banner({
                         </span>
                           </div>
                           <div className="md:mb-[30px] mb-2.5">
-                            <p className="md:text-[30px] leading-none text-qblack font-semibold md:mb-3">
+                            <p className="md:text-[30px] leading-none text-white font-semibold md:mb-3">
                               {sidebarImgOne.title_one}
                             </p>
-                            <h1 className="md:text-[30px] md:leading-[40px] text-qblack font-semibold">
+                            <h1 className="md:text-[30px] md:leading-[40px] text-white font-semibold">
                               {sidebarImgOne.title_two}
                             </h1>
                           </div>
@@ -149,10 +149,10 @@ export default function Banner({
                         </span>
                           </div>
                           <div className="md:mb-[30px] mb-2.5">
-                            <p className="md:text-[30px] leading-none text-qblack font-semibold md:mb-3">
+                            <p className="md:text-[30px] leading-none text-white font-semibold md:mb-3">
                               {sidebarImgTwo.title_one}
                             </p>
-                            <h1 className="md:text-[30px] md:leading-[40px] text-qblack font-semibold">
+                            <h1 className="md:text-[30px] md:leading-[40px] text-white font-semibold">
                               {sidebarImgTwo.title_two}
                             </h1>
                           </div>

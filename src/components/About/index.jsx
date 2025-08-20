@@ -82,8 +82,89 @@ export default function About({ aboutData }) {
             ]}
           />
         </div>
+        <div
+          className="space-y-4 text-[18px] "
+          style={{
+            margin: "0 auto",
+            maxWidth: "1000px",
+            textAlign: "left",
+            marginBottom: "90px",
+          }}
+        >
+          <p>
+            Kutoot translates to "Surprise," and it perfectly encapsulates the essence
+            of our platform. We are a next-generation, rewards-driven e-commerce
+            platform designed to transform every shopping experience into an
+            opportunity to win life-changing prizes. With Kutoot, each coin you spend
+            brings you closer not only to the items you love but also to exciting
+            opportunities like luxury villas, cars, gold, gadgets, and more through our
+            transparent lucky draws.
+          </p>
 
-        <div className="aboutus-wrapper w-full py-10">
+          <p className="mt-4">
+            <strong>Our Philosophy: Shop. Win. Give.</strong>
+          </p>
+
+          <p className="mt-4">
+            <strong>Shop</strong>
+          </p>
+          <p>
+            At Kutoot, you can explore a wide range of curated products and services
+            using Kutoot Coins, our digital shopping credits. This innovative approach
+            ensures a seamless shopping journey, providing you with the best options
+            tailored to your preferences.
+          </p>
+
+          <p className="mt-4">
+            <strong>Win</strong>
+          </p>
+          <p>
+            Every purchase you make on Kutoot rewards you with free entries into our
+            lucky reward draws. These draws are conducted fairly and are live-streamed
+            to ensure complete transparency. It's a simple, exciting, and hassle-free
+            way to get rewarded for your shopping.
+          </p>
+
+          <p className="mt-4">
+            <strong>Give</strong>
+          </p>
+          <p>
+            Kutoot believes in making a positive impact. With every purchase, you
+            contribute to social good. We pledge 5% of our net proceeds to verified
+            NGOs, helping create meaningful change and support thriving communities.
+            Your shopping experience with Kutoot directly benefits those in need,
+            proving that every coin spent tells a bigger story.
+          </p>
+
+          <p className="mt-4">
+            <strong>Why Choose Kutoot?</strong>
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              <strong>No Skills Required:</strong> Kutoot offers a straightforward and
+              enjoyable shopping experience with no need for special skills or teams.
+            </li>
+            <li>
+              <strong>Infinite Surprises:</strong> Beyond just shopping, every
+              interaction on our platform holds the potential for delightful surprises.
+            </li>
+            <li>
+              <strong>Community Impact:</strong> By choosing Kutoot, you help drive
+              social change and support community development.
+            </li>
+          </ul>
+
+          <p className="mt-4">
+            ✨ Discover a world where shopping is more than just a transaction. It's
+            about surprises, rewards, and making a difference — all on a single
+            platform. Welcome to Kutoot, where every coin counts and every experience
+            is enriched with possibilities.
+          </p>
+        </div>
+
+
+
+        {/* <div className="aboutus-wrapper w-full py-10">
           <div className="container-x mx-auto">
             <div className="w-full min-h-[665px] lg:flex lg:space-x-12 rtl:space-x-reverse items-center pb-10 lg:pb-0">
               <div className="md:w-[570px] w-full md:h-[560px] h-auto rounded overflow-hidden my-5 lg:my-0 relative">
@@ -116,9 +197,9 @@ export default function About({ aboutData }) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="customer-feedback w-full bg-[#F1EDE9] py-[60px]">
+        {/* <div className="customer-feedback w-full bg-[#F1EDE9] py-[60px]">
           <div className="title flex justify-center mb-5">
             <h1 className="text-[30px] font-semibold text-qblack">
               {ServeLangItem()?.Customers_Feedback}
@@ -232,8 +313,8 @@ export default function About({ aboutData }) {
               </div>
             </div>
           </div>
-        </div>
-        <div className="container-x mx-auto my-[60px]">
+        </div> */}
+        {/* <div className="container-x mx-auto my-[60px]">
           <div
             data-aos="fade-down"
             className="best-services w-full bg-qyellow flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10"
@@ -259,9 +340,9 @@ export default function About({ aboutData }) {
                 </div>
               ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="blog-post-wrapper w-full mb-[100px]">
+        {/* <div className="blog-post-wrapper w-full mb-[100px]">
           <div className="container-x mx-auto">
             <div className="blog-post-title flex justify-center items-cente mb-[30px]">
               <h1 className="text-3xl font-semibold text-qblack">
@@ -285,7 +366,7 @@ export default function About({ aboutData }) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
