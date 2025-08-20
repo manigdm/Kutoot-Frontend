@@ -73,7 +73,7 @@ export default function Faq({ datas }) {
               </div>
             </div>
             <div className="flex-1">
-              <div className="bg-white sm:p-10 p-5">
+              <div className="bg-[#F1EDE9] sm:p-10 p-5">
                 <div className="title flex flex-col items-center">
                   <h1 className="lg:text-[34px] text-xl font-bold text-qblack">
                     {ServeLangItem()?.Have_Any_Qustion}

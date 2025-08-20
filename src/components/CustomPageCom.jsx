@@ -31,7 +31,7 @@ function CustomPageCom({ slug }) {
     <>
       {pageData && <PageHead title={pageData.page_name} />}
       <Layout childrenClasses="pt-0 pb-0">
-        <div className="terms-condition-page w-full bg-white pb-[30px] min-h-screen">
+        <div className="terms-condition-page w-full bg-[#F1EDE9] pb-[30px] min-h-screen">
           <div className="w-full mb-[30px]">
             {pageData && (
               <PageTitle

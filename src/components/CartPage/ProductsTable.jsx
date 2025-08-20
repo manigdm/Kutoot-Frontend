@@ -66,7 +66,7 @@ export default function ProductsTable({
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <tbody>
             {/* table heading */}
-            <tr className="text-[13px] font-medium text-black bg-[#F6F6F6] whitespace-nowrap px-2 border-b default-border-bottom uppercase">
+            <tr className="text-[13px] font-medium text-[#3B322B] bg-[#F6F6F6] whitespace-nowrap px-2 border-b default-border-bottom uppercase">
               <td className="py-4 pl-10 block whitespace-nowrap min-w-[300px]">
                 {ServeLangItem()?.Product}
               </td>
@@ -81,7 +81,7 @@ export default function ProductsTable({
                 cartItems.map((item) => (
                 <tr
                   key={item.id}
-                  className="bg-white border-b hover:bg-gray-50"
+                  className="bg-[#F1EDE9] border-b hover:bg-gray-50"
                 >
                   <td className="pl-10  py-4  w-[380px]">
                     <div className="flex space-x-6 items-center">

@@ -22,7 +22,7 @@ export default function SupportTab() {
                 <td className="py-6 whitespace-nowrap  text-center">Action</td>
               </tr>
               {/* table heading end */}
-              <tr className="bg-white hover:bg-gray-50">
+              <tr className="bg-[#F1EDE9] hover:bg-gray-50">
                 <td className="text-center py-4">
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
@@ -78,7 +78,7 @@ export default function SupportTab() {
                   </button>
                 </td>
               </tr>
-              <tr className="bg-white hover:bg-gray-50">
+              <tr className="bg-[#F1EDE9] hover:bg-gray-50">
                 <td className="text-center py-4">
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
@@ -134,7 +134,7 @@ export default function SupportTab() {
                   </button>
                 </td>
               </tr>
-              <tr className="bg-white hover:bg-gray-50">
+              <tr className="bg-[#F1EDE9] hover:bg-gray-50">
                 <td className="text-center py-4">
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
@@ -190,7 +190,7 @@ export default function SupportTab() {
                   </button>
                 </td>
               </tr>
-              <tr className="bg-white hover:bg-gray-50">
+              <tr className="bg-[#F1EDE9] hover:bg-gray-50">
                 <td className="text-center py-4">
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
@@ -246,7 +246,7 @@ export default function SupportTab() {
                   </button>
                 </td>
               </tr>
-              <tr className="bg-white hover:bg-gray-50">
+              <tr className="bg-[#F1EDE9] hover:bg-gray-50">
                 <td className="text-center py-4">
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
@@ -302,7 +302,7 @@ export default function SupportTab() {
                   </button>
                 </td>
               </tr>
-              <tr className="bg-white hover:bg-gray-50">
+              <tr className="bg-[#F1EDE9] hover:bg-gray-50">
                 <td className="text-center py-4">
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>

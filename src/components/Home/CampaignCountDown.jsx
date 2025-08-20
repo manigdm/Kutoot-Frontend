@@ -33,7 +33,7 @@ export default function CampaignCountDown({
               <div className="w-full xl:p-12 p-5">
                 <div className="countdown-wrapper w-full flex lg:justify-between justify-evenly lg:mb-10 mb-2">
                   <div className="countdown-item">
-                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
                       <span className="font-700 sm:text-[30px] text-[14px] text-[#EB5757]">
                         {showDate}
                       </span>
@@ -43,7 +43,7 @@ export default function CampaignCountDown({
                     </p>
                   </div>
                   <div className="countdown-item">
-                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
                       <span className="font-700 sm:text-[30px] text-[14px] text-[#2F80ED]">
                         {showHour}
                       </span>
@@ -53,7 +53,7 @@ export default function CampaignCountDown({
                     </p>
                   </div>
                   <div className="countdown-item">
-                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
                       <span className="font-700 sm:text-[30px] text-[14px] text-[#219653]">
                         {showMinute}
                       </span>
@@ -63,7 +63,7 @@ export default function CampaignCountDown({
                     </p>
                   </div>
                   <div className="countdown-item">
-                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+                    <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
                       <span className="font-700 sm:text-[30px] text-[14px] text-[#EF5DA8]">
                         {showSecound}
                       </span>
@@ -111,7 +111,7 @@ export default function CampaignCountDown({
                     <br /> {ServeLangItem()?.Its_Make_easy_for_you_life}
                   </h1>
                   <div className="flex space-x-5 rtl:space-x-reverse items-center">
-                    <div className="bg-white w-[170px] h-[60px] flex justify-center items-center cursor-pointer">
+                    <div className="bg-[#F1EDE9] w-[170px] h-[60px] flex justify-center items-center cursor-pointer">
                       <Link
                         href={
                           downloadData?.play_store
@@ -123,7 +123,7 @@ export default function CampaignCountDown({
                         <GooglePlay />
                       </Link>
                     </div>
-                    <div className="bg-white w-[170px] h-[60px] flex justify-center items-center cursor-pointer">
+                    <div className="bg-[#F1EDE9] w-[170px] h-[60px] flex justify-center items-center cursor-pointer">
                       <Link
                         href={
                           downloadData?.app_store ? downloadData.app_store : "#"

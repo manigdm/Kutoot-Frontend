@@ -5,18 +5,17 @@ import ServeLangItem from "../../Helpers/ServeLangItem";
 function OneColumnAdsTwo({ data }) {
   if(data){
       return (
-          <div className={`one-column-ads-one sm:h-[166px] h-[100px] w-full rounded`}>
-              <div
-                  data-aos="fade-right"
-                  style={{
-                      backgroundImage: `url(${
-                          process.env.NEXT_PUBLIC_BASE_URL + data.image
-                      })`,
-                      backgroundSize: `cover`,
-                      backgroundRepeat: `no-repeat`,
-                  }}
-                  className="w-full h-full flex justify-center items-center ltr:md:pl-[40px] rtl:md:pr-[80px] ltr:pl-3 rtl:pr-3 md:py-[40px] py-4 group rounded"
-              >
+<div className="one-column-ads-one sm:h-[166px] h-[100px] w-full rounded">
+  <div
+    data-aos="fade-right"
+    style={{
+      backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_URL + data.image})`,
+      backgroundSize: 'cover',              // Fill container, cropping if needed
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+    }}
+    className="w-full h-full flex justify-center items-center ltr:md:pl-[40px] rtl:md:pr-[80px] ltr:pl-3 rtl:pr-3 md:py-[40px] py-4 group rounded"
+  >
                   <div className="w-full h-full flex flex-col justify-evenly">
                       <div>
                           <div className="mb-3">

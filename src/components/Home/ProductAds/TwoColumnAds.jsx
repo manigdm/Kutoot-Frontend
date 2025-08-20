@@ -27,18 +27,18 @@ function TwoColumnAds({ bannerOne, bannerTwo }) {
                                       className="w-full h-full relative ltr:pl-[50px] rtl:pr-[50px] py-[35px] flex flex-col justify-between group rounded"
                                   >
                                       <div>
-                                          <div className="lg:mb-[22px] mb-2.5">
+                                          {/* <div className="lg:mb-[22px] mb-2.5">
                     <span className="text-qblack uppercase text-xs font-semibold">
                       {bannerOne.badge}
                     </span>
-                                          </div>
+                                          </div> */}
                                           <div className="lg:mb-[30px] mb-2.5">
-                                              <p className="lg:text-[30px] text-[20px] leading-none text-qblack font-semibold lg:mb-3">
+                                              {/* <p className="lg:text-[30px] text-[20px] leading-none text-qblack font-semibold lg:mb-3">
                                                   {bannerOne.title_one}
                                               </p>
                                               <h1 className="lg:text-[30px] text-[20px] lg:leading-[40px] text-qblack font-semibold">
                                                   {bannerOne.title_two}
-                                              </h1>
+                                              </h1> */}
                                           </div>
                                       </div>
                                       <div>
@@ -70,18 +70,18 @@ function TwoColumnAds({ bannerOne, bannerTwo }) {
                                       className="w-full h-full relative bg-blue-100  ltr:pl-[50px] rtl:pr-[50px] py-[35px] flex flex-col justify-between group rounded"
                                   >
                                       <div>
-                                          <div className="lg:mb-[22px] mb-2.5">
+                                          {/* <div className="lg:mb-[22px] mb-2.5">
                                             <span className="text-qblack uppercase text-xs font-semibold">
                                             {bannerTwo.badge}
                                             </span>
-                                          </div>
+                                          </div> */}
                                           <div className="lg:mb-[30px] mb-2.5">
-                                              <p className="lg:text-[30px] leading-none text-qblack font-semibold lg:mb-3">
+                                              {/* <p className="lg:text-[30px] leading-none text-qblack font-semibold lg:mb-3">
                                                   {bannerTwo.title_one}
                                               </p>
                                               <h1 className="lg:text-[30px] text-[20px] lg:leading-[40px] text-qblack font-semibold">
                                                   {bannerTwo.title_two}
-                                              </h1>
+                                              </h1> */}
                                           </div>
                                       </div>
                                       <div>

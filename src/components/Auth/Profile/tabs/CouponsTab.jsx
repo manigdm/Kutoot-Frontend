@@ -19,7 +19,7 @@ const CouponsTable = ({ data }) => {
   };
 
   return (
-    <div className="overflow-x-auto bg-white rounded-lg shadow">
+    <div className="overflow-x-auto bg-[#F1EDE9] rounded-lg shadow">
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
           <tr>
@@ -30,7 +30,7 @@ const CouponsTable = ({ data }) => {
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-[#F1EDE9] divide-y divide-gray-200">
           {data.map((item, index) => (
             <tr key={index} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.camp_title || 'N/A'}</td>
@@ -101,7 +101,7 @@ export default function CouponsTab() {
       ) : coinsData.length > 0 ? (
         <CouponsTable data={coinsData} />
       ) : (
-        <div className="bg-white rounded-lg shadow p-8 text-center">
+        <div className="bg-[#F1EDE9] rounded-lg shadow p-8 text-center">
           <p className="text-gray-500">No coins data available</p>
         </div>
       )}

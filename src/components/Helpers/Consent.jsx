@@ -42,7 +42,7 @@ function Consent() {
     <>
       {consentData && (
         <div
-          className="fixed md:w-[420px] w-full h-[260px] rounded bg-white shadow md:left-8 md:bottom-8 left-0 bottom-0 p-7"
+          className="fixed md:w-[420px] w-full h-[260px] rounded bg-[#F1EDE9] shadow md:left-8 md:bottom-8 left-0 bottom-0 p-7"
           style={{
             boxShadow: "rgb(0 0 0 / 14%) 0px 15px 50px 0px",
             zIndex: "9999999999",

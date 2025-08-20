@@ -75,7 +75,8 @@ body {
   background-image: -webkit-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
   background-image: -ms-linear-gradient( 7deg, rgb(232, 42, 122) 0%, rgb(238 225 252) 100%);
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35); */
-  background: #fff;
+  background: #FFFDF2;
+    font-family: "poppins";
 }
 .font-100 {
   font-weight: 100;
@@ -133,7 +134,7 @@ body {
 
 }
 .about-content :is(h1,h2,h3){
-  color:#222222 !important;
+  color:#3B322B !important;
   font-size: 42px !important;
   font-weight: bold !important;
   line-height: 52px !important;
@@ -446,19 +447,19 @@ body {
 }
 
 .nav-widget-wrapper .category-dropdown .categories-list .category-item{
-  @apply bg-white text-qblack
+  @apply bg-[#F1EDE9] text-qblack
 }
 .nav-widget-wrapper .category-dropdown .categories-list .category-item:hover{
   background: #e3a848;
 }
 .nav-widget-wrapper .category-dropdown .categories-list .category-item .sub-category-lvl-two ul li.category-item{
-  @apply bg-white text-qblack
+  @apply bg-[#F1EDE9] text-qblack
 }
 .nav-widget-wrapper .category-dropdown .categories-list .category-item .sub-category-lvl-two ul li.category-item:hover{
   background: #e3a848;
 }
 .nav-widget-wrapper .category-dropdown .categories-list .category-item .sub-category-lvl-two .sub-category-lvl-three ul li.category-item{
-  @apply bg-white  text-qblack
+  @apply bg-[#F1EDE9]  text-qblack
 }
 .nav-widget-wrapper .category-dropdown .categories-list .category-item .sub-category-lvl-two .sub-category-lvl-three ul li.category-item:hover{
   background: #e3a848;
@@ -706,7 +707,7 @@ li {
 }
 
 .orange-btn{
-  background: #DA7636;
+  background: #EA6B1E;
   color: #fff;
   padding: 5px;
   font-size: 14px;
@@ -714,7 +715,10 @@ li {
   font-size: 12px;
   font-weight: bold;
 }
-
+.orange-btn:hover {
+  background: linear-gradient(90deg, #EA6B1E, #FF2A2A);  /* Gradient from orange to red */
+  color: #fff;  /* Keep the text color white */
+}
 .quomodo-shop-nav-bar.nav-widget-wrapper {
   @apply bg-block;
 }

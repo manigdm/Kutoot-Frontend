@@ -21,7 +21,7 @@ export default function HeaderTwo({ className, drawerAction, settings }) {
         settings={settings && settings}
         className="quomodo-shop-middle-bar lg:block hidden"
       />
-      <div className="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-white">
+      <div className="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-[#F1EDE9]">
         <div className="w-full h-full flex justify-between items-center px-5">
           <div onClick={drawerAction}>
             <svg

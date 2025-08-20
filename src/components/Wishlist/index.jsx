@@ -43,7 +43,7 @@ function Wishlist() {
           </div>
         </div>
       ) : (
-        <div className="wishlist-page-wrapper w-full bg-white pb-[60px]">
+        <div className="wishlist-page-wrapper w-full bg-[#F1EDE9] pb-[60px]">
           <div className="w-full">
             <PageTitle
               title="Wishlist"

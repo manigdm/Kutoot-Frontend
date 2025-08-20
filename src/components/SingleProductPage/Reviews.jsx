@@ -14,7 +14,7 @@ export default function Reviews({ comments }) {
             comments.map((comment) => (
               <div
                 key={comment.id}
-                className="comment-item bg-white px-10 py-[32px] mb-2.5"
+                className="comment-item bg-[#F1EDE9] px-10 py-[32px] mb-2.5"
               >
                 <div className="comment-author flex justify-between items-center mb-3">
                   <div className="flex space-x-3 items-center">
@@ -74,7 +74,7 @@ export default function Reviews({ comments }) {
                   comment.replys.map((reply) => (
                     <div
                       key={reply.id}
-                      className="sub-comment-item bg-white px-10 pt-[32px] border-t"
+                      className="sub-comment-item bg-[#F1EDE9] px-10 pt-[32px] border-t"
                     >
                       <div className="comment-author  mb-3">
                         <div className="flex space-x-3 items-center">

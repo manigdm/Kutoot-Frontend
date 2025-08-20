@@ -128,7 +128,7 @@ export default function CommentBlog({ comments, blog, fetchComments }) {
               <>
                 <div
                   key={comment.id + Math.random()}
-                  className="comment-item bg-white px-10 py-[32px] mb-2.5"
+                  className="comment-item bg-[#F1EDE9] px-10 py-[32px] mb-2.5"
                 >
                   <div className="comment-author flex justify-between items-center mb-3">
                     <div className="flex space-x-3 rtl:space-x-reverse items-center">
@@ -157,7 +157,7 @@ export default function CommentBlog({ comments, blog, fetchComments }) {
                     comment.replys.map((reply) => (
                       <div
                         key={reply.id}
-                        className="sub-comment-item bg-white px-10 pt-[32px] border-t"
+                        className="sub-comment-item bg-[#F1EDE9] px-10 pt-[32px] border-t"
                       >
                         <div className="comment-author  mb-3">
                           <div className="flex space-x-3 rtl:space-x-reverse items-center">

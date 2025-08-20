@@ -8,7 +8,7 @@ export default function PageTitle({ title, breadcrumb = [] }) {
           <BreadcrumbCom paths={breadcrumb} />
         </div>
         <div className="flex justify-center">
-          <h1 className="text-3xl font-semibold text-black">{title}</h1>
+          <h1 className="text-3xl font-semibold text-[#3B322B]">{title}</h1>
         </div>
       </div>
     </div>

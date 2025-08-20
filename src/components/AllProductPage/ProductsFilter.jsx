@@ -23,13 +23,13 @@ export default function ProductsFilter({
   return (
     <>
       <div
-        className={`filter-widget w-full fixed lg:relative left-0 top-0 h-screen z-10 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${
+        className={`filter-widget w-full fixed lg:relative left-0 top-0 h-screen z-10 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-[#F1EDE9] px-[30px] pt-[40px] ${
           className || ""
         }  ${filterToggle ? "block" : "hidden lg:block"}`}
       >
         <div className="filter-subject-item pb-10 border-b border-qgray-border">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">
+            <h1 className="text-[#3B322B] text-base font-500">
               {ServeLangItem()?.Product_categories}
             </h1>
           </div>
@@ -64,7 +64,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">
+            <h1 className="text-[#3B322B] text-base font-500">
               {ServeLangItem()?.Price_Range}
             </h1>
           </div>
@@ -82,7 +82,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">
+            <h1 className="text-[#3B322B] text-base font-500">
               {ServeLangItem()?.Brands}
             </h1>
           </div>
@@ -124,7 +124,7 @@ export default function ProductsFilter({
               className={`filter-subject-item pb-10  border-b border-qgray-border mt-10`}
             >
               <div className="subject-title mb-[30px]">
-                <h1 className="text-black text-base font-500">
+                <h1 className="text-[#3B322B] text-base font-500">
                   {variant.name}
                 </h1>
               </div>

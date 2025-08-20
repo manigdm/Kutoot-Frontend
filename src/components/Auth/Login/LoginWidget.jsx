@@ -146,7 +146,7 @@ function LoginWidget({ redirect = true, notVerifyHandler }) {
                 </svg>
               )}
             </button>
-            <span onClick={rememberMe} className="text-base text-black">
+            <span onClick={rememberMe} className="text-base text-[#3B322B]">
               {ServeLangItem()?.Remember_Me}
             </span>
           </div>

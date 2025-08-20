@@ -211,7 +211,7 @@ export default function ProductCardRowStyleOneTwo({ className, datas }) {
   return (
     <div
       data-aos="fade-left"
-      className={`product-row-card-style-one-two w-full h-[250px] bg-white group relative overflow-hidden ${
+      className={`product-row-card-style-one-two w-full h-[250px] bg-[#F1EDE9] group relative overflow-hidden ${
         className || ""
       }`}
     >
@@ -313,7 +313,7 @@ export default function ProductCardRowStyleOneTwo({ className, datas }) {
           ></div>
           <div
             data-aos="fade-up"
-            className="md:mx-10 w-full bg-white relative py-[40px] sm:px-[38px] px-3 relative md:mt-12 h-full overflow-y-scroll xl:overflow-hidden xl:h-auto xl:mt-0"
+            className="md:mx-10 w-full bg-[#F1EDE9] relative py-[40px] sm:px-[38px] px-3 relative md:mt-12 h-full overflow-y-scroll xl:overflow-hidden xl:h-auto xl:mt-0"
             style={{ zIndex: "999" }}
           >
             <ProductView

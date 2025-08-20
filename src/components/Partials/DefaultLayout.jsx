@@ -304,7 +304,7 @@ export default function DefaultLayout({ children }) {
                   <div className="w-full h-full fixed left-0 top-0 bg-black bg-opacity-50"></div>
                   <div
                     data-aos="fade-up"
-                    className={`lg:w-[572px] w-full lg:h-[670px] h-full bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0] relative z-40`}
+                    className={`lg:w-[572px] w-full lg:h-[670px] h-full bg-[#F1EDE9] flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0] relative z-40`}
                   >
                     <div
                       onClick={() => getLoginContexts.handlerPopup(false)}
@@ -350,7 +350,7 @@ export default function DefaultLayout({ children }) {
               )} */}
             </div>
           ) : (
-            <div className="w-full h-full fixed hidden bg-white px-5 py-5">
+            <div className="w-full h-full fixed hidden bg-[#F1EDE9] px-5 py-5">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

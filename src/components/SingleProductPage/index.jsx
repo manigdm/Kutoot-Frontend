@@ -122,7 +122,7 @@ export default function SingleProductPage({details}) {
             <Layout childrenClasses="pt-0 pb-0">
                 <>
                     <div className="single-product-wrapper w-full ">
-                        <div className="product-view-main-wrapper bg-white pt-[30px] w-full">
+                        <div className="product-view-main-wrapper bg-[#F1EDE9] pt-[30px] w-full">
                             <div className="breadcrumb-wrapper w-full ">
                                 <div className="container-x mx-auto">
                                     <BreadcrumbCom
@@ -136,7 +136,7 @@ export default function SingleProductPage({details}) {
                                     />
                                 </div>
                             </div>
-                            <div className="w-full bg-white pb-[60px]">
+                            <div className="w-full bg-[#F1EDE9] pb-[60px]">
                                 <div className="container-x mx-auto">
                                     {/*key name spelling not correct (gellery)*/}
                                     <ProductView
@@ -384,7 +384,7 @@ export default function SingleProductPage({details}) {
                             </div>
                         </div>
                         {relatedProducts.length > 0 && (
-                            <div className="related-product w-full bg-white">
+                            <div className="related-product w-full bg-[#F1EDE9]">
                                 <div className="container-x mx-auto">
                                     <div className="w-full py-[60px]">
                                         <h1 className="sm:text-3xl text-xl font-600 text-white leading-none mb-[30px]">
@@ -423,7 +423,7 @@ export default function SingleProductPage({details}) {
                             ></div>
                             <div
                                 data-aos="fade-up"
-                                className="sm:w-[548px] w-full bg-white relative py-[40px] px-[38px]"
+                                className="sm:w-[548px] w-full bg-[#F1EDE9] relative py-[40px] px-[38px]"
                                 style={{zIndex: "999"}}
                             >
                                 <div className="title-bar flex items-center justify-between mb-3">

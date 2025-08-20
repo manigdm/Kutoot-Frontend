@@ -10,7 +10,7 @@ function CountDownWidget({ endTime }) {
     <div className="ltr:sm:mr-[75px] rtl:sm:ml-[75px]">
       <div className="countdown-wrapper w-full flex sm:space-x-6 rtl:space-x-reverse space-x-3 sm:justify-between justify-evenly">
         <div className="countdown-item">
-          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
             <span className="font-700 sm:text-[30px] text-base text-[#EB5757]">
               {showDate}
             </span>
@@ -20,7 +20,7 @@ function CountDownWidget({ endTime }) {
           </p>
         </div>
         <div className="countdown-item">
-          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
             <span className="font-700 sm:text-[30px] text-base text-[#2F80ED]">
               {showHour}
             </span>
@@ -30,7 +30,7 @@ function CountDownWidget({ endTime }) {
           </p>
         </div>
         <div className="countdown-item">
-          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
             <span className="font-700 sm:text-[30px] text-base text-[#219653]">
               {showMinute}
             </span>
@@ -40,7 +40,7 @@ function CountDownWidget({ endTime }) {
           </p>
         </div>
         <div className="countdown-item">
-          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+          <div className="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-[#F1EDE9] flex justify-center items-center">
             <span className="font-700 sm:text-[30px] text-base text-[#EF5DA8]">
               {showSecound}
             </span>

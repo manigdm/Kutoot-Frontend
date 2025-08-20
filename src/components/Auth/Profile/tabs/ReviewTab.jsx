@@ -20,7 +20,7 @@ export default function ReviewTab({ className, reviews }) {
               <div key={datas.id} className="item">
                 <div
                   style={{ boxShadow: "0px 15px 64px rgba(0, 0, 0, 0.05)" }}
-                  className={`product-row-card-style-one w-full h-[170px] bg-white group relative overflow-hidden ${
+                  className={`product-row-card-style-one w-full h-[170px] bg-[#F1EDE9] group relative overflow-hidden ${
                     className || ""
                   } `}
                 >

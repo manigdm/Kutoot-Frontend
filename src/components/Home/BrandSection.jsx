@@ -26,7 +26,7 @@ export default function BrandSection({ className, sectionTitle, brands = [] }) {
                     query: { brand: datas.slug },
                   }}
                 >
-                  <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center relative cursor-pointer">
+                  <div className="w-full h-[130px] bg-[#F1EDE9] border border-primarygray flex justify-center items-center relative cursor-pointer">
                     <Image
                       layout="fill"
                       objectFit="scale-down"

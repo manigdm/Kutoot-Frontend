@@ -147,7 +147,7 @@ export default function Cart({ className }) {
     <>
       <div
         style={{ boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)" }}
-        className={`cart-wrappwer w-[300px] bg-white border-t-[3px] ${
+        className={`cart-wrappwer w-[300px] bg-[#F1EDE9] border-t-[3px] ${
           className || ""
         }`}
       >

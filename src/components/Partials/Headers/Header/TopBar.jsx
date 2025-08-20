@@ -16,7 +16,7 @@ export default function TopBar({ className, contact,topBarProps }) {
   return (
     <>
       <div
-        className={`w-full bg-white border-b qgray-border ${
+        className={`w-full bg-[#F1EDE9] border-b qgray-border ${
           className || ""
         }`}
       >
@@ -26,8 +26,8 @@ export default function TopBar({ className, contact,topBarProps }) {
               <ul className="flex space-x-6">
                 <Link href="/" passHref>
                       <Image
-                        width="120"
-                        height="44"
+                        width="140"
+                        height="64"
                         objectFit="scale-down"
                         src={"/assets/images/logo-kutoot.png"}
                         alt="logo"
@@ -46,7 +46,7 @@ export default function TopBar({ className, contact,topBarProps }) {
                             </button> */}
                             {toggleCurrency && (
                                 <div
-                                    className="w-24 h-[100px] overflow-y-scroll absolute bg-white left-0 top-[40px] z-50 p-2"
+                                    className="w-24 h-[100px] overflow-y-scroll absolute bg-[#F1EDE9] left-0 top-[40px] z-50 p-2"
                                     style={{ boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)" }}
                                 >
                                   <ul className="flex flex-col space-y-2">

@@ -62,7 +62,7 @@ export default function Middlebar({ className, settings }) {
         <div className="relative h-full">
           <div className="flex justify-between items-center h-full">
             <div className="relative custom-logo">
-              <div className="category w-[270px] h-[53px] bg-white px-5 rounded mt-[6px] relative">
+              <div className="category w-[270px] h-[53px] bg-[#F1EDE9] px-5 rounded mt-[6px] relative">
                 <button
                   onClick={handler}
                   type="button"
@@ -167,7 +167,7 @@ export default function Middlebar({ className, settings }) {
                           <div
                             className={`sub-category-lvl-two absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
                               item.active_sub_categories.length > 0
-                                ? "bg-white"
+                                ? "bg-[#F1EDE9]"
                                 : ""
                             }`}
                             style={{ height: `${subCatHeight}px` }}
@@ -227,7 +227,7 @@ export default function Middlebar({ className, settings }) {
                                       className={`sub-category-lvl-three absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
                                         subItem.active_child_categories.length >
                                         0
-                                          ? "bg-white"
+                                          ? "bg-[#F1EDE9]"
                                           : ""
                                       }`}
                                       style={{ height: `${subCatHeight}px` }}
@@ -348,7 +348,7 @@ export default function Middlebar({ className, settings }) {
                     style={{ zIndex: "35", margin: "0" }}
                   ></div>
                   <div
-                    className="w-[208px] h-[267px] bg-white absolute right-0 top-11 z-40 border-t-[3px] primary-border flex flex-col justify-between"
+                    className="w-[208px] h-[267px] bg-[#F1EDE9] absolute right-0 top-11 z-40 border-t-[3px] primary-border flex flex-col justify-between"
                     style={{
                       boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
                     }}

@@ -197,7 +197,7 @@ function OrderCom() {
                       </div>
                       <div className="flex lg:space-x-[373px] space-x-[90px] rtl:space-x-reverse w-full h-full justify-center">
                         <div className="relative">
-                          <div className="w-[30px] h-[30px] border-[8px] rounded-full border-qyellow bg-white relative z-20"></div>
+                          <div className="w-[30px] h-[30px] border-[8px] rounded-full border-qyellow bg-[#F1EDE9] relative z-20"></div>
                           <p className="absolute -left-4 top-10 sm:text-base text-sm font-400">
                             {ServeLangItem()?.Pending}
                           </p>
@@ -205,7 +205,7 @@ function OrderCom() {
                         {/*orderStatus*/}
                         <div className="relative">
                           <div
-                              className={`w-[30px] h-[30px] border-[8px] rounded-full  bg-white relative z-20 ${
+                              className={`w-[30px] h-[30px] border-[8px] rounded-full  bg-[#F1EDE9] relative z-20 ${
                                   orderStatus === "Progress" ||
                                   orderStatus === "Delivered" ||
                                   orderStatus === "Completed"
@@ -219,7 +219,7 @@ function OrderCom() {
                                   orderStatus === "Delivered" ||
                                   orderStatus === "Completed"
                                       ? "primary-bg"
-                                      : "bg-white"
+                                      : "bg-[#F1EDE9]"
                               }`}
                           ></div>
                           <p className="absolute -left-4 top-10 sm:text-base text-sm font-400">
@@ -228,7 +228,7 @@ function OrderCom() {
                         </div>
                         <div className="relative">
                           <div
-                              className={`w-[30px] h-[30px] border-[8px] rounded-full bg-white  relative z-20 ${
+                              className={`w-[30px] h-[30px] border-[8px] rounded-full bg-[#F1EDE9]  relative z-20 ${
                                   orderStatus === "Delivered" || orderStatus === "Completed"
                                       ? "border-qyellow"
                                       : "border-qgray"
@@ -238,7 +238,7 @@ function OrderCom() {
                               className={`lg:w-[400px] w-[100px] h-[8px] absolute ltr:lg:-left-[390px] ltr:-left-[92px] rtl:lg:-right-[390px] rtl:-right-[92px] top-[10px] z-10 ${
                                   orderStatus === "Delivered" || orderStatus === "Completed"
                                       ? "primary-bg"
-                                      : "bg-white"
+                                      : "bg-[#F1EDE9]"
                               }`}
                           ></div>
                           <p className="absolute -left-4 top-10 sm:text-base text-sm font-400">
@@ -259,7 +259,7 @@ function OrderCom() {
 
 
             {resData && (
-                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" className="bg-white lg:p-10 p-3 rounded-xl">
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" className="bg-[#F1EDE9] lg:p-10 p-3 rounded-xl">
                    <div id="printSection">
                 <div className="sm:flex justify-between items-center mb-4">
                   <div>
@@ -343,7 +343,7 @@ function OrderCom() {
                   <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <tbody>
                       {/* table heading */}
-                      <tr className="text-[13px] font-medium text-black bg-[#F6F6F6] whitespace-nowrap px-2 border-b default-border-bottom uppercase">
+                      <tr className="text-[13px] font-medium text-[#3B322B] bg-[#F6F6F6] whitespace-nowrap px-2 border-b default-border-bottom uppercase">
                         <td className=" py-4 ltr:pl-10 rtl:pr-10 block whitespace-nowrap rtl:text-right  w-[380px]">
                           {ServeLangItem()?.Product}
                         </td>
@@ -365,7 +365,7 @@ function OrderCom() {
                         resData.order_products.map((item, i) => (
                           <tr
                             key={i}
-                            className="bg-white border-b hover:bg-gray-50 last:border-none"
+                            className="bg-[#F1EDE9] border-b hover:bg-gray-50 last:border-none"
                           >
                             <td className="pl-10 w-[400px] py-4 ">
                               <div className="flex space-x-6 items-center">
@@ -485,7 +485,7 @@ function OrderCom() {
           ></div>
           <div
             data-aos="fade-up"
-            className="sm:w-1/2 w-full bg-white relative py-[40px] px-[38px]"
+            className="sm:w-1/2 w-full bg-[#F1EDE9] relative py-[40px] px-[38px]"
             style={{ zIndex: "999" }}
           >
             <div className="title-bar flex items-center justify-between mb-3">

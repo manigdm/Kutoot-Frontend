@@ -6,7 +6,7 @@ export default function TermsCondition({ datas }) {
   const { terms_conditions } = datas;
   return (
     <Layout childrenClasses="pt-0 pb-0">
-      <div className="terms-condition-page w-full bg-white pb-[30px] min-h-screen">
+      <div className="terms-condition-page w-full bg-[#F1EDE9] pb-[30px] min-h-screen">
         <div className="w-full mb-[30px]">
           <PageTitle
             breadcrumb={[

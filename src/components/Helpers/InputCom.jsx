@@ -30,7 +30,7 @@ export default function InputCom({
           placeholder={placeholder}
           value={value}
           onChange={inputHandler}
-          className={`input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full font-normal bg-white focus:ring-0 focus:outline-none ${
+          className={`input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full font-normal bg-[#F1EDE9] focus:ring-0 focus:outline-none ${
             inputClasses || "h-full"
           }`}
           type={type}

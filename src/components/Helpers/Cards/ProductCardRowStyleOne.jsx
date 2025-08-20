@@ -235,7 +235,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
     <div className="main-wrapper-card relative">
       <div
         data-aos="fade-left"
-        className={`product-row-card-style-one  w-full lg:h-[250px] h-[200px] bg-white group relative shadow-custom rounded-lg overflow-hidden ${
+        className={`product-row-card-style-one  w-full lg:h-[250px] h-[200px] bg-[#F1EDE9] group relative shadow-custom rounded-lg overflow-hidden ${
           className || ""
         }`}
       >
@@ -338,7 +338,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
             type="button"
             onClick={() => quickViewHandler(datas.slug)}
           >
-            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-black items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded" style={{ background: "#848383", padding: "10px" }}>
+            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-[#3B322B] hover:text-[#3B322B] items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded" style={{ background: "#848383", padding: "10px" }}>
               <QuickViewIco className="fill-current" />
             </span>
           </button>
@@ -348,7 +348,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
               type="button"
               onClick={() => addToWishlist(datas.id)}
             >
-              <span className="hover:bg-qyellow w-10 h-10 flex text-black hover:text-blackjustify-center items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded" style={{ background: "#848383", padding: "10px" }}>
+              <span className="hover:bg-qyellow w-10 h-10 flex text-[#3B322B] hover:text-blackjustify-center items-center transition-all duration-300 ease-in-out hover-bg-qyellow bg-primarygray rounded" style={{ background: "#848383", padding: "10px" }}>
                 <ThinLove className="fill-current" />
               </span>
             </button>
@@ -369,7 +369,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
             onClick={() => productCompare(datas.id)}
           >
 
-            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-black hover:text-blacktransition-all duration-300 ease-in-out items-center hover-bg-qyellow bg-primarygray rounded">
+            <span className="hover:bg-qyellow w-10 h-10 flex justify-center text-[#3B322B] hover:text-blacktransition-all duration-300 ease-in-out items-center hover-bg-qyellow bg-primarygray rounded">
               <Compair className="fill-current" />
             </span>
           </button> */}
@@ -382,7 +382,7 @@ export default function ProductCardRowStyleOne({ className, datas }) {
             ></div>
             <div
               data-aos="fade-up"
-              className="md:mx-10 xl:mt-[100px] rounded w-full bg-white relative lg:py-[40px] pt-[80px] pb-[40px] sm:px-[38px] px-3 md:mt-12 h-full overflow-y-scroll xl:overflow-hidden xl:mt-0 "
+              className="md:mx-10 xl:mt-[100px] rounded w-full bg-[#F1EDE9] relative lg:py-[40px] pt-[80px] pb-[40px] sm:px-[38px] px-3 md:mt-12 h-full overflow-y-scroll xl:overflow-hidden xl:mt-0 "
               style={{ zIndex: "999" }}
             >
               <div className="w-full h-full overflow-y-scroll overflow-style-none">

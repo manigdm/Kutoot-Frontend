@@ -118,7 +118,7 @@ export default function About({ aboutData }) {
           </div>
         </div>
 
-        <div className="customer-feedback w-full bg-white py-[60px]">
+        <div className="customer-feedback w-full bg-[#F1EDE9] py-[60px]">
           <div className="title flex justify-center mb-5">
             <h1 className="text-[30px] font-semibold text-qblack">
               {ServeLangItem()?.Customers_Feedback}

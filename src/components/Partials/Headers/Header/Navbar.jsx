@@ -70,7 +70,7 @@ export default function Navbar({ className }) {
         <div className="relative h-full">
           <div className="flex justify-between items-center h-full">
             <div className="relative custom-logo">
-              <div className="category w-[270px] h-[53px] bg-white px-5 rounded mt-[6px] relative">
+              <div className="category w-[270px] h-[53px] bg-[#F1EDE9] px-5 rounded mt-[6px] relative">
                 <button
                   onClick={handler}
                   type="button"
@@ -175,7 +175,7 @@ export default function Navbar({ className }) {
                           <div
                             className={`sub-category-lvl-two absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
                               item.active_sub_categories.length > 0
-                                ? "bg-white"
+                                ? "bg-[#F1EDE9]"
                                 : ""
                             }`}
                             style={{ height: `${subCatHeight}px` }}
@@ -235,7 +235,7 @@ export default function Navbar({ className }) {
                                       className={`sub-category-lvl-three absolute ltr:left-[270px] rtl:right-[270px] top-0 z-10 w-[270px] ${
                                         subItem.active_child_categories.length >
                                         0
-                                          ? "bg-white"
+                                          ? "bg-[#F1EDE9]"
                                           : ""
                                       }`}
                                       style={{ height: `${subCatHeight}px` }}
@@ -357,7 +357,7 @@ export default function Navbar({ className }) {
                     style={{ zIndex: "35", margin: "0" }}
                   ></div>
                   <div
-                    className="w-[208px] h-[167px] bg-white absolute right-0 top-11 z-40 rounded-lg primary-border flex flex-col justify-between"
+                    className="w-[208px] h-[167px] bg-[#F1EDE9] absolute right-0 top-11 z-40 rounded-lg primary-border flex flex-col justify-between"
                     style={{
                       boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
                     }}
@@ -455,7 +455,7 @@ export default function Navbar({ className }) {
                     </span>
                     <div className="sub-menu w-full absolute left-0 top-[60px]">
                       <div
-                        className="mega-menu-wrapper w-full bg-white p-[30px] flex justify-between items-center "
+                        className="mega-menu-wrapper w-full bg-[#F1EDE9] p-[30px] flex justify-between items-center "
                         style={{
                           minHeight: "295px",
                           boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
@@ -535,7 +535,7 @@ export default function Navbar({ className }) {
                                 >
                                     <div className="cursor-pointer w-full relative  ">
                                       <div className="inline-flex  rtl:space-x-reverse space-x-1.5 items-center relative z-20">
-                                        <span className="text-sm text-black font-medium leading-[30px]">
+                                        <span className="text-sm text-[#3B322B] font-medium leading-[30px]">
                                           {ServeLangItem()?.Shop_Now}
                                         </span>
                                         <span className="leading-[30px]">
@@ -616,7 +616,7 @@ export default function Navbar({ className }) {
                     </span>
                     <div className="sub-menu w-[220px] absolute left-0 top-[60px]">
                       <div
-                        className="w-full bg-white flex justify-between items-center "
+                        className="w-full bg-[#F1EDE9] flex justify-between items-center "
                         style={{
                           boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
                         }}
