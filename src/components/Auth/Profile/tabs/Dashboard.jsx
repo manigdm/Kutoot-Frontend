@@ -151,7 +151,7 @@ export default function Dashboard({ dashBoardData, profileInfo }) {
         </div>
         <div className="quick-view-grid w-full lg:flex justify-between lg:space-x-2 xl:space-x-0 items-center mt-3 ">
           <div className="flex flex-col items-center qv-item xl:w-[200px] xl:h-[208px] lg:w-1/2 w-full mb-5 xl:mb-0 bg-[#4b0758] group hover-bg-qyellow transition-all duration-300 ease-in-out p-6 ">
-            <div className="w-[62px] h-[62px] rounded bg-white flex justify-center items-center">
+            <div className="w-[62px] h-[62px] rounded bg-[#F1EDE9] flex justify-center items-center">
               <span>
                 <svg
                     width="36"
@@ -183,7 +183,7 @@ export default function Dashboard({ dashBoardData, profileInfo }) {
           </span>
           </div>
           <div className="flex flex-col items-center qv-item xl:w-[200px] xl:h-[208px] lg:w-1/2 w-full mb-5 xl:mb-0 bg-[#4b0758] group hover-bg-qyellow transition-all duration-300 ease-in-out p-6 ">
-            <div className="w-[62px] h-[62px] rounded bg-white flex justify-center items-center">
+            <div className="w-[62px] h-[62px] rounded bg-[#F1EDE9] flex justify-center items-center">
             <span>
               <svg
                   width="33"
@@ -207,7 +207,7 @@ export default function Dashboard({ dashBoardData, profileInfo }) {
           </span>
           </div>
           <div className="flex flex-col items-center qv-item xl:w-[200px] xl:h-[208px] lg:w-1/2 w-full mb-5 xl:mb-0 bg-[#4b0758] group hover-bg-qyellow transition-all duration-300 ease-in-out p-6 ">
-            <div className="w-[62px] h-[62px] rounded bg-white flex justify-center items-center">
+            <div className="w-[62px] h-[62px] rounded bg-[#F1EDE9] flex justify-center items-center">
             <span>
               <svg
                   width="27"
@@ -239,7 +239,7 @@ export default function Dashboard({ dashBoardData, profileInfo }) {
           </span>
           </div>
           <div className="flex flex-col items-center qv-item xl:w-[200px] xl:h-[208px] lg:w-1/2 w-full mb-5 xl:mb-0 bg-[#4b0758] group hover-bg-qyellow transition-all duration-300 ease-in-out p-6 ">
-            <div className="w-[62px] h-[62px] rounded bg-white flex justify-center items-center ">
+            <div className="w-[62px] h-[62px] rounded bg-[#F1EDE9] flex justify-center items-center ">
               <span>
                 <svg
                     width="27"
@@ -389,7 +389,7 @@ export default function Dashboard({ dashBoardData, profileInfo }) {
         {confirmation && (
             <div className="w-full h-screen fixed left-0 top-0 z-40 flex justify-center items-center">
               <div onClick={confirmHandler} className="w-full h-full fixed left-0 top-0 bg-black bg-opacity-50"></div>
-              <div className={`w-[400px] bg-white z-50 p-7 flex justify-center items-center transform transition duration-300 ease-in-out ${confirmValue?'scale-100':'scale-0'}`}>
+              <div className={`w-[400px] bg-[#F1EDE9] z-50 p-7 flex justify-center items-center transform transition duration-300 ease-in-out ${confirmValue?'scale-100':'scale-0'}`}>
                 <div>
                   <div className="flex justify-center mb-10">
               <span className="text-qred">
@@ -410,7 +410,7 @@ export default function Dashboard({ dashBoardData, profileInfo }) {
                   <div className="mb-5">
                     <p className="text-sm text-qgraytwo leading-[24px]">Enter the email <span className="font-semibold text-gray-700">{auth().user.email}</span> to continue:</p>
                     <input
-                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-[50px] border border-qgray-border font-normal bg-white focus:ring-0 focus:outline-none "
+                        className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-[50px] border border-qgray-border font-normal bg-[#F1EDE9] focus:ring-0 focus:outline-none "
                         type="text"
                         value={confirmUser}
                         onChange={(e) => setConfirmUser(e.target.value.trim())}

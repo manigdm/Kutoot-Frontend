@@ -53,16 +53,16 @@ export default function Banner({
                             className="flex w-full max-w-full h-full h-auto relative items-center rtl:pr-[30px] ltr:pl-[30px]"
                           >
                             <div>
-                              <div className="inline-block md:w-[112px] w-[100px] shadow md:h-[25px] h-[18px] flex items-center justify-center  bg-white rounded-full md:mb-[30px] mb-[15px]">
+                              <div className="inline-block md:w-[112px] w-[100px] shadow md:h-[25px] h-[18px] flex items-center justify-center  bg-[#F1EDE9] rounded-full md:mb-[30px] mb-[15px]">
                                 <span className="text-qblack uppercase md:text-xs text-[10px] font-semibold">
                                   {item.badge}
                                 </span>
                               </div>
                               <div className="md:mb-[30px] mb-[15px]">
-                                <p className="md:text-[50px] text-[20px] leading-none text-qblack md:mb-3">
+                                <p className="md:text-[50px] text-[20px] leading-none text-white md:mb-3">
                                   {item.title_one}
                                 </p>
-                                <h1 className="md:text-[50px] text-[20px] md:w-[400px] md:leading-[66px] text-qblack font-bold">
+                                <h1 className="md:text-[50px] text-[20px] md:w-[400px] md:leading-[66px] text-white font-bold">
                                   {item.title_two}
                                 </h1>
                               </div>
@@ -101,16 +101,16 @@ export default function Banner({
                     >
                       <div className="flex flex-col justify-between">
                         <div>
-                          <div className="inline-block md:w-[112px] w-[100px] shadow md:h-[25px] h-[18px] flex items-center justify-center  bg-white rounded-full md:mb-[22px] mb-[15px]">
+                          <div className="inline-block md:w-[112px] w-[100px] shadow md:h-[25px] h-[18px] flex items-center justify-center  bg-[#F1EDE9] rounded-full md:mb-[22px] mb-[15px]">
                         <span className="text-qblack uppercase md:text-xs text-[10px] font-semibold">
                           {sidebarImgOne.badge}
                         </span>
                           </div>
                           <div className="md:mb-[30px] mb-2.5">
-                            <p className="md:text-[30px] leading-none text-qblack font-semibold md:mb-3">
+                            <p className="md:text-[30px] leading-none text-white font-semibold md:mb-3">
                               {sidebarImgOne.title_one}
                             </p>
-                            <h1 className="md:text-[30px] md:leading-[40px] text-qblack font-semibold">
+                            <h1 className="md:text-[30px] md:leading-[40px] text-white font-semibold">
                               {sidebarImgOne.title_two}
                             </h1>
                           </div>
@@ -143,16 +143,16 @@ export default function Banner({
                     >
                       <div className="flex flex-col justify-between">
                         <div>
-                          <div className="inline-block md:w-[112px] w-[100px] shadow md:h-[25px] h-[18px] flex items-center justify-center  bg-white rounded-full md:mb-[22px] mb-[15px]">
+                          <div className="inline-block md:w-[112px] w-[100px] shadow md:h-[25px] h-[18px] flex items-center justify-center  bg-[#F1EDE9] rounded-full md:mb-[22px] mb-[15px]">
                         <span className="text-qblack uppercase md:text-xs text-[10px] font-semibold">
                           {sidebarImgTwo.badge}
                         </span>
                           </div>
                           <div className="md:mb-[30px] mb-2.5">
-                            <p className="md:text-[30px] leading-none text-qblack font-semibold md:mb-3">
+                            <p className="md:text-[30px] leading-none text-white font-semibold md:mb-3">
                               {sidebarImgTwo.title_one}
                             </p>
-                            <h1 className="md:text-[30px] md:leading-[40px] text-qblack font-semibold">
+                            <h1 className="md:text-[30px] md:leading-[40px] text-white font-semibold">
                               {sidebarImgTwo.title_two}
                             </h1>
                           </div>
@@ -210,7 +210,7 @@ export default function Banner({
             </div>
             <div
               data-aos="fade-up"
-              className="best-services w-full bg-white flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10" style={{border: "1px solid rgb(166, 161, 161)", borderRadius: "8px"}}
+              className="best-services w-full bg-[#F1EDE9] flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10" style={{border: "1px solid rgb(166, 161, 161)", borderRadius: "8px"}}
             >
               {services.map((service) => (
                 <div key={service.id} className="item">
@@ -224,7 +224,7 @@ export default function Banner({
                       </span>
                     </div>
                     <div>
-                      <p className="text-black text-[15px] font-700 tracking-wide mb-1">
+                      <p className="text-[#3B322B] text-[15px] font-700 tracking-wide mb-1">
                         {service.title}
                       </p>
                       <p className="text-sm text-qgray line-clamp-1">

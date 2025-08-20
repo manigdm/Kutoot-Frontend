@@ -140,7 +140,7 @@ function Profile() {
               { name: ServeLangItem()?.profile, path: "/profile" },
             ]}
           />
-          <div className="w-full bg-white xl:p-10 p-5">
+          <div className="w-full bg-[#F1EDE9] xl:p-10 p-5">
             <div className="title-area w-full flex justify-between items-center">
               <h1 className="text-[22px] font-bold text-qblack">
                 {ServeLangItem()?.Your_Dashboard}

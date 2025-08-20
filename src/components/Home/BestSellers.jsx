@@ -17,7 +17,7 @@ export default function BestSellers({ className, sallers = [] }) {
                       query: { seller: saller.slug },
                   }}
               >
-                      <div className="sm:w-[170px] sm:h-[170px] w-[140px] h-[140px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2 relative">
+                      <div className="sm:w-[170px] sm:h-[170px] w-[140px] h-[140px] rounded-full bg-[#F1EDE9] flex justify-center items-center overflow-hidden mb-2 relative">
                           <Image
                               layout="fill"
                               objectFit="scale-down"

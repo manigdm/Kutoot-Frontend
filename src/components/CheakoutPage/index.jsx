@@ -947,7 +947,7 @@ function CheakoutPage() {
   return (
     <>
       {carts && (
-        <div className="checkout-page-wrapper w-full bg-white pb-[60px]">
+        <div className="checkout-page-wrapper w-full bg-[#F1EDE9] pb-[60px]">
           <div className="w-full mb-5">
             <PageTitle
               title="Checkout"
@@ -2516,7 +2516,7 @@ function CheakoutPage() {
                           <div
                             style={{ zIndex: "999" }}
                             data-aos="zoom-in"
-                            className="w-[359px] bg-white shadow-2xl p-2 rounded absolute -left-10 top-0"
+                            className="w-[359px] bg-[#F1EDE9] shadow-2xl p-2 rounded absolute -left-10 top-0"
                           >
                             <div className="stripe-inputs">
                               <div className="input-item mb-5">

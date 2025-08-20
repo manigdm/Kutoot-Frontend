@@ -4,9 +4,8 @@ const withPWA = require('next-pwa');
 const { hostname } = new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`);
 const nextConfig={
   reactStrictMode: true,
-  swcMinify: false,
   images: {
-    domains: [`${hostname}`]
+    unoptimized: true,
   },
 }
 const pwa = process.env.NEXT_PWA_STATUS;
@@ -19,5 +18,4 @@ const nextConfigWithPwa = withPWA({
 }) (
     nextConfig
 );
-module.exports = pwa==='1'?nextConfigWithPwa:nextConfig ;
-
+module.exports = pwa==='1'?nextConfigWithPwa:nextConfig ;

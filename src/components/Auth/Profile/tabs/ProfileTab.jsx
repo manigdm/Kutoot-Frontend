@@ -275,7 +275,7 @@ export default function ProfileTab({ profileInfo, updatedProfile }) {
                   </span>
                     </div>
                   </button>
-                  <div style={{boxShadow: "rgb(0 0 0 / 14%) 0px 15px 50px 0px",display:countryDropToggle?'block':'none'}} className="country-dropdown-list w-[250px] h-[250px] bg-white absolute left-0 top-[80px] z-20 overflow-y-scroll">
+                  <div style={{boxShadow: "rgb(0 0 0 / 14%) 0px 15px 50px 0px",display:countryDropToggle?'block':'none'}} className="country-dropdown-list w-[250px] h-[250px] bg-[#F1EDE9] absolute left-0 top-[80px] z-20 overflow-y-scroll">
                     <ul>
                       {getCountries && getCountries.length>0&&getCountries.map((item,i)=>(
                           <li onClick={()=>selectCountryhandler(item)} key={i} className="flex space-x-1.5 items-center px-3 py-1 cursor-pointer">

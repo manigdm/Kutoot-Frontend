@@ -254,7 +254,7 @@ export default function Blog({ details }) {
               <div className="lg:w-[370px] w-full">
                 <div
                   data-aos="fade-up"
-                  className="search-widget w-full p-[30px] bg-white mb-[30px]"
+                  className="search-widget w-full p-[30px] bg-[#F1EDE9] mb-[30px]"
                 >
                   <h1 className="text-[22px] text-qblack font-bold mb-5">
                     {ServeLangItem()?.Search}
@@ -288,7 +288,7 @@ export default function Blog({ details }) {
                 </div>
                 <div
                   data-aos="fade-up"
-                  className="latest-post-widget w-full bg-white p-[30px] mb-[30px]"
+                  className="latest-post-widget w-full bg-[#F1EDE9] p-[30px] mb-[30px]"
                 >
                   <h1 className="text-[22px] text-qblack font-bold mb-5">
                     {ServeLangItem()?.Latest_Post}
@@ -388,7 +388,7 @@ export default function Blog({ details }) {
                 </div>
                 <div
                   data-aos="fade-up"
-                  className="categories-widget w-full bg-white p-[30px] mb-[30px]"
+                  className="categories-widget w-full bg-[#F1EDE9] p-[30px] mb-[30px]"
                 >
                   <h1 className="text-[22px] text-qblack font-bold mb-5">
                     {ServeLangItem()?.Categories}

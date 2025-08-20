@@ -77,7 +77,7 @@ export default function SearchBox({ className }) {
   return (
     <>
       <div
-        className={`w-full h-full flex items-center  border rounded-xl border-qgray-border bg-white  ${
+        className={`w-full h-full flex items-center  border rounded-xl border-qgray-border bg-[#F1EDE9]  ${
           className || ""
         }`}
       >
@@ -88,7 +88,7 @@ export default function SearchBox({ className }) {
               onKeyDown={(e) => e.key === "Enter" && searchHandler()}
               onChange={(e) => setSearchkey(e.target.value)}
               type="text"
-              className="search-input rounded-xl rounded-r-none bg-white"
+              className="search-input rounded-xl rounded-r-none bg-[#F1EDE9]"
               placeholder={ServeLangItem()?.Search_products + "..."}
             />
           </div>
@@ -137,7 +137,7 @@ export default function SearchBox({ className }) {
                 onClick={() => setToggleCat(!toggleCat)}
               ></div>
               <div
-                className="w-[227px] h-auto absolute bg-white left-0 top-[29px] z-50 p-5"
+                className="w-[227px] h-auto absolute bg-[#F1EDE9] left-0 top-[29px] z-50 p-5"
                 style={{ boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)" }}
               >
                 <ul className="flex flex-col space-y-2">
@@ -198,7 +198,7 @@ export default function SearchBox({ className }) {
         {/*        onClick={() => setSubToggleCat(!subToggleCat)}*/}
         {/*      ></div>*/}
         {/*      <div*/}
-        {/*        className="w-[227px] h-auto absolute bg-white left-0 top-[29px] z-50 p-5"*/}
+        {/*        className="w-[227px] h-auto absolute bg-[#F1EDE9] left-0 top-[29px] z-50 p-5"*/}
         {/*        style={{ boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)" }}*/}
         {/*      >*/}
         {/*        <ul className="flex flex-col space-y-2">*/}

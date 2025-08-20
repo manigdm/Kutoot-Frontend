@@ -99,7 +99,7 @@ export default function Ads() {
               </div>
 
               <div className="md:w-[415px] w-full h-[54px] sm:flex mt-8">
-                <div className="flex-1 bg-white ltr:pl-4 rtl:pr-4 mb-2 md:mb-0 flex space-x-2 rtl:space-x-reverse items-center h-full focus-within:text-qgreen text-qblack overflow-hidden">
+                <div className="flex-1 bg-[#F1EDE9] ltr:pl-4 rtl:pr-4 mb-2 md:mb-0 flex space-x-2 rtl:space-x-reverse items-center h-full focus-within:text-qgreen text-qblack overflow-hidden">
                   <span>
                     <svg
                       width="17"

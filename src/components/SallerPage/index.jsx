@@ -74,7 +74,7 @@ export default function SallerPage() {
 
               <div className="saller-text-details sm:mt-[55px] mt-[100px]">
                 <ul>
-                  <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
+                  <li className="text-[#3B322B] flex space-x-5 items-center leading-9 text-base font-normal">
                     <span>
                       <svg
                         width="16"
@@ -95,7 +95,7 @@ export default function SallerPage() {
                     </span>
                     <span>Demoemail@gmail.com</span>
                   </li>
-                  <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
+                  <li className="text-[#3B322B] flex space-x-5 items-center leading-9 text-base font-normal">
                     <span>
                       <svg
                         width="15"
@@ -112,7 +112,7 @@ export default function SallerPage() {
                     </span>
                     <span>023 434 54354</span>
                   </li>
-                  <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
+                  <li className="text-[#3B322B] flex space-x-5 items-center leading-9 text-base font-normal">
                     <span>
                       <svg
                         width="14"
@@ -148,7 +148,7 @@ export default function SallerPage() {
 
               <div className="saller-logo mt-5 sm:mt-5">
                 <div className="flex sm:justify-center justify-start">
-                  <div className="w-[170px] h-[170px] flex justify-center items-center rounded-full bg-white relative mb-1">
+                  <div className="w-[170px] h-[170px] flex justify-center items-center rounded-full bg-[#F1EDE9] relative mb-1">
                     <Image
                       layout="fill"
                       objectFit="scale-down"
@@ -190,7 +190,7 @@ export default function SallerPage() {
               </div>
 
               <div className="flex-1">
-                <div className="products-sorting w-full bg-white md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]">
+                <div className="products-sorting w-full bg-[#F1EDE9] md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]">
                   <div>
                     <p className="font-400 text-[13px]">
                       <span className="text-qgray"> Showing</span> 1–16 of 66

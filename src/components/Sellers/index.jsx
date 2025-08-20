@@ -80,7 +80,7 @@ function Sallers({ sellersData }) {
 
                           <div className="saller-text-details">
                             <ul>
-                              <li className="text-black flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
+                              <li className="text-[#3B322B] flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
                                 <span>
                                   <svg
                                     width="16"
@@ -101,7 +101,7 @@ function Sallers({ sellersData }) {
                                 </span>
                                 <span>{seller.email}</span>
                               </li>
-                              <li className="text-black flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
+                              <li className="text-[#3B322B] flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
                                 <span>
                                   <svg
                                     width="15"
@@ -118,7 +118,7 @@ function Sallers({ sellersData }) {
                                 </span>
                                 <span>{seller.phone}</span>
                               </li>
-                              <li className="text-black flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
+                              <li className="text-[#3B322B] flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
                                 <span>
                                   <svg
                                     width="14"
@@ -188,7 +188,7 @@ function Sallers({ sellersData }) {
 
                       <div>
                         <div className="flex sm:justify-center justify-start">
-                          <div className="w-[170px] h-[170px] rounded-full bg-white mb-[20px] flex justify-center items-center relative overflow-hidden">
+                          <div className="w-[170px] h-[170px] rounded-full bg-[#F1EDE9] mb-[20px] flex justify-center items-center relative overflow-hidden">
                             <Image
                               layout="fill"
                               objectFit="scale-down"

@@ -164,7 +164,7 @@ function BecomeSaller() {
       </div>
       <div className="content-wrapper w-full mb-10">
         <div className="container-x mx-auto">
-          <div className="w-full bg-white sm:p-[30px] p-3">
+          <div className="w-full bg-[#F1EDE9] sm:p-[30px] p-3">
             <div className="flex xl:flex-row flex-col-reverse xl:space-x-11">
               <div className="xl:w-[824px]">
                 <div className="title w-full mb-4">
@@ -291,7 +291,7 @@ function BecomeSaller() {
                       )}
                     </button>
                     <Link href="/seller-terms-condition">
-                      <span className="text-base text-black cursor-pointer">
+                      <span className="text-base text-[#3B322B] cursor-pointer">
                         {
                           ServeLangItem()
                             ?.I_agree_all_terms_and_condition_in_ecoShop

@@ -93,7 +93,7 @@ export default function Blogs({ blogs, nextPageUrl }) {
                 </div>
             </div>
 
-            <div className="w-full pt-[60px] bg-white">
+            <div className="w-full pt-[60px] bg-[#F1EDE9]">
                 <div className="container-x mx-auto">
                     <div className="w-full">
                         {getBlogs && getBlogs.length > 0 ? (

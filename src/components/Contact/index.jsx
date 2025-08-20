@@ -92,10 +92,10 @@ export default function Contact({ datas }) {
                           />
                         </svg>
                       </div>
-                      <p className="text-[22px] text-black leading-[30px] text-center font-semibold">
+                      <p className="text-[22px] text-[#3B322B] leading-[30px] text-center font-semibold">
                         {ServeLangItem()?.phone}
                       </p>
-                      <p className="text-[15px] text-black leading-[30px] text-center">
+                      <p className="text-[15px] text-[#3B322B] leading-[30px] text-center">
                         {datas.contact.phone}
                       </p>
                     </div>
@@ -136,10 +136,10 @@ export default function Contact({ datas }) {
                           />
                         </svg>
                       </div>
-                      <p className="text-[22px] text-black leading-[30px] text-center font-semibold">
+                      <p className="text-[22px] text-[#3B322B] leading-[30px] text-center font-semibold">
                         {ServeLangItem()?.Email}
                       </p>
-                      <p className="text-[15px] text-black leading-[30px] text-center">
+                      <p className="text-[15px] text-[#3B322B] leading-[30px] text-center">
                         {datas.contact.email}
                       </p>
                     </div>
@@ -184,7 +184,7 @@ export default function Contact({ datas }) {
                 </div>
               )}
             </div>
-            <div className="flex-1 bg-white sm:p-10 p-3">
+            <div className="flex-1 bg-[#F1EDE9] sm:p-10 p-3">
               <div className="title flex flex-col items-center">
                 <h1 className="text-[34px] font-bold text-qblack">
                   {ServeLangItem()?.Get_In_Touch}

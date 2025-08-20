@@ -123,7 +123,7 @@ function ProductsCompaire() {
   };
 
   return (
-    <div className="products-compaire-wrapper w-full bg-white pb-[40px]">
+    <div className="products-compaire-wrapper w-full bg-[#F1EDE9] pb-[40px]">
       <div className="w-full mb-5">
         <PageTitle
           breadcrumb={[
@@ -164,7 +164,7 @@ function ProductsCompaire() {
                     imagesRow.map((item, i) => (
                       <td
                         key={i}
-                        className="product bg-white p-6 border-b border-r border-qgray-border relative"
+                        className="product bg-[#F1EDE9] p-6 border-b border-r border-qgray-border relative"
                         style={{
                           width: `calc(100% / ${
                             compareProducts.length >= 4
@@ -181,7 +181,7 @@ function ProductsCompaire() {
                         {/*        inputClasses="w-full h-full px-2"*/}
                         {/*    >*/}
                         {/*      <div*/}
-                        {/*          className="absolute right-2 z-10 bg-white"*/}
+                        {/*          className="absolute right-2 z-10 bg-[#F1EDE9]"*/}
                         {/*          style={{ top: "calc(100% - 28px)" }}*/}
                         {/*      >*/}
                         {/*        <svg*/}
@@ -282,7 +282,7 @@ function ProductsCompaire() {
                             : compareProducts.length + 1
                         })`,
                       }}
-                      className="product bg-white px-6 border-r border-qgray-border pb-[20px] align-top"
+                      className="product bg-[#F1EDE9] px-6 border-r border-qgray-border pb-[20px] align-top"
                     >
                       <div className="flex space-x-2 items-center">
                         {Array.from(Array(item), () => (
@@ -336,7 +336,7 @@ function ProductsCompaire() {
                               : compareProducts.length + 1
                           })`,
                         }}
-                        className="product bg-white px-6 border-r border-qgray-border pb-[20px] align-top"
+                        className="product bg-[#F1EDE9] px-6 border-r border-qgray-border pb-[20px] align-top"
                       >
                         {item !== 0 ? (
                           <span className="text-[13px] font-semibold text-green-500">
@@ -382,7 +382,7 @@ function ProductsCompaire() {
                               : compareProducts.length + 1
                           })`,
                         }}
-                        className="product bg-white px-6 border-r border-qgray-border pb-[20px] align-top"
+                        className="product bg-[#F1EDE9] px-6 border-r border-qgray-border pb-[20px] align-top"
                       >
                           {item.specifications.length > 0 ? (
                               item.specifications.map((sp, i) => (

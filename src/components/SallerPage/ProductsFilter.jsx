@@ -16,13 +16,13 @@ export default function ProductsFilter({
   return (
     <>
       <div
-        className={`filter-widget w-full fixed lg:relative left-0 top-0 h-screen z-10 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${
+        className={`filter-widget w-full fixed lg:relative left-0 top-0 h-screen z-10 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-[#F1EDE9] px-[30px] pt-[40px] ${
           className || ""
         }  ${filterToggle ? "block" : "hidden lg:block"}`}
       >
         <div className="filter-subject-item pb-10 border-b border-qgray-border">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">
+            <h1 className="text-[#3B322B] text-base font-500">
               Product categories
             </h1>
           </div>
@@ -473,7 +473,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">Price Range</h1>
+            <h1 className="text-[#3B322B] text-base font-500">Price Range</h1>
           </div>
           <div className="price-range mb-5">
             <InputRange
@@ -490,7 +490,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">Brands</h1>
+            <h1 className="text-[#3B322B] text-base font-500">Brands</h1>
           </div>
           <div className="filter-items">
             <ul>
@@ -659,7 +659,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">Storage</h1>
+            <h1 className="text-[#3B322B] text-base font-500">Storage</h1>
           </div>
           <div className="filter-items">
             <div className="flex space-x-[5px] flex-wrap">
@@ -718,7 +718,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">Sizes</h1>
+            <h1 className="text-[#3B322B] text-base font-500">Sizes</h1>
           </div>
           <div className="filter-items">
             <ul>

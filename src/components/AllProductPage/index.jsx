@@ -346,7 +346,7 @@ export default function AllProductPage({ response, sellerInfo }) {
 
                 <div className="saller-text-details  w-72">
                   <ul>
-                    <li className="text-black flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
+                    <li className="text-[#3B322B] flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
                       <span>
                         <svg
                           width="16"
@@ -367,7 +367,7 @@ export default function AllProductPage({ response, sellerInfo }) {
                       </span>
                       <span>{sellerInfo.seller.email}</span>
                     </li>
-                    <li className="text-black flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
+                    <li className="text-[#3B322B] flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
                       <span>
                         <svg
                           width="15"
@@ -384,7 +384,7 @@ export default function AllProductPage({ response, sellerInfo }) {
                       </span>
                       <span>{sellerInfo.seller.phone}</span>
                     </li>
-                    <li className="text-black flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
+                    <li className="text-[#3B322B] flex space-x-5 rtl:space-x-reverse items-center leading-9 text-base font-normal">
                       <span>
                         <svg
                           width="14"
@@ -455,7 +455,7 @@ export default function AllProductPage({ response, sellerInfo }) {
 
                 <div className="saller-logo mt-5 sm:mt-5">
                   <div className="flex sm:justify-center justify-start">
-                    <div className="w-[170px] h-[170px] flex justify-center items-center rounded-full bg-white relative mb-1 overflow-hidden">
+                    <div className="w-[170px] h-[170px] flex justify-center items-center rounded-full bg-[#F1EDE9] relative mb-1 overflow-hidden">
                       <Image
                         layout="fill"
                         objectFit="scale-down"
@@ -591,7 +591,7 @@ export default function AllProductPage({ response, sellerInfo }) {
               <div className="flex-1">
                 {response.data && response.data.products.data.length > 0 ? (
                   <div className="w-full">
-                    <div className="products-sorting w-full bg-white md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]">
+                    <div className="products-sorting w-full bg-[#F1EDE9] md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]">
                       <div>
                         <p className="font-400 text-[13px]">
                           <span className="text-qgray">

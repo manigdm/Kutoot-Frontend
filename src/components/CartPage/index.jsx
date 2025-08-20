@@ -138,7 +138,7 @@ function CardPage() {
           </div>
         </div>
       ) : (
-        <div className="cart-page-wrapper w-full bg-white pb-[60px]">
+        <div className="cart-page-wrapper w-full bg-[#F1EDE9] pb-[60px]">
           <div className="w-full">
             <PageTitle
               title="Your Cart"
@@ -172,7 +172,7 @@ function CardPage() {
                     </div>
                   </Link>
                   <Link href="/checkout">
-                    <div className="!text-black w-[300px] h-[50px] black-btn flex justify-center items-center cursor-pointer">
+                    <div className="!text-[#3B322B] w-[300px] h-[50px] black-btn flex justify-center items-center cursor-pointer">
                       <span className="text-sm font-semibold text-white">
                         {ServeLangItem()?.Proceed_to_Checkout}
                       </span>

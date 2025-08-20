@@ -6,7 +6,7 @@ import Facebook from "../../../Helpers/icons/Facebook";
 import Instagram from "../../../Helpers/icons/Instagram";
 import Youtube from "../../../Helpers/icons/Youtube";
 
-export default function Footer({ settings }) {
+export default function Footer({ settings = {} }) {
   const { websiteSetup } = useSelector((state) => state.websiteSetup);
   const [firstCol, setFirstCol] = useState(null);
   const [secondCol, setSecondCol] = useState(null);
@@ -40,7 +40,7 @@ export default function Footer({ settings }) {
   });
 
   return (
-    <footer className="footer-section-wrapper bg-white">
+    <footer className="footer-section-wrapper bg-[#F1EDE9]">
       <div className="container-x block mx-auto pt-[83px]">
         <div className="lg:flex justify-between mb-[95px]">
           <div className="lg:w-4/10 w-full mb-10 lg:mb-0">

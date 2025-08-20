@@ -89,7 +89,7 @@ export default function ForgotPass() {
       <div className="login-page-wrapper w-full py-10">
         <div className="container-x mx-auto">
           <div className="lg:flex items-center relative">
-            <div className="lg:w-[572px] w-full h-[783px] bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
+            <div className="lg:w-[572px] w-full h-[783px] bg-[#F1EDE9] flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
               {forgotUser ? (
                 <div className="w-full">
                   <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">

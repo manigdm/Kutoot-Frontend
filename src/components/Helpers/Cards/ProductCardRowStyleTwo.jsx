@@ -149,7 +149,15 @@ export default function ProductCardRowStyleTwo({ className, datas }) {
       data-aos="fade-up"
       className={`product-card-row-two w-full  ${className || ""}`}
     >
-      <div className="w-full h-[105px] bg-white border-primarygray px-5 " style={{ border: "1px solid rgb(166, 161, 161)", borderRadius: "8px", marginBottom: "2px" }}>
+<div 
+  className="w-full h-[105px] bg-[#F1EDE9] border-primarygray px-5" 
+  style={{
+    border: "1px solid rgb(166, 161, 161)",
+    borderRadius: "8px",
+    marginBottom: "10px",
+    backgroundColor: "#F1EDE9",  // Set the background color to #F1EDE9
+  }}
+>
         <div className="w-full h-full flex space-x-5 justify-center items-center">
           <div className="w-[75px] h-full relative">
             <Image

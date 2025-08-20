@@ -39,7 +39,7 @@ export default function Drawer({ className, open, action }) {
           ></div>
         )}
         <div
-          className={`w-[280px] transition-all duration-300 ease-in-out h-screen overflow-y-auto overflow-x-hidden overflow-style-none bg-white fixed top-0 z-50 ${
+          className={`w-[280px] transition-all duration-300 ease-in-out h-screen overflow-y-auto overflow-x-hidden overflow-style-none bg-[#F1EDE9] fixed top-0 z-50 ${
             open ? "left-0" : "-left-[280px]"
           }`}
         >
@@ -93,7 +93,7 @@ export default function Drawer({ className, open, action }) {
           </div>
           <div className="w-full mt-5 px-5">
             <div className="search-bar w-full h-[34px]  flex ">
-              <div className="flex-1 bg-white h-full border border-r-0 border-[#E9E9E9]">
+              <div className="flex-1 bg-[#F1EDE9] h-full border border-r-0 border-[#E9E9E9]">
                 <input
                   value={searchKey}
                   onChange={(e) => setSearchkey(e.target.value)}
@@ -154,7 +154,7 @@ export default function Drawer({ className, open, action }) {
                           query: { category: item.slug },
                         }}
                       >
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span>
                               <span>
@@ -216,7 +216,7 @@ export default function Drawer({ className, open, action }) {
               <ul className="categories-list">
                 <li className="category-item">
                   <Link href="#">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400 capitalize">{ServeLangItem()?.Pages}</span>
                       </div>
@@ -253,7 +253,7 @@ export default function Drawer({ className, open, action }) {
                   <ul className="submenu-list ml-5">
                     <li className="category-item">
                       <Link href="/privacy-policy">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400 capitalize">
                               {ServeLangItem()?.Privacy_Policy}
@@ -292,7 +292,7 @@ export default function Drawer({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <Link href="/faq">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400 capitalize">{ServeLangItem()?.FAQ}</span>
                           </div>
@@ -329,7 +329,7 @@ export default function Drawer({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <Link href="/terms-condition">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400 capitalize">
                               {ServeLangItem()?.Term_and_Conditions}
@@ -368,7 +368,7 @@ export default function Drawer({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <Link href="/seller-terms-condition">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qgreen transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover:bg-qgreen transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400 capitalize capitalize ">
                               {ServeLangItem()?.Seller_terms_and_conditions}
@@ -412,7 +412,7 @@ export default function Drawer({ className, open, action }) {
                             <React.Fragment key={i}>
                               <li className="category-item">
                                 <Link href={`/pages?custom=${item.slug}`} passHref>
-                                  <div className=" flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                                  <div className=" flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                                     <div className="flex items-center space-x-6">
                                   <span className="text-sm font-400 capitalize capitalize ">
                                     {item.page_name}
@@ -456,7 +456,7 @@ export default function Drawer({ className, open, action }) {
 
                 <li className="category-item">
                   <Link href="/about">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400 capitalize">{ServeLangItem()?.About}</span>
                       </div>
@@ -493,7 +493,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <Link href="/Blogs">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400 capitalize">{ServeLangItem()?.blogs}</span>
                       </div>
@@ -530,7 +530,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <Link href="/contact">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-[#F1EDE9] hover-bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400 capitalize">Contact</span>
                       </div>

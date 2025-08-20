@@ -49,7 +49,7 @@ function TrackingOrder() {
           <p className="text-[15px] text-qgraytwo leading-8 mb-5">
             {ServeLangItem()?.Enter_your_order_tracking_number_and_your_secret_id}.
           </p>
-          <div className="w-full bg-white lg:px-[30px] px-5 py-[23px] lg:flex items-center">
+          <div className="w-full bg-[#F1EDE9] lg:px-[30px] px-5 py-[23px] lg:flex items-center">
             <div className="lg:w-[642px] w-full">
               <div className="mb-3">
 

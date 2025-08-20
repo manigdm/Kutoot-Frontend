@@ -328,7 +328,7 @@ function Index({pusher}) {
                  style={{zIndex: '9999999999999'}}>
                 {/*w-[576px] h-[474px]*/}
                 <div
-                    className={`bg-white transform   transition duration-700 ease-in-out ${
+                    className={`bg-[#F1EDE9] transform   transition duration-700 ease-in-out ${
                         toggleMessage.toggle ? "translate-y-0 md:w-[576px] w-full md:h-[474px] h-full" : "translate-y-[480px] w-0 h-0"
                     }`}
                     style={{boxShadow: "0px 4px 109px rgba(0, 0, 0, 0.12)"}}
@@ -397,7 +397,7 @@ function Index({pusher}) {
                         style={{height: `calc(100% - 38px)`}}
                     >
                         <div
-                            className={`md:w-[240px] bg-[#FFF2DA] md:bg-white  w-full md:h-full overflow-x-scroll md:overflow-x-hidden border-r border-[#E9E9E9] md:overflow-y-scroll overflow-style-none`}
+                            className={`md:w-[240px] bg-[#FFF2DA] md:bg-[#F1EDE9]  w-full md:h-full overflow-x-scroll md:overflow-x-hidden border-r border-[#E9E9E9] md:overflow-y-scroll overflow-style-none`}
                         >
                             <div className={`seller-list w-full`}>
                                 <ul className={`flex flex-row md:flex-col`}>
@@ -466,7 +466,7 @@ function Index({pusher}) {
                                         >
                                             <div className={`flex space-x-2.5 items-center`}>
                                                 <div
-                                                    className={`w-[58px] h-[63px] rounded relative bg-white`}
+                                                    className={`w-[58px] h-[63px] rounded relative bg-[#F1EDE9]`}
                                                 >
                                                     <Image
                                                         layout="fill"
@@ -551,7 +551,7 @@ function Index({pusher}) {
                                                     <button onClick={() => send(product.id)}
                                                             style={{left: "calc(50% - 46px)", bottom: "-16px"}}
                                                             type="button"
-                                                            className={`w-[120px] h-[32px] bg-white text-sm text-qyellow font-semibold absolute shadow-lg`}
+                                                            className={`w-[120px] h-[32px] bg-[#F1EDE9] text-sm text-qyellow font-semibold absolute shadow-lg`}
                                                     >
                                                         {ServeLangItem().Send_Product}
                                                     </button>
@@ -628,7 +628,7 @@ function Index({pusher}) {
                                                                             <div
                                                                                 className={`flex space-x-2.5 items-center`}>
                                                                                 <div
-                                                                                    className={`w-[58px] h-[63px] relative bg-white`}
+                                                                                    className={`w-[58px] h-[63px] relative bg-[#F1EDE9]`}
                                                                                 >
                                                                                     <Image
                                                                                         layout="fill"

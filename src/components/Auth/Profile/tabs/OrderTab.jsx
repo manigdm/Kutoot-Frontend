@@ -31,7 +31,7 @@ export default function OrderTab({ orders }) {
             {orders &&
               orders.length > 0 &&
               orders.map((item, i) => (
-                <tr key={i} className="bg-white border-b hover:bg-gray-50">
+                <tr key={i} className="bg-[#F1EDE9] border-b hover:bg-gray-50">
                   <td className="text-center py-4">
                     <span className="text-lg text-qgray font-medium">
                       #{item.order_id}

@@ -31,11 +31,11 @@ export default function Signup() {
         <div className="container-x mx-auto">
           <div className="lg:flex items-center relative w-full lg:min-h-[700px]">
             {verify ? (
-              <div className="lg:w-[572px] w-full lg:h-[700px] bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
+              <div className="lg:w-[572px] w-full lg:h-[700px] bg-[#F1EDE9] flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
                 <VerifyWidget />
               </div>
             ) : signupView ? (
-              <div className="lg:w-[572px] w-full lg:h-auto bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
+              <div className="lg:w-[572px] w-full lg:h-auto bg-[#F1EDE9] flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
                 <SignupWidget />
               </div>
             ) : (

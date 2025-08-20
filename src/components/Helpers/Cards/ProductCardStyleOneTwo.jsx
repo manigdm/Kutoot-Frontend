@@ -219,7 +219,7 @@ export default function ProductCardStyleOneTwo({ datas }) {
   };
   return (
     <div
-      className="product-card-style-one-two w-full h-full bg-white relative group overflow-hidden"
+      className="product-card-style-one-two w-full h-full bg-[#F1EDE9] relative group overflow-hidden"
       style={{ boxShadow: "0px 15px 64px 0px rgba(0, 0, 0, 0.05)" }}
     >
       <div
@@ -325,7 +325,7 @@ export default function ProductCardStyleOneTwo({ datas }) {
           ></div>
           <div
             data-aos="fade-up"
-            className="md:mx-10 w-full bg-white relative py-[40px] sm:px-[38px] px-3 relative md:mt-12 h-full overflow-y-scroll xl:overflow-hidden xl:h-auto xl:mt-0"
+            className="md:mx-10 w-full bg-[#F1EDE9] relative py-[40px] sm:px-[38px] px-3 relative md:mt-12 h-full overflow-y-scroll xl:overflow-hidden xl:h-auto xl:mt-0"
             style={{ zIndex: "999" }}
           >
             <ProductView
